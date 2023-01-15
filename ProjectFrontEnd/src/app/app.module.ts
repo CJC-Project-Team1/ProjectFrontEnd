@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RelationexecutiveModule } from './module/relationexecutive/relationexecutive.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginfailedComponent } from './loginfailed/loginfailed.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegistrationComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    LoginfailedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RelationexecutiveModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

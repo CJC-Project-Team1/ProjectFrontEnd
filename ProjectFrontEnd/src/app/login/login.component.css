@@ -2,3 +2,8 @@
     margin: 35%;
     width: 30%;
 }
+
+label{
+    color: navy;
+    font-weight: bold;
+}
