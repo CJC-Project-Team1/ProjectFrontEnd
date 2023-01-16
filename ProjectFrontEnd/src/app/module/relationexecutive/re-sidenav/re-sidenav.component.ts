@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-re-sidenav',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./re-sidenav.component.css']
 })
 export class ReSidenavComponent {
+
+  @Input() sideNavStatus:boolean=false;
 
   list=[
     {

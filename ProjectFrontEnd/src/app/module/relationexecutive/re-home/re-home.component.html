@@ -1,9 +1,9 @@
  <!-- <div class="container-fluid">  -->
-    <app-re-header></app-re-header>
+    <app-re-header (sideNavToggled)="sideNavStatus = $event;"></app-re-header>
     <main>
-        <app-re-sidenav class="border border-dark"></app-re-sidenav>
+        <app-re-sidenav class="border border-dark" [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-re-sidenav>
 
-        <div class="display-area">
+        <div class="display-area" [ngClass]="{'display-area-shrink':sideNavStatus}">
             <img src="assets\Image\q2.jpg" alt="quote" height="503" width="1099">
         </div>
     </main>
