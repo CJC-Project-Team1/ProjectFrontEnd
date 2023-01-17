@@ -1,24 +1,29 @@
-
-<div class="col-md-12">
-    <div class="col-md-3">
-
-    </div>
-    <div class="col-md-6 mt-3 loginDiv">
-        <form [formGroup]="loginform" (ngSubmit)="logincheck()">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Username</label>
-              <input type="email" class="form-control" formControlName="username" id="exampleInputEmail1" aria-describedby="emailHelp">
-              
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-          </form>
-          <router-outlet></router-outlet>
-    </div>
-    <div class="col-md-3">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>LOG In</h1>
+          <h6>Please enter login details !!</h6>
+        </div>
+        <form [formGroup]="loginform" (ngSubmit)="onLognin()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">USERNAME</label>
+            <input type="text" formControlName="username" class="form-control" placeholder="Enter username">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">PASSWORD</label>
+            <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1"
+              placeholder="Password">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" [disabled]="!loginform.valid">LOGIN</button>
+          </div>
+        </form><br>
+      </div>
     </div>
   </div>
+</div>
 

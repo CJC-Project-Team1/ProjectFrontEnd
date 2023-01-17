@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 })
 export class RegisterEnquiryComponent {
 
-  constructor(private enq:EnquiryService, private fb:FormBuilder ){}
+  constructor(private enq:EnquiryService, private fb:FormBuilder){}
 
   enquiryform:FormGroup
 
@@ -27,6 +28,8 @@ export class RegisterEnquiryComponent {
 
   saveEnquiry(){
     this.enq.save(this.enquiryform.value).subscribe()
-    window.location.reload()
+    console.log(this.enquiryform.value)
+    alert('register');
+  // window.location.reload()
   }
 }

@@ -18,12 +18,14 @@ export class EnquiryService {
     contactNo: 0
   }
 
-  url:string=" http://localhost:9080/enquiryApi";
+  url:string="http://localhost:9080/enquiryApi";
   constructor(private http:HttpClient) { }
 
   save(enq:Enquiry)
   {
-    return this.http.post(this.url+"/saveEnq",enq);
+    console.log("in save enq service.")
+    console.log(enq.panCard)
+    return this.http.post(this.url+"/saveEnq",enq,{responseType:'text' as 'json'});
   }
 
   get()
