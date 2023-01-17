@@ -1,14 +1,14 @@
 /* Style the header with a grey background and some padding */
 .header {
     overflow: hidden;
-    background-color: #be1855;
+    background-color: rgb(76, 133, 58);
     padding: 20px 10px;
   }
   
   /* Style the header links */
   .header a {
     float: left;
-    color: black;
+    color: rgb(229, 229, 240);
     text-align: center;
     padding: 12px;
     text-decoration: none;
