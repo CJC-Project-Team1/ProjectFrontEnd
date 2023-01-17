@@ -12,7 +12,6 @@ import { UpdateComponent } from './update/update.component';
 import { SanctionedLoanComponent } from './sanctioned-loan/sanctioned-loan.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     ReHeaderComponent,
@@ -27,7 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RelationexecutiveRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     ReHeaderComponent,
