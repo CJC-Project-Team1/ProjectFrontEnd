@@ -30,6 +30,6 @@ export class RegisterEnquiryComponent {
     this.enq.save(this.enquiryform.value).subscribe()
     console.log(this.enquiryform.value)
     alert('register');
-  // window.location.reload()
+   window.location.reload()
   }
 }

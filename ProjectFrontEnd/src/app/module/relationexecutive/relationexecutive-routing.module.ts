@@ -17,10 +17,10 @@ const routes: Routes = [
         path:'enquiry',component:RegisterEnquiryComponent
       },
       {
-        path:'view',component:ViewApplicaionComponent
+        path:'viewEnq',component:ViewApplicaionComponent
       },
       {
-        path:'update',component:UpdateComponent
+        path:'viewEnq/updateEnq',component:UpdateComponent
       },
       {
       path:'sanction',component:SanctionedLoanComponent

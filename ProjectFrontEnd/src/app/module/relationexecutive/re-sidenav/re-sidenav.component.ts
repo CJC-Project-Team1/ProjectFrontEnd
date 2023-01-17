@@ -26,13 +26,13 @@ export class ReSidenavComponent {
       number:'3',
       name:'View Application',
       icon:'fa fa-eye',
-      path:'view'
+      path:'viewEnq'
     },
     {
       number:'4',
       name:'Update Enquiry',
       icon:'fa fa-file-text',
-      path:'update'
+      path:'viewEnq/updateEnq'
     },
     {
       number:'5',

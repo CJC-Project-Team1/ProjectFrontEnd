@@ -1,1 +1,49 @@
-<p>update works!</p>
+<div class="container-form">
+    <h1>Register New Enquiry</h1>
+    <form [formGroup]="updateEnqform" (ngSubmit)="updateEnquiry()">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">Enquiry Id</label>
+                <input type="text" class="form-control" formControlName="enquiryId" name="id" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">Customer Name</label>
+                <input type="text" class="form-control" formControlName="customerName" name="cname" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip02">Email ID</label>
+                <input type="text" class="form-control" formControlName="emailId" name="email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">Pan Card</label>
+                <input type="text" class="form-control" formControlName="panCard" name="pan" required>
+            </div>
+        </div>    
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">Adhar Card</label>
+                    <input type="text" class="form-control" formControlName="adharCard" name="adhar" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">Date of Birth</label>
+                    <input type="date" class="form-control" formControlName="dateOfBirth" name="dob" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">Contact Number</label>
+                    <input type="text" class="form-control" formControlName="contactNo" name="contact" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">Enquiry Status</label>
+                    <input type="text" class="form-control" formControlName="enquiryStatus" name="status" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-success btn-lg btn-block">
+            </div>
+    </form>
+</div>

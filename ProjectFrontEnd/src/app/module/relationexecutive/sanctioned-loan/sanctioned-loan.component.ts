@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { jsPDF } from 'jspdf';
 @Component({
   selector: 'app-sanctioned-loan',
   templateUrl: './sanctioned-loan.component.html',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SanctionedLoanComponent {
 
+  makePDF()
+  {
+    let pdf =new jsPDF();
+    pdf.text("DEmo",10,10);
+    pdf.save();
+  }
 }
