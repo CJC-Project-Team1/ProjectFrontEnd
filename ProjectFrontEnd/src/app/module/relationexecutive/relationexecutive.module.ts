@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.component';
 import { UpdateComponent } from './update/update.component';
 import { SanctionedLoanComponent } from './sanctioned-loan/sanctioned-loan.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SanctionedLoanComponent } from './sanctioned-loan/sanctioned-loan.compo
   ],
   imports: [
     CommonModule,
-    RelationexecutiveRoutingModule
+    RelationexecutiveRoutingModule,
+    ReactiveFormsModule
   ],
   exports:[
     ReHeaderComponent,

@@ -14,16 +14,16 @@ export class EnquiryService {
     adharCard: '',
     emailId: '',
     dateOfBirth: '',
-    enquiryStatus: '',
+    enquiryStatus: 'pending',
     contactNo: 0
   }
 
-  url:string=" http://localhost:3000/Enquiry";
+  url:string=" http://localhost:9080/enquiryApi";
   constructor(private http:HttpClient) { }
 
   save(enq:Enquiry)
   {
-    return this.http.post(this.url,enq);
+    return this.http.post(this.url+"/saveEnq",enq);
   }
 
   get()
