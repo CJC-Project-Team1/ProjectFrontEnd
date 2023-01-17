@@ -12,7 +12,6 @@ import { UpdateComponent } from './update/update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 
-
 @NgModule({
   declarations: [
     ReHeaderComponent,
@@ -27,7 +26,7 @@ import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.co
   imports: [
     CommonModule,
     RelationexecutiveRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     ReHeaderComponent,
