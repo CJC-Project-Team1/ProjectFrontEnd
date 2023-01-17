@@ -3,7 +3,7 @@
         <li class="nav-list-item" *ngFor="let item of list">
             <i class="{{item.icon}}" aria-hidden="true"></i>
             <span>
-                <a routerLink="reHome">{{item.name}}</a>
+                <a [routerLink]="[item.path]">{{item.name}}</a>
             </span>
         </li>
     </ul>

@@ -13,27 +13,32 @@ export class ReSidenavComponent {
     {
       number:'1',
       name:'Home',
-      icon:'fa fa-home'
+      icon:'fa fa-home',
+      path:'homepage'
     },
     {
       number:'2',
       name:'Register Enquiry',
-      icon:'fa fa-pencil-square-o' 
+      icon:'fa fa-pencil-square-o',
+      path:'enquiry'
     },
     {
       number:'3',
       name:'View Application',
-      icon:'fa fa-eye'
+      icon:'fa fa-eye',
+      path:'view'
     },
     {
       number:'4',
       name:'Update Enquiry',
-      icon:'fa fa-file-text' 
+      icon:'fa fa-file-text',
+      path:'update'
     },
     {
       number:'5',
       name:'Sanction Letter',
-      icon:'fa fa-envelope-open' 
+      icon:'fa fa-envelope-open',
+      path:'sanction'
     }
   ]
 }

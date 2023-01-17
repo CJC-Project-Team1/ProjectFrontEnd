@@ -5,13 +5,23 @@ import { RelationexecutiveRoutingModule } from './relationexecutive-routing.modu
 import { ReHeaderComponent } from './re-header/re-header.component';
 import { ReSidenavComponent } from './re-sidenav/re-sidenav.component';
 import { ReHomeComponent } from './re-home/re-home.component';
+import { RegisterEnquiryComponent } from './register-enquiry/register-enquiry.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.component';
+import { UpdateComponent } from './update/update.component';
+import { SanctionedLoanComponent } from './sanctioned-loan/sanctioned-loan.component';
 
 
 @NgModule({
   declarations: [
     ReHeaderComponent,
     ReSidenavComponent,
-    ReHomeComponent
+    ReHomeComponent,
+    RegisterEnquiryComponent,
+    HomePageComponent,
+    ViewApplicaionComponent,
+    UpdateComponent,
+    SanctionedLoanComponent
   ],
   imports: [
     CommonModule,
