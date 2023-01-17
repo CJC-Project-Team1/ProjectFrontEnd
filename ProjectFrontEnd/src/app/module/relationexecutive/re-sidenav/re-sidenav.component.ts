@@ -36,9 +36,9 @@ export class ReSidenavComponent {
     },
     {
       number:'5',
-      name:'Sanction Letter',
+      name:'Approved Loan',
       icon:'fa fa-envelope-open',
-      path:'sanction'
+      path:'approved'
     }
   ]
 }

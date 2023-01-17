@@ -1,0 +1,33 @@
+<div id="content" #content>
+<h1 style="text-align: center; color: rgb(33, 46, 71);">Approved Enquiry List Data</h1>
+<hr>
+<table class="table" border="2">
+  <thead>
+    <tr>
+      <th scope="col">Enquiry ID</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Email ID</th>
+      <th scope="col">Pan Card</th>
+      <th scope="col">Adhar Card</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Contact Number</th>      
+      <th scope="col">Enquiry Status</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of enq">
+      <td>{{e.enquiryId}}</td>
+      <td>{{e.customerName}}</td>
+      <td>{{e.emailId}}</td>
+      <td>{{e.panCard}}</td>
+      <td>{{e.adharCard}}</td>
+      <td>{{e.dateOfBirth}}</td>
+      <td>{{e.contactNo}}</td>
+      <td>{{e.enquiryStatus}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<i class="fa fa-download" aria-hidden="true"></i><button type="button" class="btn btn-warning"  (click)="makePDF()">DownLoad PDF</button>
+<router-outlet></router-outlet>

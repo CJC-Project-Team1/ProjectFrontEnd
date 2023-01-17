@@ -33,6 +33,11 @@ export class EnquiryService {
     return this.http.get<Enquiry[]>(this.url+"/getAllEnq");
   }
 
+  getByStatus()
+  {
+    return this.http.get<Enquiry[]>(this.url+"/getEnqByStatus/"+"approved");
+  }
+
   
   update(enq:Enquiry)
   {
