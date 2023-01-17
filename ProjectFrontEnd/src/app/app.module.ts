@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { FaqsComponent } from './faqs/faqs.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RelationexecutiveModule } from './module/relationexecutive/relationexecutive.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
+import { AdminPageModule } from './module/admin-page/admin-page.module';
+import { AdminComponent } from './module/adminPage/admin/admin.component';
+import { OperationExecutiveModule } from './module/operation-executive/operation-executive.module';
+import { CreditManagerModule } from './module/credit-manager/credit-manager.module';
+import { AccountHeadModule } from './module/account-head/account-head.module';
+import { TeleHeadModule } from './module/tele-head/tele-head.module';
 
 @NgModule({
   declarations: [
@@ -23,11 +28,11 @@ import { LoginfailedComponent } from './loginfailed/loginfailed.component';
     AboutusComponent,
     ContactusComponent,
     FaqsComponent,
-    RegistrationComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LoginfailedComponent
+    LoginfailedComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,12 @@ import { LoginfailedComponent } from './loginfailed/loginfailed.component';
     BrowserAnimationsModule,
     RelationexecutiveModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminPageModule,
+    OperationExecutiveModule,
+    CreditManagerModule,
+    AccountHeadModule,
+    TeleHeadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
