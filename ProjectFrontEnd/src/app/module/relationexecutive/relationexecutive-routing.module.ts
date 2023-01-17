@@ -5,6 +5,7 @@ import { CibilCheckComponent } from '../operationalexecutive/cibil-check/cibil-c
 import { CorrespondanceComponent } from '../operationalexecutive/correspondance/correspondance.component';
 import { EnquiryApprovalComponent } from '../operationalexecutive/enquiry-approval/enquiry-approval.component';
 import { LoanRegistrationComponent } from '../operationalexecutive/loan-registration/loan-registration.component';
+import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ReHomeComponent } from './re-home/re-home.component';
 import { RegisterEnquiryComponent } from './register-enquiry/register-enquiry.component';
@@ -27,7 +28,7 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
         path:'viewEnq/updateEnq',component:UpdateComponent
       },
       {
-      path:'sanction',component:SanctionedLoanDetails
+      path:'sanction',component:ApprovedEnquiryComponent
       },
 
       {
