@@ -21,7 +21,7 @@ export class RegisterEnquiryComponent {
       adharCard:[],
       emailId:[],
       dateOfBirth:[],
-      enquiryStatus:['pending'],
+      enquiryStatus:['OPEN'],
       contactNo:[]
     })
   }

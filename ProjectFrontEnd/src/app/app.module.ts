@@ -14,8 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RelationexecutiveModule } from './module/relationexecutive/relationexecutive.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
-import { AccountheadModule } from './module/accounthead/accounthead.module';import { AdminModule } from './module/admin/admin.module';
-
+import { AccountheadModule } from './module/accounthead/accounthead.module';
+import { AdminModule } from './module/admin/admin.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
 import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
 

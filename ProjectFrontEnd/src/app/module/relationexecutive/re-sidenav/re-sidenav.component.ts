@@ -94,8 +94,39 @@ export class ReSidenavComponent {
           icon:'fa fa-star',
           path:'leaveApp'
         }
+      ],
+      CM:[
+        {
+          number:'1',
+          name:'Loan Application',
+          icon:'fa fa-envelope',
+          path:'application'
+        },
+        {
+          number:'2',
+          name:'Previous Loan',
+          icon:'fa fa-hand-o-up',
+          path:'prevLoan'
+        }
+      ],
+      AH:[
+        {
+          number:'1',
+          name:'Final Applications',
+          icon:'fa fa-check',
+          path:'approvedApp'
+        }
+      ],
+      TH:[
+        {
+          number:'1',
+          name:'Defaulters',
+          icon:'fa fa-exclamation-triangle',
+          path:'defaulter'
+        }
       ]
     }
+    
     
   ]
 }

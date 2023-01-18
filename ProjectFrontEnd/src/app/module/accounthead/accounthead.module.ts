@@ -7,7 +7,6 @@ import { ApprovedApplicationComponent } from './approved-application/approved-ap
 
 @NgModule({
   declarations: [  
-  
     ApprovedApplicationComponent
   ],
   imports: [
