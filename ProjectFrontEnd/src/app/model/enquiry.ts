@@ -1,3 +1,5 @@
+import { Cibil } from "./cibil";
+
 export class Enquiry {
     enquiryId:number;
 	customerName:string;

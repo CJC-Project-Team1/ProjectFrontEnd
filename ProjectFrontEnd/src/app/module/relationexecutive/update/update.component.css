@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+    padding-top: 20px;
+    color: navy;
+    padding-bottom: 20px;
+}
+
+label{
+    font-weight: 500;
+}
+
+.container-form{
+    margin: auto;
+    width: 150%;
+    padding-left: 200px;
+}

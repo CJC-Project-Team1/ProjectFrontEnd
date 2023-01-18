@@ -7,6 +7,10 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
+import { CreditmanagerModule } from './module/creditmanager/creditmanager.module';
+import { OperationalexecutiveModule } from './module/operationalexecutive/operationalexecutive.module';
+import { ReHomeComponent } from './module/relationexecutive/re-home/re-home.component';
+import { RelationexecutiveModule } from './module/relationexecutive/relationexecutive.module';
 import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
@@ -42,9 +46,9 @@ const routes: Routes = [
             path:'loginfailed',component:LoginfailedComponent
           }
         ]
-      }
-    ]
-  }
+      },
+]},
+
 ];
 
 @NgModule({

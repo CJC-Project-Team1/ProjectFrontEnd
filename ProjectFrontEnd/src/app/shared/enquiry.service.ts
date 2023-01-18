@@ -30,12 +30,18 @@ export class EnquiryService {
 
   get()
   {
-    return this.http.get<Enquiry[]>(this.url);
+    return this.http.get<Enquiry[]>(this.url+"/getAllEnq");
   }
 
+  getByStatus()
+  {
+    return this.http.get<Enquiry[]>(this.url+"/getEnqByStatus/"+"approved");
+  }
+
+  
   update(enq:Enquiry)
   {
-    return this.http.put(this.url+"/"+enq.enquiryId,enq);
+    return this.http.put(this.url+"/updateEnq/"+enq.enquiryId,enq,{responseType:'text' as 'json'});
   }
 
 }
