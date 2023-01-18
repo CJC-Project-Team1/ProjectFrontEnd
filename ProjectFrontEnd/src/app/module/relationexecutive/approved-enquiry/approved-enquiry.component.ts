@@ -19,11 +19,12 @@ export class ApprovedEnquiryComponent {
   ngOnInit() 
     {
       this.es.getByStatus().subscribe((enqLsit:Enquiry[])=>{
-        this.enq=enqLsit;        
+        this.enq=enqLsit;      
       })
       let e=this.enq;
     }
 
+   
    
     makePDF()
     {

@@ -10,22 +10,42 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 })
 export class ViewApplicaionComponent {
 
-  enq:Enquiry[];
+  enq: Enquiry[];
+  //pagination
+  page: number = 1;
+  count: number = 0;
+  tableItems: number = 5;
+  tableSizes: any = [2, 4, 6, 8];
 
-  constructor(private es:EnquiryService,private route:Router){}
+  constructor(private es: EnquiryService, private route: Router) { }
 
-  ngOnInit(){
-    this.es.get().subscribe((enqList:Enquiry[])=>{
-      this.enq=enqList;
+  ngOnInit() {
+    this.getData();
+ 
+  }
+
+  getData() {
+    this.es.get().subscribe((enqList: Enquiry[]) => {
+      this.enq = enqList;
     })
+
   }
 
-  delEnq(id: number) {
-    
-    }
-    
-  onUpdate()
+  onTableData(event:any)
   {
-    this.route.navigate(['reHome','updateEnq']);
+    this.page=event;
+    this.getData();
   }
+
+  onTableSize(event:any)
+  {
+    this.tableItems=event.target.value;
+    this.page=1;
+    this.getData();
+  }
+
+
+
+
+
 }

@@ -16,6 +16,10 @@ import { RelationexecutiveModule } from './module/relationexecutive/relationexec
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,8 @@ import { LoginfailedComponent } from './loginfailed/loginfailed.component';
     BrowserAnimationsModule,
     RelationexecutiveModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
