@@ -21,7 +21,12 @@ export class LoginComponent {
   }
 
   onLognin(){
-    if(this.loginform.get('username').value==="re" && this.loginform.get('password').value==="re123"){
+    if(this.loginform.get('username').value==="admin" && this.loginform.get('password').value==="admin"){
+      console.log('in Admin');
+      sessionStorage.setItem('role', 'ADMIN');
+      this.router.navigate(['reHome','homepage']);
+    }
+    else if(this.loginform.get('username').value==="re" && this.loginform.get('password').value==="re123"){
       console.log('in Relational Executive');
       sessionStorage.setItem('role', 'RE');
       this.router.navigate(['reHome','homepage']);
@@ -46,6 +51,7 @@ export class LoginComponent {
       sessionStorage.setItem('role', 'TH');
       this.router.navigate(['reHome','homepage']);
     }
+    
     else{
       this.router.navigate(['header','login','loginfailed'])
     }

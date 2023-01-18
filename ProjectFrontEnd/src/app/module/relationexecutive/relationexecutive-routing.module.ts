@@ -1,5 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddEmployeeComponent } from '../admin/add-employee/add-employee.component';
+import { LeaveApplicaionsComponent } from '../admin/leave-applicaions/leave-applicaions.component';
+import { UpdateEmployeeComponent } from '../admin/update-employee/update-employee.component';
+import { ViewEmployeesComponent } from '../admin/view-employees/view-employees.component';
 import { ApprovedApplicationComponent } from '../accounthead/approved-application/approved-application.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
 import { PreviousLoanCheckComponent } from '../creditmanager/previous-loan-check/previous-loan-check.component';
@@ -46,24 +50,6 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
       },
       {
         path:'approval',component:EnquiryApprovalComponent
-      },
-
-      //CM Components
-      {
-        path:'application',component:LoanApplicationComponent
-      },
-      {
-        path:'prevLoan',component:PreviousLoanCheckComponent
-      },
-
-      //AH Components
-      {
-        path:'approvedApp',component:ApprovedApplicationComponent
-      },
-
-      //TH Component
-      {
-        path:'defaulter',component:DefaultersComponent
       }
 
     ]

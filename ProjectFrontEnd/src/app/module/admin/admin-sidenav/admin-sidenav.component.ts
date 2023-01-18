@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-re-sidenav',
-  templateUrl: './re-sidenav.component.html',
-  styleUrls: ['./re-sidenav.component.css']
+  selector: 'app-admin-sidenav',
+  templateUrl: './admin-sidenav.component.html',
+  styleUrls: ['./admin-sidenav.component.css']
 })
-export class ReSidenavComponent {
+export class AdminSidenavComponent {
 
   @Input() sideNavStatus:boolean=false;
 
@@ -44,7 +44,7 @@ export class ReSidenavComponent {
         },
         {
           number:'5',
-          name:'Approved Loan',
+          name:'Sanction Letter',
           icon:'fa fa-envelope-open',
           path:'sanction'
         }
@@ -73,26 +73,6 @@ export class ReSidenavComponent {
           name:'Correspondance',
           icon:'fa fa-envelope',
           path:'mail'
-        }
-      ],
-      ADMIN:[
-        {
-          number:'1',
-          name:'Add Employee',
-          icon:'fa fa-pencil-square-o',
-          path:'addEmp'
-        },
-        {
-          number:'2',
-          name:'View Employees',
-          icon:'fa fa-check-square-o',
-          path:'viewEmp'
-        },
-        {
-          number:'3',
-          name:'Leave Applications',
-          icon:'fa fa-star',
-          path:'leaveApp'
         }
       ]
     }
