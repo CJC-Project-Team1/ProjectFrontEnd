@@ -32,13 +32,19 @@ export class LoginComponent {
       this.router.navigate(['reHome','homepage']);
     }
     else if(this.loginform.get('username').value==="cm" && this.loginform.get('password').value==="cm123"){
-      this.router.navigate(['cmHome'])
+      console.log('in Credit Manager');
+      sessionStorage.setItem('role', 'CM');
+      this.router.navigate(['reHome','homepage']);
     }
     else if(this.loginform.get('username').value==="ah" && this.loginform.get('password').value==="ah123"){
-      this.router.navigate(['ahHome'])
+      console.log('in Account Head');
+      sessionStorage.setItem('role', 'AH');
+      this.router.navigate(['reHome','homepage']);
     }
     else if(this.loginform.get('username').value==="th" && this.loginform.get('password').value==="th123"){
-      this.router.navigate(['thHome'])
+      console.log('in Tele Head');
+      sessionStorage.setItem('role', 'TH');
+      this.router.navigate(['reHome','homepage']);
     }
     else{
       this.router.navigate(['header','login','loginfailed'])

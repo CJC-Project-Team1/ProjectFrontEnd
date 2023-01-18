@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { FaqsComponent } from './faqs/faqs.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RelationexecutiveModule } from './module/relationexecutive/relationexecutive.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
+import { AccountheadModule } from './module/accounthead/accounthead.module';
+import { TeleheadModule } from './module/telehead/telehead.module';
 
 
 
@@ -27,7 +28,6 @@ import { LoginfailedComponent } from './loginfailed/loginfailed.component';
     AboutusComponent,
     ContactusComponent,
     FaqsComponent,
-    RegistrationComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
@@ -40,6 +40,8 @@ import { LoginfailedComponent } from './loginfailed/loginfailed.component';
     RelationexecutiveModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AccountheadModule,
+    TeleheadModule,
     
   ],
   providers: [],
