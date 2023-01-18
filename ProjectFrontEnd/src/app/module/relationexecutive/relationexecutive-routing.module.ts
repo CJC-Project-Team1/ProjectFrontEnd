@@ -17,6 +17,7 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
       {
         path:'homepage',component:HomePageComponent
       },
+      //RE Components
       {
         path:'enquiry',component:RegisterEnquiryComponent
       },
@@ -29,7 +30,7 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
       {
       path:'sanction',component:ApprovedEnquiryComponent
       },
-
+      //OE Components
       {
         path:'cibil',component:CibilCheckComponent
       },
