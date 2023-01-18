@@ -46,9 +46,8 @@ export class UpdateComponent {
   updateEnquiry()
   {
     console.log(this.updateEnqform.value);
-    this.es.update(this.updateEnqform.value).subscribe();
-    window.location.reload();
+    this.es.update(this.updateEnqform.value).subscribe();   
     this.loctn.back();
-    
+   // window.location.reload();
   }
 }

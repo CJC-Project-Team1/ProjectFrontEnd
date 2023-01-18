@@ -1,6 +1,5 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { CibilCheckComponent } from '../operationalexecutive/cibil-check/cibil-check.component';
 import { CorrespondanceComponent } from '../operationalexecutive/correspondance/correspondance.component';
 import { EnquiryApprovalComponent } from '../operationalexecutive/enquiry-approval/enquiry-approval.component';
