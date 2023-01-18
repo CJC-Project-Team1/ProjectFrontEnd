@@ -16,9 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
 import { AccountheadModule } from './module/accounthead/accounthead.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
-
-
-
+import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
 
 
 @NgModule({
@@ -31,7 +29,8 @@ import { TeleheadModule } from './module/telehead/telehead.module';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    LoginfailedComponent
+    LoginfailedComponent,
+    EmiCalculatorComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +40,7 @@ import { TeleheadModule } from './module/telehead/telehead.module';
     ReactiveFormsModule,
     HttpClientModule,
     AccountheadModule,
-    TeleheadModule,
-    
+    TeleheadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

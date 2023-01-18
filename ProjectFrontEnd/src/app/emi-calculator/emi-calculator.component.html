@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>EMI Calculator</h1>
+            <hr>
+          </div>
+          <form [formGroup]="emiform" (ngSubmit)="calculate()">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Loan Amount</label>
+              <input type="text" formControlName="principal" class="form-control" placeholder="Enter Loan Amount"> 
+              <small id="emailHelp" class="form-text text-muted">Enter Your Principal Loan Amount</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Tenure in Months</label>
+              <input type="text" formControlName="count" class="form-control" id="exampleInputPassword1"
+                placeholder="Enter EMI count">
+              <small id="emailHelp" class="form-text text-muted">Enter Number of Monthly EMI You Wish to Pay</small> 
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Enter Rate of Interest</label>
+                <input type="text" formControlName="roi"  class="form-control" id="exampleInputPassword1"
+                  placeholder="Enter Current Rate of Interest"> 
+                <small id="emailHelp" class="form-text text-muted">Rate of Interest Currently Applicable</small> 
+              </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-warning">CALCULATE</button>
+            </div>
+            </form>
+            <div class="result">
+                {{result}}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -31,6 +32,9 @@ const routes: Routes = [
       },
       {
         path:'contactus', component:ContactusComponent
+      },
+      {
+        path:'emi',component:EmiCalculatorComponent
       },
       {
         path:'login', component:LoginComponent,
