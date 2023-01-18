@@ -50,8 +50,19 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
       },
       {
         path:'approval',component:EnquiryApprovalComponent
-      }
+      },
 
+
+      //ADMIN Components
+      {
+        path:'addEmp', component:AddEmployeeComponent
+      },
+      {
+        path:'viewEmp', component:ViewEmployeesComponent
+      },
+      {
+        path:'leaveApp', component:LeaveApplicaionsComponent
+      }
     ]
   }
  ];

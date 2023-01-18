@@ -1,0 +1,147 @@
+<div class="empadd">
+            <div class="row g-0 align-items-center" style="margin-left: 5px;">
+                
+              <div class="col-xl-4 ">
+                <h3 class="mb-3 text-uppercase text-center">Employee registration</h3>
+                <img src="assets/Image/empadd.jpg"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; height:80%;" />
+              </div>
+
+              
+              <div class="col-xl-8">
+                <div class="card-body p-md-5 text-black">
+
+
+                <form [formGroup]="addEmpForm" (ngSubmit)="send()">   
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Name</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="employeeName">
+                  </div>
+
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="emailId">
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Contact no</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="contactNo">
+                  </div>
+                </div>
+            
+                    <div class="col-md-6">
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">DOB</span>
+                    </div>
+                    <input type="date" class="form-control" formControlName="dob">
+                  </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="input-group mb-4">
+                    <div class="custom-control-inline">
+                        <label for="inputPassword6">Gender:</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="gender" class="custom-control-input" formControlName="gender" value="Male">
+                        <label class="custom-control-label" for="customRadio1">Male</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="gender" class="custom-control-input" formControlName="gender" value="Female">
+                        <label class="custom-control-label" for="customRadio2">Female</label>
+                      </div>
+                  </div>
+
+                  <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" >Address</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="address">
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-md-6 mb-5">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">Designation</label>
+                    </div>
+                    <select class="custom-select" formControlName="designation">
+                      <option selected>Choose...</option>
+                      <option value="Relationship Executive">Relationship Executive</option>
+                      <option value="Operational Executive">Operational Executive</option>
+                      <option value="Credit Manager">Credit Manager</option>
+                      <option value="Account Head">Account Head</option>
+                      <option value="Tele Head">Tele Head</option>
+                    </select>
+                </div>
+                    </div>
+                  
+                    <div class="col-md-6">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Appointment Date</span>
+                    </div>
+                    <input type="date" class="form-control" formControlName="appointmentDate">
+                  </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                  <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Username</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="username">
+                  </div>
+                    </div>
+
+                    <div class="col-md-6">
+                  <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Password</span>
+                    </div>
+                    <input type="password" class="form-control" formControlName="password">
+                  </div>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-md-8">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Photo</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" (change)="onselectphoto($event)">
+                  <label class="custom-file-label">Choose file</label>
+                </div>
+              </div>
+            </div>
+        </div>
+
+              <div class="col-md-3">
+              <input class="btn btn-primary btn-block" type="submit" value="Save" >
+            </div>
+
+            </form> 
+
+                </div>
+              </div>
+            </div>
+        </div>   
+       
+ 
+
