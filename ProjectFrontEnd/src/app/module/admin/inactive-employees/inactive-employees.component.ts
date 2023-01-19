@@ -4,13 +4,12 @@ import { Router } from '@angular/router';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/shared/employee.service';
 
-
 @Component({
-  selector: 'app-view-employees',
-  templateUrl: './view-employees.component.html',
-  styleUrls: ['./view-employees.component.css']
+  selector: 'app-inactive-employees',
+  templateUrl: './inactive-employees.component.html',
+  styleUrls: ['./inactive-employees.component.css']
 })
-export class ViewEmployeesComponent {
+export class InactiveEmployeesComponent {
   constructor(private es:EmployeeService, private sanitizer:DomSanitizer, private router:Router){
     
   }
@@ -18,17 +17,19 @@ export class ViewEmployeesComponent {
   photo:any;
   ngOnInit()
   {
-    this.es.getAllEmp().subscribe((edata:Employee[])=>{
+    this.es.getInactiveEmp().subscribe((edata:Employee[])=>{
       this.employees=edata
       this.employees.forEach(emp => {
-        //let objectURL = 'data:image/jpeg;base64,' + emp.photo;
-        //emp.photo = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+        this.photo = emp.photo;
+        let objectURL = 'data:image/jpeg;base64,' + emp.photo;
+        emp.photo = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     });
   }); 
   }
 
   edit(e:Employee)
   {
+    e.photo = this.photo;
     this.es.emp = Object.assign({},e);
     this.router.navigate(['reHome/updateEmp']);
   }

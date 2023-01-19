@@ -26,14 +26,14 @@ export class EmployeeService {
   url:string="http://localhost:9080/empApi";
   constructor(private http:HttpClient) { }
 
-  saveEmp(em:Employee)
+  saveEmp(emp)
   {
-    return this.http.post(this.url+"/saveEmp",em,{responseType:'text' as 'json'});
+    return this.http.post(this.url+"/saveEmp",emp,{responseType:'text' as 'json'});
   }
 
-  updateEmp(em:Employee)
+  updateEmp(emp, id)
   {
-    return this.http.put(this.url+"/updateEmp/"+em.employeeId,em,{responseType:'text' as 'json'});
+    return this.http.put(this.url+"/updateEmp/"+id,emp,{responseType:'text' as 'json'});
   }
 
   getAllEmp()
@@ -44,7 +44,7 @@ export class EmployeeService {
   getActiveEmp()
   {
     return this.http.get<Employee[]>(this.url+"/getAllActiveEmp");
-  }
+  } 
 
   getInactiveEmp()
   {
@@ -58,6 +58,6 @@ export class EmployeeService {
 
   deleteEmp(id:number)
   {
-    return this.http.delete(this.url+"/deleteEmp/"+id);
+    return this.http.delete(this.url+"/deleteEmp/"+id,{responseType:'text'});
   }
 }

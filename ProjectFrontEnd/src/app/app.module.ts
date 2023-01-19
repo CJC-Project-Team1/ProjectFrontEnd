@@ -22,6 +22,7 @@ import { OperationalexecutiveModule } from './module/operationalexecutive/operat
 import { CreditmanagerModule } from './module/creditmanager/creditmanager.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { CreditmanagerModule } from './module/creditmanager/creditmanager.module
     FooterComponent,
     LoginComponent,
     LoginfailedComponent,
-    EmiCalculatorComponent
+    EmiCalculatorComponent,
   ],
   imports: [
     BrowserModule,

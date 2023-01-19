@@ -4,33 +4,24 @@ import { Router } from '@angular/router';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/shared/employee.service';
 
-
 @Component({
-  selector: 'app-view-employees',
-  templateUrl: './view-employees.component.html',
-  styleUrls: ['./view-employees.component.css']
+  selector: 'app-active-employees',
+  templateUrl: './active-employees.component.html',
+  styleUrls: ['./active-employees.component.css']
 })
-export class ViewEmployeesComponent {
-  constructor(private es:EmployeeService, private sanitizer:DomSanitizer, private router:Router){
-    
-  }
+export class ActiveEmployeesComponent {
+  constructor(private es:EmployeeService, private sanitizer:DomSanitizer, private router:Router){}
+
   employees:Employee[];
-  photo:any;
   ngOnInit()
   {
-    this.es.getAllEmp().subscribe((edata:Employee[])=>{
+    this.es.getActiveEmp().subscribe((edata:Employee[])=>{
       this.employees=edata
       this.employees.forEach(emp => {
         //let objectURL = 'data:image/jpeg;base64,' + emp.photo;
-        //emp.photo = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+       // emp.photo = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     });
-  }); 
-  }
-
-  edit(e:Employee)
-  {
-    this.es.emp = Object.assign({},e);
-    this.router.navigate(['reHome/updateEmp']);
+    }); 
   }
 
   delete(id)
@@ -39,6 +30,7 @@ export class ViewEmployeesComponent {
     //window.location.reload();
   }
 
+  
   getStateColor(status) {
     switch(status) {
       case ('Active'):

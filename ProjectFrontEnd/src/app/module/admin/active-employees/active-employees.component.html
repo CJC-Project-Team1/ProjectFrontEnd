@@ -1,8 +1,5 @@
-
-
-
-  <table class="table table-responsive" style="border-radius: 5px;">
-    <thead class="thead" style="background-color: aquamarine;">
+<table class="table">
+    <thead class="thead bg-info">
       <tr>
         <th scope="col">Photo</th>
         <th scope="col">ID</th>
@@ -15,7 +12,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let emp of employees">
-        <th><img src="data:image/png;base64,{{emp.photo}}" style="height: 100px; width: 100px"/></th>
+        <th><img src="data:image/png;base64,{{emp.photo}}" style="height: 100px; width: 100px" /></th>
         <th scope="row">{{emp.employeeId}}</th>
         <td>{{emp.employeeName}}</td>
         <td>{{emp.designation}}</td>
@@ -29,6 +26,4 @@
     </tbody>
   </table>
 
-  
-
-
+  <router-outlet></router-outlet>
