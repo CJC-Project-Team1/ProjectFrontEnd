@@ -63,15 +63,15 @@ export class BorrowerService {
     }
   }
 
-  url: string = "http://localhost:9080/bapi/";
+  url: string = "http://localhost:9080/borrowerApi/";
 
   constructor(private http: HttpClient) { }
 
-  saveBrwr(b: Borrower) {
+  saveBrwr(b: any) {
     return this.http.post(this.url + "borrower", b, { responseType: 'text' as 'json' });
   }
 
-  updateBrwr(b: Borrower) {
+  updateBrwr(b: any) {
     return this.http.put(this.url + "borrower/" + b.borrowerId, b, { responseType: 'text' as 'json' });
   }
 

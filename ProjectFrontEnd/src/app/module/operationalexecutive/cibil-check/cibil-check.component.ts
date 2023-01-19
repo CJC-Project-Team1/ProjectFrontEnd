@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cibil-check',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./cibil-check.component.css']
 })
 export class CibilCheckComponent {
+
 
 }

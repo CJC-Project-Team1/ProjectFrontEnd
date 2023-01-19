@@ -12,12 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RelationexecutiveModule } from './module/relationexecutive/relationexecutive.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginfailedComponent } from './loginfailed/loginfailed.component';
 import { AccountheadModule } from './module/accounthead/accounthead.module';
 import { AdminModule } from './module/admin/admin.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
 import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
+import { OperationalexecutiveModule } from './module/operationalexecutive/operationalexecutive.module';
+import { CreditmanagerModule } from './module/creditmanager/creditmanager.module';
 
 
 @NgModule({
@@ -38,11 +40,14 @@ import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.componen
     AppRoutingModule,
     AdminModule,
     BrowserAnimationsModule,
+    CreditmanagerModule,
+    OperationalexecutiveModule,
     RelationexecutiveModule,
     ReactiveFormsModule,
     HttpClientModule,
     AccountheadModule,
-    TeleheadModule
+    TeleheadModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
