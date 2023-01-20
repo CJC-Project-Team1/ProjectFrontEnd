@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="container" id="content" #content  >
+            <img src="assets/image/CRM.jpg" width="1100" height="300">
+            <br><br>
+            <h2 style="color: rgb(236, 79, 93)"><b>HOME INTERIOR FINANCE PVT.LTD</b></h2>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {{date| date:'shortDate'}}<br>
+                pune</p>
+
+            <hr>
+            <form [formGroup]="sanctionForm">
+                TO,<br>
+                <input type="text" formControlName="customerName" ><br>
+
+                <b> Sub. – Loan approval confirmation </b> <br>
+                Dear <input type="text" formControlName="customerName"><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                We are pleased to inform you that your loan request has been approved, and we are releasing the
+                sanctioned amount to your Account.
+                We are sure you will agree that your consistent performance, dependability and overall contribution have
+                helped the immediate approval of your request.<br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Following are the details regarding
+                your loan request.<br><br><br>
+
+                <div formGroupName="loanDetails">
+                    <table>
+                        <tr>
+                            <td>Your Sanctioned Loan Amount :-</td>
+                            <td><input class="text" formControlName="loanAmount"> </td>
+                        </tr>
+                        <tr>
+                            <td>Interest Rate :- </td>
+                            <td> <input class="text" formControlName="interestRate"> </td>
+                        </tr>
+                        <tr>
+                            <td>Loan Tenure in year :- </td>
+                            <td> <input class="text" formControlName="loanTenure"> </td>
+                        </tr>
+                    </table>
+                </div><br>
+                The Company is glad we could support you in the time of your need, and looks for your continued
+                consistent performances moving forward.<br>
+                <br>
+                Good luck
+                <br><br><br>
+            </form>
+        </div>
+
+        <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"
+            style="margin-left: 350px">
+        &nbsp;&nbsp;
+        <input type="button" value="Send Mail" class="btn btn-success" (click)="mail()">
+        &nbsp;&nbsp;
+        <input type="button" value="Back" class="btn btn-success" (click)="back()">
+    </div>
+</div>
