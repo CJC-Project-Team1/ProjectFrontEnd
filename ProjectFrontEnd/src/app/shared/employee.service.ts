@@ -36,6 +36,11 @@ export class EmployeeService {
     return this.http.put(this.url+"/updateEmp/"+id,emp,{responseType:'text' as 'json'});
   }
 
+  updatePhoto(id, photo)
+  {
+    return this.http.put(this.url+"/updateEmpPhoto/"+id,photo,{responseType:'text' as 'json'})
+  }
+
   getAllEmp()
   {
     return this.http.get<Employee[]>(this.url+"/getAllEmp");

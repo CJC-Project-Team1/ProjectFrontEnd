@@ -1,5 +1,11 @@
 
-
+<div class="container">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+    </div>
+    <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder="search by status" [(ngModel)]="filterText">
+  </div>
 
   <table class="table table-responsive" style="border-radius: 5px;">
     <thead class="thead" style="background-color: aquamarine;">
@@ -14,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let emp of employees">
+      <tr *ngFor="let emp of filteredEmps">
         <th><img src="data:image/png;base64,{{emp.photo}}" style="height: 100px; width: 100px"/></th>
         <th scope="row">{{emp.employeeId}}</th>
         <td>{{emp.employeeName}}</td>
@@ -28,6 +34,9 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+  
 
   
 

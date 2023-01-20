@@ -6,7 +6,7 @@ import { ViewEmployeesComponent } from './view-employees/view-employees.componen
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { LeaveApplicaionsComponent } from './leave-applicaions/leave-applicaions.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActiveEmployeesComponent } from './active-employees/active-employees.component';
 import { InactiveEmployeesComponent } from './inactive-employees/inactive-employees.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -26,7 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule,
     AdminRoutingModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     
