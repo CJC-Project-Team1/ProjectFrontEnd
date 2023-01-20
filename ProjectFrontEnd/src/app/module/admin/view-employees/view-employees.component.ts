@@ -55,7 +55,7 @@ export class ViewEmployeesComponent {
         break;
       
       case ('Inactive'):
-        return 'gray-svg';
+        return 'red-svg';
         break;
         
     }

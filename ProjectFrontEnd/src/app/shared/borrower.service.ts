@@ -6,6 +6,7 @@ import { Borrower } from '../model/borrower';
   providedIn: 'root'
 })
 export class BorrowerService {
+ 
 
   brwr: Borrower = {
     borrowerId: 0,
@@ -43,14 +44,14 @@ export class BorrowerService {
     },
     borrowerDocuments: {
       documentId: 0,
-      adharCard: undefined,
-      panCard: undefined,
-      photo: undefined,
-      bankStatement: undefined,
-      addressProof: undefined,
-      balanceSheet: undefined,
-      gstCertificate: undefined,
-      proprietaryDeed: undefined
+      adharCard: [],
+      panCard: [],
+      photo: [],
+      bankStatement: [],
+      addressProof: [],
+      balanceSheet: [],
+      gstCertificate: [],
+      proprietaryDeed: []
     },
     appliedLoan: {
       appliedLoanId: 0,
@@ -68,6 +69,8 @@ export class BorrowerService {
   constructor(private http: HttpClient) { }
 
   saveBrwr(b: any) {
+    console.log('IN BRWR SERVICE');
+   // console.log(b.documentId.adharCard);
     return this.http.post(this.url + "borrower", b, { responseType: 'text' as 'json' });
   }
 
@@ -75,6 +78,9 @@ export class BorrowerService {
     return this.http.put(this.url + "borrower/" + b.borrowerId, b, { responseType: 'text' as 'json' });
   }
 
+  getBrwrById(id: number) {
+    return this.http.get<Borrower>(this.url + "borrower/"+id);
+  }
   getBrwr() {
     return this.http.get<Borrower[]>(this.url + "borrowers");
   }

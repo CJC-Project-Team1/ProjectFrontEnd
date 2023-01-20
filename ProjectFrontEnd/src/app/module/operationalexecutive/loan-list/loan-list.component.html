@@ -1,0 +1,49 @@
+<p>loan-list works!</p>
+<h1 style="text-align: center; color: rgb(33, 46, 71);">BORROWER LIST</h1><hr>
+<table class="table table-striped table-dark" border="2" >
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">EMAIL_ID</th>
+        <th scope="col">MOBILE NO</th>
+        <th scope="col">ADHAR CARD</th>
+        <th scope="col">PAN CARD</th>
+        <th scope="col">DATE OF BIRTH</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">GST NUMBER</th>    
+        <th scope="col">DOCUMNET STATUS</th>    
+        <th scope="col">SHOW DETAILS</th>
+        <th scope="col">EDIT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of brwr | paginate: {
+        itemsPerPage: tableItems,
+       currentPage: page,
+       totalItems: count
+      };
+  let i = index">
+        <td>{{b.borrowerId}}</td>
+        <td>{{b.borrowerName}}</td>
+        <td>{{b.emailId}}</td>
+        <td>{{b.contactNo}}</td>
+        <td>{{b.adharNo}}</td>
+        <td>{{b.panNo}}</td>
+        <td>{{b.dateOfBirth}}</td>
+        <td>{{b.address}}</td>
+        <td>{{b.gstNo}}</td>
+        <td>{{b.documentStatus}}</td>
+       <td><i class="fa fa-info" aria-hidden="true" [routerLink]="['details',b.borrowerId]"></i></td> 
+       <td><i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['update']" [state]="b"></i></td> 
+     </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls
+                        previousLabel="Prev"
+                        nextLabel="Next"
+                       (pageChange)="onTableData($event)">
+    </pagination-controls>
+  </div> 
+<router-outlet></router-outlet>
