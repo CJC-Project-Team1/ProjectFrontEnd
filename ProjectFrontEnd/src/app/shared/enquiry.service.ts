@@ -17,22 +17,22 @@ export class EnquiryService {
     dateOfBirth: '',
     enquiryStatus: 'pending',
     contactNo: 0,
-    c:{
-      cibilId:0,
-      cibilScore:0,
-      cibilRemark:''
+    cibil: {
+      cibilId: 0,
+      cibilScore: 0,
+      cibilRemark: ''
     }
   }
-
+  
   url:string="http://localhost:9080/enquiryApi";
   constructor(private http:HttpClient) { }
 
   save(enq:Enquiry)
   {
     console.log("in save enq service.")
-    console.log(enq.panCard)
-    console.log(enq.c.cibilScore)
-    console.log(enq.c.cibilRemark)
+    // console.log(enq.panCard)
+    // console.log(enq.c.cibilScore)
+    // console.log(enq.c.cibilRemark)
     return this.http.post(this.url+"/saveEnq",enq,{responseType:'text' as 'json'});
   }
 

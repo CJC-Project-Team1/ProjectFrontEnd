@@ -10,20 +10,15 @@
       <th scope="col">Adhar Card</th>
       <th scope="col">Date of Birth</th>
       <th scope="col">Contact Number</th>
-      <th scope="col">Enquiry Status</th>
       <th scope="col">Cibil Score</th>      
       <th scope="col">Cibil Status</th>
       <th scope="col">Cibil Check</th>
+      <th scope="col">Enquiry Status</th>
       <th scope="col">Update</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let e of enq | paginate: {
-      itemsPerPage: tableItems,
-     currentPage: page,
-     totalItems: count
-    };
-let i = index" >
+    <tr *ngFor="let e of enquiry" >
       <td>{{e.enquiryId}}</td>
       <td>{{e.customerName}}</td>
       <td>{{e.emailId}}</td>
@@ -31,27 +26,23 @@ let i = index" >
       <td>{{e.adharCard}}</td>
       <td>{{e.dateOfBirth}}</td>
       <td>{{e.contactNo}}</td>
-      <td>
-        <select>
-            <option>{{e.enquiryStatus}}</option>
-            <option>Approved</option>
-            <option>Rejected</option>
-        </select>
-      </td>
-      <!-- <td>{{e.c.cibilScore}}</td> -->
-      <td>{{e.c.cibilRemark}}</td>
+      <td>{{e.cibil.cibilScore}}</td>
+      <td>{{e.cibil.cibilRemark}}</td>
       <td><input type="button" value="Check" routerLink="cibil"></td>
+      <!-- <td>
+        <select [value]="e.enquiryStatus">
+            <option >OPEN</option>
+            <option ><button type="button" (click)="approved(e)">Approved</button></option>
+            <option ><button type="button" (click)="rejected(e)">Rejected</button></option>
+        </select>
+      </td> -->
+      <td><div>
+        <button *ngIf="e.cibil.cibilScore>=700" (click)="approved(e)" type="button">Approvrd</button>
+        <button *ngIf="700>e.cibil.cibilScore" (click)="rejected(e)" type="button">Rejected</button>
+      </div></td>
       <td><input type="submit" (click)="update(e)"></td>
     </tr>
   </tbody>
 </table>
-<div class="d-flex justify-content-center">
-  <pagination-controls
-                      previousLabel="Prev"
-                      nextLabel="Next"
-                     (pageChange)="onTableData($event)">
-  </pagination-controls>
-</div> 
-
 
 <router-outlet></router-outlet>

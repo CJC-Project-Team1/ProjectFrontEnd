@@ -18,6 +18,8 @@ import { AccountheadModule } from './module/accounthead/accounthead.module';
 import { AdminModule } from './module/admin/admin.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
 import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
+import { CreditmanagerModule } from './module/creditmanager/creditmanager.module';
+import { OperationalexecutiveModule } from './module/operationalexecutive/operationalexecutive.module';
 
 
 @NgModule({
@@ -48,7 +50,7 @@ import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.componen
     AccountheadModule,
     TeleheadModule
   ],
-  providers: [CibilCheckComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

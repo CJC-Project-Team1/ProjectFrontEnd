@@ -14,7 +14,7 @@ import { CibilCheckComponent } from '../cibil-check/cibil-check.component';
 })
 export class EnquiryApprovalComponent {
 
-  enq:Enquiry[];
+  enquiry:Enquiry[]
   //pagination
   page: number = 1;
   count: number = 0;
@@ -24,33 +24,23 @@ export class EnquiryApprovalComponent {
   constructor(private es: EnquiryService, private route: Router,private loctn:Location) { }
 
   ngOnInit() {
-    this.getData();
-    
-  }
-
-  getData() {
-    this.es.get().subscribe((enqList: Enquiry[]) => {
-      this.enq = enqList;
+    this.es.get().subscribe(enqList => {
+      this.enquiry = enqList;
     })
   }
 
-  onTableData(event:any)
+  update(enq:Enquiry)
   {
-    this.page=event;
-    this.getData();
-  }
-
-  onTableSize(event:any)
-  {
-    this.tableItems=event.target.value;
-    this.page=1;
-    this.getData();
-  }
-
-  update(e:Enquiry)
-  {
-    this.es.update(e).subscribe();
-    window.location.reload()
+    console.log(enq.enquiryStatus)
+    this.es.update(enq).subscribe();
+    //window.location.reload();
   }
   
+  approved(e:Enquiry){
+    e.enquiryStatus='Approved'
+  }
+  rejected(e:Enquiry)
+  {
+    e.enquiryStatus='Rejected'
+  }
 }

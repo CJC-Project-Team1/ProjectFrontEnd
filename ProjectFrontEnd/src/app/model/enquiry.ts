@@ -9,5 +9,5 @@ export class Enquiry {
 	dateOfBirth:string;
 	enquiryStatus:string;
 	contactNo:number;
-	c:Cibil;
+	cibil:Cibil;
 }

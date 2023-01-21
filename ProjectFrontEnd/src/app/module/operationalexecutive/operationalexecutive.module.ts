@@ -6,7 +6,9 @@ import { CibilCheckComponent } from './cibil-check/cibil-check.component';
 import { LoanRegistrationComponent } from './loan-registration/loan-registration.component';
 import { EnquiryApprovalComponent } from './enquiry-approval/enquiry-approval.component';
 import { CorrespondanceComponent } from './correspondance/correspondance.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,10 @@ import { CorrespondanceComponent } from './correspondance/correspondance.compone
   ],
   imports: [
     CommonModule,
-    OperationalexecutiveRoutingModule
+    OperationalexecutiveRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule
   ]
 })
 export class OperationalexecutiveModule { }
