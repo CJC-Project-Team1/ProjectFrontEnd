@@ -8,7 +8,7 @@ export class EmailSenderService {
 
   constructor(private http:HttpClient) { }
 
-  url:string=" http://localhost:9080/emailApi";
+  url:string=" http://localhost:9080/emailApi/";
 
   postAttachment(data:any)
   {

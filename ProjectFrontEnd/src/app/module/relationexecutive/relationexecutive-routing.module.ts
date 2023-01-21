@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ApprovedApplicationComponent } from '../accounthead/approved-application/approved-application.component';
 import { EmailComponent } from '../accounthead/email/email.component';
+import { LedgerComponent } from '../accounthead/ledger/ledger.component';
 import { SanctionLetterComponent } from '../accounthead/sanction-letter/sanction-letter.component';
 import { ActiveEmployeesComponent } from '../admin/active-employees/active-employees.component';
 import { AddEmployeeComponent } from '../admin/add-employee/add-employee.component';
@@ -119,6 +120,9 @@ const routes: Routes = [
       },
       {
         path: 'approvedApp/sanctionLetter', component: SanctionLetterComponent
+      },
+      {
+        path: 'approvedApp/ledger', component: LedgerComponent
       },
 
   //TH Component
