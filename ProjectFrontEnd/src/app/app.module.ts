@@ -18,9 +18,6 @@ import { AccountheadModule } from './module/accounthead/accounthead.module';
 import { AdminModule } from './module/admin/admin.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
 import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
-import { OperationalexecutiveModule } from './module/operationalexecutive/operationalexecutive.module';
-import { CreditmanagerModule } from './module/creditmanager/creditmanager.module';
-
 
 
 @NgModule({
@@ -45,12 +42,13 @@ import { CreditmanagerModule } from './module/creditmanager/creditmanager.module
     OperationalexecutiveModule,
     RelationexecutiveModule,
     ReactiveFormsModule,
+    OperationalexecutiveModule,
+    CreditmanagerModule,
     HttpClientModule,
     AccountheadModule,
-    TeleheadModule,
-    FormsModule
+    TeleheadModule
   ],
-  providers: [],
+  providers: [CibilCheckComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -43,7 +43,7 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
       },
       //OE Components
       {
-        path:'cibil',component:CibilCheckComponent
+        path:'approval/cibil',component:CibilCheckComponent
       },
       {
         path:'mail',component:CorrespondanceComponent

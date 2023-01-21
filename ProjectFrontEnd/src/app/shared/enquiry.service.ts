@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Enquiry } from '../model/enquiry';
+import { Cibil } from '../model/cibil';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,12 @@ export class EnquiryService {
     emailId: '',
     dateOfBirth: '',
     enquiryStatus: 'pending',
-    contactNo: 0
+    contactNo: 0,
+    c:{
+      cibilId:0,
+      cibilScore:0,
+      cibilRemark:''
+    }
   }
 
   url:string="http://localhost:9080/enquiryApi";
@@ -25,6 +31,8 @@ export class EnquiryService {
   {
     console.log("in save enq service.")
     console.log(enq.panCard)
+    console.log(enq.c.cibilScore)
+    console.log(enq.c.cibilRemark)
     return this.http.post(this.url+"/saveEnq",enq,{responseType:'text' as 'json'});
   }
 
