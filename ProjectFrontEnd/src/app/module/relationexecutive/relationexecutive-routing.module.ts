@@ -1,15 +1,22 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ApprovedApplicationComponent } from '../accounthead/approved-application/approved-application.component';
+import { ActiveEmployeesComponent } from '../admin/active-employees/active-employees.component';
 import { AddEmployeeComponent } from '../admin/add-employee/add-employee.component';
+import { InactiveEmployeesComponent } from '../admin/inactive-employees/inactive-employees.component';
 import { LeaveApplicaionsComponent } from '../admin/leave-applicaions/leave-applicaions.component';
+import { ProfileComponent } from '../admin/profile/profile.component';
+import { UpdateEmployeeComponent } from '../admin/update-employee/update-employee.component';
 import { ViewEmployeesComponent } from '../admin/view-employees/view-employees.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
 import { PreviousLoanCheckComponent } from '../creditmanager/previous-loan-check/previous-loan-check.component';
+import { ApplicationDetailsComponent } from '../operationalexecutive/application-details/application-details.component';
 import { CibilCheckComponent } from '../operationalexecutive/cibil-check/cibil-check.component';
 import { CorrespondanceComponent } from '../operationalexecutive/correspondance/correspondance.component';
 import { EnquiryApprovalComponent } from '../operationalexecutive/enquiry-approval/enquiry-approval.component';
+import { LoanListComponent } from '../operationalexecutive/loan-list/loan-list.component';
 import { LoanRegistrationComponent } from '../operationalexecutive/loan-registration/loan-registration.component';
+import { UpdateLoanComponent } from '../operationalexecutive/update-loan/update-loan.component';
 import { DefaultersComponent } from '../telehead/defaulters/defaulters.component';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -50,6 +57,15 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
       {
         path:'approval',component:EnquiryApprovalComponent
       },
+      {
+        path:'loanlist',component:LoanListComponent
+      },
+      {
+        path:'loanlist/details/:id',component:ApplicationDetailsComponent
+      },
+      {
+        path:'loanlist/update',component:UpdateLoanComponent
+      },
 
 
       //ADMIN Components
@@ -57,7 +73,28 @@ import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.compo
         path:'addEmp', component:AddEmployeeComponent
       },
       {
-        path:'viewEmp', component:ViewEmployeesComponent
+        path:'viewEmp', component:ViewEmployeesComponent,
+        children:[
+          {
+            path:'activeEmp', component:ActiveEmployeesComponent,
+            children:[
+              {
+                path:'empProfile', component:ProfileComponent
+              }
+            ]
+          },
+          {
+            path:'inactiveEmp', component:InactiveEmployeesComponent
+          },
+          
+        ]
+      },
+
+      {
+        path:'viewEmp/empProfile', component:ProfileComponent
+      },
+      {
+        path:'viewEmp/empProfile/updateEmp', component:UpdateEmployeeComponent
       },
       {
         path:'leaveApp', component:LeaveApplicaionsComponent

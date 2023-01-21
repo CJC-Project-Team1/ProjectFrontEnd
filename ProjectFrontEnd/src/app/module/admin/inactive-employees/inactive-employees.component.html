@@ -1,0 +1,43 @@
+<table class="table">
+    <thead class="thead bg-info">
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Contact no</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Appointment Date</th>
+        <th scope="col">Username</th>
+        <th scope="col">Password</th>
+        <th scope="col">Status</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <th><img [src]="emp.photo" style="height: 100px; width: 100px" /></th>
+        <th scope="row">{{emp.employeeId}}</th>
+        <td>{{emp.employeeName}}</td>
+        <td>{{emp.dob}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.contactNo}}</td>
+        <td>{{emp.emailId}}</td>
+        <td>{{emp.address}}</td>
+        <td>{{emp.designation}}</td>
+        <td>{{emp.appointmentDate}}</td>
+        <td>{{emp.username}}</td>
+        <td>{{emp.password}}</td>
+        <td><svg height="14" width="14">
+            <circle cx="7" cy="7" r="7" [ngClass]="getStateColor(emp.empStatus)" />
+          </svg>
+        </td>
+        <td><i class="btn fa fa-pencil-square-o" aria-hidden="true" (click)="edit(emp)"></i></td>
+        <td><i class="btn fa fa-trash" aria-hidden="true" (click)="delete(emp.employeeId)"></i></td>
+      </tr>
+    </tbody>
+  </table>

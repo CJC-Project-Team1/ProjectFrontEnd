@@ -81,17 +81,17 @@ export class LoanRegistrationComponent {
   onReg() {
     
     console.log(this.regForm.value);
-    let id=JSON.stringify(this.regForm.value);
+    let brwrData=JSON.stringify(this.regForm.value);
     let frmdata=new FormData();
-    frmdata.append("adhar",this.selectedadharCard);
-    frmdata.append("pan",this.selectedpanCard);
+    frmdata.append("adharCard",this.selectedadharCard);
+    frmdata.append("panCard",this.selectedpanCard);
     frmdata.append("photo",this.selectedphoto);
     frmdata.append("bankStatement",this.selectedbankStatement);
     frmdata.append("addressProof",this.selectedaddressProof);
     frmdata.append("balanceSheet",this.selectedbalanceSheet);
     frmdata.append("gstCertificate",this.selectedgstCertificate);
     frmdata.append("proprietaryDeed",this.selectedproprietaryDeed);
-    frmdata.append("documentId",id);
+    frmdata.append("borrower",brwrData);
     
     this.bs.saveBrwr(frmdata).subscribe();
     alert("Registered.");
@@ -137,6 +137,8 @@ export class LoanRegistrationComponent {
 
   next()
   {
+    this.bs.saveBrwr(this.regForm.value).subscribe();
+    console.log(this.regForm.value);
     this.steps=this.steps+1;
   }
   previous()

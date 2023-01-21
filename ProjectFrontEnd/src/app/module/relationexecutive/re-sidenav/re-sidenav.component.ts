@@ -73,7 +73,14 @@ export class ReSidenavComponent {
           name:'Correspondance',
           icon:'fa fa-envelope',
           path:'mail'
+        },
+        {
+          number:'5',
+          name:'Registered Loans',
+          icon:'fa fa-list-ol',
+          path:'loanlist'
         }
+
       ],
       ADMIN:[
         {

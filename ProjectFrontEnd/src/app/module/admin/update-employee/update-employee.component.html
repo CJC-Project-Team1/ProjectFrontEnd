@@ -1,1 +1,136 @@
-<p>update-employee works!</p>
+<div class="empadd">
+    <div class="row align-items-center" style="margin: 10px;">
+        
+      <div class="col-xl-5 ">
+        <h3 class="mb-3 text-uppercase text-center">Update Employee Details </h3>
+        <img src="assets/Image/empadd.jpg"
+          alt="Sample photo" class="img-fluid"
+          style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; height:80%;" />
+      </div>
+
+      
+      <div class="col-xl-7 p-md-3 text-black" >
+        <form [formGroup]="addEmpForm" (ngSubmit)="send()">   
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Name</span>
+            </div>
+            <input type="text" class="form-control" formControlName="employeeName">
+          </div>
+
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+            </div>
+            <input type="text" class="form-control" formControlName="emailId">
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Contact no</span>
+            </div>
+            <input type="text" class="form-control" formControlName="contactNo">
+          </div>
+        </div>
+    
+            <div class="col-md-6">
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text">DOB</span>
+            </div>
+            <input type="date" class="form-control" formControlName="dob">
+          </div>
+            </div>
+          </div>
+
+          
+          <div class="input-group mb-4" style="align-items: center;">
+            <div class="custom-control-inline">
+              <span class="input-group-text">Gender</span>
+            </div>
+            <div class="custom-control custom-radio" style="margin-left: 30px;">
+                <input type="radio" id="customRadio1" name="gender" class="custom-control-input" formControlName="gender" value="Male">
+                <label class="custom-control-label" for="customRadio1">Male</label>
+              </div>
+              <div class="custom-control custom-radio" style="margin-left: 30px;">
+                <input type="radio" id="customRadio2" name="gender" class="custom-control-input" formControlName="gender" value="Female">
+                <label class="custom-control-label" for="customRadio2">Female</label>
+              </div>
+          </div>
+
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" >Address</span>
+            </div>
+            <input type="text" class="form-control" formControlName="address">
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text">Designation</label>
+            </div>
+            <select class="custom-select" formControlName="designation">
+              <option selected>Choose...</option>
+              <option value="Relationship Executive">Relationship Executive</option>
+              <option value="Operational Executive">Operational Executive</option>
+              <option value="Credit Manager">Credit Manager</option>
+              <option value="Account Head">Account Head</option>
+              <option value="Tele Head">Tele Head</option>
+            </select>
+        </div>
+            </div>
+          
+            <div class="col-md-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Appointment Date</span>
+            </div>
+            <input type="date" class="form-control" formControlName="appointmentDate">
+          </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Username</span>
+            </div>
+            <input type="text" class="form-control" formControlName="username">
+          </div>
+            </div>
+
+            <div class="col-md-6">
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Password</span>
+            </div>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+      <input class="btn btn-primary btn-block" type="submit" value="Update" >
+    </div>
+
+    <div class="col-md-3">
+      <button type="button" class="btn btn-danger" (click)="route()"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Go Back</button>
+    </div>
+  </div>
+
+    </form> 
+
+        </div>
+      </div>
+    </div>
+
+
+
+

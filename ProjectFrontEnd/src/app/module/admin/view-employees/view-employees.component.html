@@ -1,1 +1,43 @@
-<p>view-employees works!</p>
+
+<div class="container">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+    </div>
+    <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder="search by status" [(ngModel)]="filterText">
+  </div>
+
+  <table class="table table-responsive" style="border-radius: 5px;">
+    <thead class="thead" style="background-color: aquamarine;">
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Status</th>
+        <th scope="col">View Profile</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of filteredEmps">
+        <th><img src="data:image/png;base64,{{emp.photo}}" style="height: 100px; width: 100px"/></th>
+        <th scope="row">{{emp.employeeId}}</th>
+        <td>{{emp.employeeName}}</td>
+        <td>{{emp.designation}}</td>
+        <td><svg height="14" width="14">
+            <circle cx="7" cy="7" r="7" [ngClass]="getStateColor(emp.empStatus)"/>
+          </svg>
+        </td>
+        <td><i class="btn fa fa-eye" aria-hidden="true" [routerLink]="['empProfile']" [state]="emp"></i></td>
+        <td><i class="btn fa fa-trash-o" aria-hidden="true" (click)="delete(emp.employeeId)"></i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  
+
+  
+
+

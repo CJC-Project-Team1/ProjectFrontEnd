@@ -214,7 +214,7 @@
         <div>
             <button type="button" class="btn btn-warning btn-lg" *ngIf="steps!=1" (click)="previous()">PREVIOUS</button>
             &nbsp;&nbsp;
-            <button type="button" class="btn btn-primary btn-lg" *ngIf="steps!=6" (click)="next()">NEXT</button>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary btn-lg" *ngIf="steps!=6" (click)="next()">NEXT</button>&nbsp;&nbsp;
             <button type="button" class="btn btn-secondary btn-lg" (click)="reset()">RESET</button>&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="submit" class="btn btn-success btn-lg" *ngIf="steps==6">SUBMIT</button>
         </div>
