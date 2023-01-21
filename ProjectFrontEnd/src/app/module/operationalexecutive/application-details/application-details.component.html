@@ -1,54 +1,6 @@
-<!-- 
-<h1 style="text-align: center; color: rgb(33, 46, 71);font-size: xx-large;font-weight: bolder;">BORROWER DETAILS</h1>
-<hr>
-<div class="jumbotron" style="text-align:center">
-    <table class="table table-dark center " style="text-align:center">
-        <tr>
-            <td> BORROWER ID</td>
-            <td><input type="text" value={{brwr.borrowerId}}></td>
-        </tr>
-        <tr>
-            <td> NAME</td>
-            <td> <input type="text" value={{brwr.borrowerName}}></td>
-        </tr>
-        <tr>
-            <td> EMAIL_ID</td>
-            <td> <input type="text" value={{brwr.emailId}}></td>
-        </tr>
-        <tr>
-            <td> MOBILE NO</td>
-            <td> <input type="text" value={{brwr.contactNo}}></td>
-        </tr>
-        <tr>
-            <td> ADHAR CARD NUMBER</td>
-            <td> <input type="text" value={{brwr.adharNo}}></td>
-        </tr>
-        <tr>
-            <td> PAN CARD NUMBER</td>
-            <td> <input type="text" value={{brwr.panNo}}></td>
-        </tr>
-        <tr>
-            <td> DATE OF BIRTH</td>
-            <td> <input type="text" value={{brwr.dateOfBirth}}></td>
-        </tr>
-        <tr>
-            <td> ADDRESS</td>
-            <td> <input type="text" value={{brwr.address}}></td>
-        </tr>
-        <tr>
-            <td> GST NUMBER</td>
-            <td> <input type="text" value={{brwr.gstNo}}></td>
-        </tr>
-        <tr>
-            <td> DOCUMNET STATUS</td>
-            <td> <input type="text" value={{brwr.documentStatus}}></td>
-        </tr>
-    </table>
- 
-    <button class="btn btn-info float-right" (click)="getBack()">Go Back</button>
-</div> -->
+<div class="container">
 
-<div class="container-form">
+  <div class="container-form">
     <h1 style="font-weight: bolder;">REGISTER BORROWER</h1>
     <hr width="100%">
     <form [formGroup]="regForm" (ngSubmit)="onReg()">
@@ -434,3 +386,5 @@
     </div>
   </div>
 
+
+</div>
