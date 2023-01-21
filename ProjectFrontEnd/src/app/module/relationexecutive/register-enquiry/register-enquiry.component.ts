@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 @Component({
   selector: 'app-register-enquiry',
@@ -10,26 +11,26 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 })
 export class RegisterEnquiryComponent {
 
-  constructor(private enq:EnquiryService, private fb:FormBuilder){}
+  constructor(private enq: EnquiryService, private fb: FormBuilder, private notify: NotifierService) { }
 
-  enquiryform:FormGroup
+  enquiryform: FormGroup
 
-  ngOnInit(){
-    this.enquiryform=this.fb.group({
-      customerName:[],
-      panCard:[],
-      adharCard:[],
-      emailId:[],
-      dateOfBirth:[],
-      enquiryStatus:['OPEN'],
-      contactNo:[]
+  ngOnInit() {
+    this.enquiryform = this.fb.group({
+      customerName: [],
+      panCard: [],
+      adharCard: [],
+      emailId: [],
+      dateOfBirth: [],
+      enquiryStatus: ['OPEN'],
+      contactNo: []
     })
   }
 
-  saveEnquiry(){
+  saveEnquiry() {
     this.enq.save(this.enquiryform.value).subscribe()
     console.log(this.enquiryform.value)
-    alert('register');
-   window.location.reload()
+    this.notify.success("Enquiry Registered!", "Registered");
+    window.location.reload()
   }
 }
