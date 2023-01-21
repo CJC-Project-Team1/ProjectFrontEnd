@@ -78,9 +78,9 @@ export class BorrowerService {
     return this.http.put(this.url + "borrower/" + b.borrowerId, b, { responseType: 'text' as 'json' });
   }
 
-  getBrwrById(id: number) {
-    return this.http.get<Borrower>(this.url + "borrower/"+id);
-  }
+   getBrwrById(id: number) {
+     return this.http.get<Borrower>(this.url + "borrower/"+id);
+   }
   getBrwr() {
     return this.http.get<Borrower[]>(this.url + "borrowers");
   }

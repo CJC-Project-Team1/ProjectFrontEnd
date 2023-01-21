@@ -36,7 +36,6 @@ app-re-sidenav{
     left: 100px;
     width: calc(100%-250px);
     transition: left 250ms ease-in, width 250ms ease-in;
-    
 }
 
 .display-area-shrink{

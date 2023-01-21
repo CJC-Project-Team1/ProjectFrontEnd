@@ -24,10 +24,10 @@ import { UpdateLoanComponent } from './update-loan/update-loan.component';
   ],
   imports: [
     CommonModule,
+    OperationalexecutiveRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    OperationalexecutiveRoutingModule,
-    NgxPaginationModule,
-   ]
+    NgxPaginationModule
+  ]
 })
 export class OperationalexecutiveModule { }

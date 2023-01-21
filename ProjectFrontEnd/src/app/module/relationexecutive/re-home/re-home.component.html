@@ -2,9 +2,10 @@
     <app-re-header (sideNavToggled)="sideNavStatus = $event;"></app-re-header>
     <main>
         <app-re-sidenav class="border border-dark" [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-re-sidenav>
-
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
         <div class="display-area" [ngClass]="{'display-area-shrink':sideNavStatus}">
-            <router-outlet></router-outlet>
+            
+           <router-outlet></router-outlet>
         </div>
     </main>
 <!-- </div>  -->

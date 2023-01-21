@@ -1,1 +1,18 @@
-<p>cibil-check works!</p>
+<div class="container-form">
+    <div class="card">
+    <h1>Cibil Check</h1><hr>
+    <form [formGroup]="cibilcheck" (ngSubmit)="check()">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="validationTooltip01">Pan Number</label>
+                <input type="text" class="form-control" formControlName="panCard" required>
+                <small id="emailHelp" class="form-text text-muted">Enter Your Pan Number</small>
+            </div>
+        </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="CHECK" class="btn btn-warning btn-lg btn-block">
+            </div>
+    </form>
+</div>
+</div>

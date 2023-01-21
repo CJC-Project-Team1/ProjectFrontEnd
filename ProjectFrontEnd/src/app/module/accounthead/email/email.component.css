@@ -1,0 +1,7 @@
+.container{
+    margin-left: 70%;
+    border: 2px solid rgb(240, 134, 134);
+    border-radius:3px;
+    box-sizing: content-box;
+
+}
