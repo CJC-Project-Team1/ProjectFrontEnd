@@ -12,12 +12,26 @@ import { EmployeeService } from 'src/app/shared/employee.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  photo: any;
   constructor(private es:EmployeeService, private loc:Location, private sanitizer:DomSanitizer, private router:Router){}
   emp:Employee;
 
   ngOnInit()
   {
     this.getState();
+  }
+
+  onselectphoto(event)
+  {
+    this.photo = event.target.files[0];
+  }
+
+  savePhoto()
+  {
+    const data = new FormData();
+    data.append("photo", this.photo);
+    this.es.updatePhoto(this.emp.employeeId, data).subscribe();
+    this.router.navigate(['reHome/viewEmp']);
   }
 
   getState()
@@ -30,5 +44,5 @@ export class ProfileComponent {
   {
     this.router.navigate(['reHome/viewEmp']);
   }
-
+  
 }

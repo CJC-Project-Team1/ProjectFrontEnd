@@ -15,6 +15,8 @@ export class ViewEmployeesComponent {
     
   }
   employees:Employee[];
+  filteredEmps:Employee[];
+  _filterText:string = '';
   photo:any;
   ngOnInit()
   {
@@ -24,13 +26,20 @@ export class ViewEmployeesComponent {
         //let objectURL = 'data:image/jpeg;base64,' + emp.photo;
         //emp.photo = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     });
+    this.filteredEmps = this.employees;
   }); 
+  
   }
 
-  edit(e:Employee)
+  get filterText()
   {
-    this.es.emp = Object.assign({},e);
-    this.router.navigate(['reHome/updateEmp']);
+    return this._filterText;
+  }
+
+  set filterText(value:string)
+  {
+    this._filterText = value;
+    this.filteredEmps = this.filterEmpByStatus(value);
   }
 
   delete(id)
@@ -46,9 +55,23 @@ export class ViewEmployeesComponent {
         break;
       
       case ('Inactive'):
-        return 'gray-svg';
+        return 'red-svg';
         break;
         
+    }
+  }
+
+  filterEmpByStatus(filterTerm:string)
+  {
+    if(this.employees.length === 0 || this.filterText === '')
+    {
+      return this.employees;
+    }
+    else
+    {
+      return this.employees.filter((emp)=>{
+        return emp.empStatus.toLowerCase() === filterTerm.toLowerCase();
+      });
     }
   }
 }
