@@ -14,15 +14,7 @@ export class SanctionedLoanDetailsService {
     customerName: '',
     customerId: '',
     monthlyEmi: 0,
-    emi:{
-      emiId:0,
-      emiStatus:'',
-      emiTenure:'',
-      emiAmount:0,
-      emiPaid:'',
-      emiRemaining:'',
-      defautlerCount:0
-    }
+   
   }
   url:string="http://localhost:9080/sanLoanApi/";
 

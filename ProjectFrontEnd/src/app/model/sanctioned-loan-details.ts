@@ -1,4 +1,4 @@
-import { Emi } from "./emi";
+
 
 export class SanctionedLoanDetails {
     sanctionedLoanId:number;
@@ -7,6 +7,5 @@ export class SanctionedLoanDetails {
     customerName:string;
 	customerId:string;
 	monthlyEmi:Number;
-	emi:Emi;
 
 }
