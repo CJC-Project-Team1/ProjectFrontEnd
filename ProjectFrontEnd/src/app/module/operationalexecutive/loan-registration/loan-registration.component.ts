@@ -137,8 +137,6 @@ export class LoanRegistrationComponent {
 
   next()
   {
-    this.bs.saveBrwr(this.regForm.value).subscribe();
-    console.log(this.regForm.value);
     this.steps=this.steps+1;
   }
   previous()
