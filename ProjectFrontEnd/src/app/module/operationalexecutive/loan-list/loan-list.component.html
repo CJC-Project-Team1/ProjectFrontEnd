@@ -34,7 +34,8 @@
         <td>{{b.address}}</td>
         <td>{{b.gstNo}}</td>
         <td>{{b.documentStatus}}</td>
-       <td><i class="fa fa-info" aria-hidden="true" [routerLink]="['details',b.borrowerId]"></i></td> 
+       <!-- <td><i class="fa fa-info" aria-hidden="true" [routerLink]="['details',b.borrowerId]"></i></td>  -->
+       <td><i class="fa fa-info" aria-hidden="true" (click)="showdetails(b)"></i></td> 
        <td><i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['update']" [state]="b"></i></td> 
      </tr>
     </tbody>

@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: blue;
+}
+
+h3{
+    color: rgb(185, 22, 22);
+    font-weight: bold;
+    
+}
+label{
+    font-weight: 500;
+}
+
+.container-form{
+    margin: auto;
+    width: 150%;
+    padding-left: 200px;
+}

@@ -1,4 +1,4 @@
-
+<!-- 
 <h1 style="text-align: center; color: rgb(33, 46, 71);font-size: xx-large;font-weight: bolder;">BORROWER DETAILS</h1>
 <hr>
 <div class="jumbotron" style="text-align:center">
@@ -46,4 +46,391 @@
     </table>
  
     <button class="btn btn-info float-right" (click)="getBack()">Go Back</button>
+</div> -->
+
+<div class="container-form">
+    <h1 style="font-weight: bolder;">REGISTER BORROWER</h1>
+    <hr width="100%">
+    <form [formGroup]="regForm" (ngSubmit)="onReg()">
+        <div *ngIf="steps==1">
+            <h3>Borrower Details</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BORROWER NAME</label>
+                    <input type="text" class="form-control" formControlName="borrowerName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">DATE OF BIRTH</label>
+                    <input type="date" class="form-control" formControlName="dateOfBirth" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">EMAIL ID</label>
+                    <input type="text" class="form-control" formControlName="emailId" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">CONTACT NUMBER</label>
+                    <input type="text" class="form-control" formControlName="contactNo" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">ADHAR CARD</label>
+                    <input type="text" class="form-control" formControlName="adharNo" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">PAN CARD</label>
+                    <input type="text" class="form-control" formControlName="panNo" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">ADDRESS</label>
+                    <input type="text" class="form-control" formControlName="address" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">DOCUMENT STATUS</label>
+                    <input type="text" class="form-control" formControlName="documentStatus" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip02">GST NUMBER</label>
+                    <input type="text" class="form-control" formControlName="gstNo" required>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div *ngIf="steps==2" formGroupName="bankDetails">
+            <h3>Bank Details</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">ACCOUNT NUMBER</label>
+                    <input type="text" class="form-control" formControlName="bankAccountNo" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">IFSC CODE</label>
+                    <input type="text" class="form-control" formControlName="ifscCode" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BANK NAME</label>
+                    <input type="text" class="form-control" formControlName="bankName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BRANCH</label>
+                    <input type="text" class="form-control" formControlName="bankBranch" required>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="steps==3"  formGroupName="businessDetails">
+            <h3>BUSINESS DETAILS</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">COMPANY NAME</label>
+                    <input type="text" class="form-control" formControlName="companyName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">REVENUE</label>
+                    <input type="text" class="form-control" formControlName="revenue" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BUSINESS TYPE</label>
+                    <input type="text" class="form-control" formControlName="businesstype" required>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="steps==4" formGroupName="loanHistory">
+            <h3>Previous Loan Details</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">Loan type</label>
+                    <input type="text" class="form-control" formControlName="loanType" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">LOAN AMOUNT</label>
+                    <input type="text" class="form-control" formControlName="loanAmount" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">LOAN TENURE</label>
+                    <input type="text" class="form-control" formControlName="loanTenure" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">PAID AMMOUNT</label>
+                    <input type="text" class="form-control" formControlName="paidAmount" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">REMAINING AMOUNT</label>
+                    <input type="text" class="form-control" formControlName="remainingAmount" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BANK</label>
+                    <input type="text" class="form-control" formControlName="bankName" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">DEFAULTER COUNT</label>
+                    <input type="number" class="form-control" formControlName="defaulterCount" required>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="steps==5" formGroupName="appliedLoan">
+            <h3>APPLIED LOAN DETAILS</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">EXPECTED AMOUNT</label>
+                    <input type="text" class="form-control" formControlName="expectedAmount" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">LOAN TYPE</label>
+                    <input type="text" class="form-control" formControlName="loanType" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">EMI COUNT</label>
+                    <input type="number" class="form-control" formControlName="emiCount" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">TENURE</label>
+                    <input type="text" class="form-control" formControlName="tenure" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">LOAN STATUS</label>
+                    <input type="text" class="form-control" formControlName="loanStatus" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">RATE OF INTEREST</label>
+                    <input type="text" class="form-control" formControlName="rateOfInterest" required>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="steps==6" formGroupName="borrowerDocuments">
+            <h3>BORROWER DOCUMNETS</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">ADHAR CARD</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.adharCard}}" data-toggle="modal" data-target="#adharModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="adharCard($event)" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">PAN CARD</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.panCard}}" data-toggle="modal" data-target="#pancardModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="panCard($event)" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">PHOTOGRAPH</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.photo}}" data-toggle="modal" data-target="#photoModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="photo($event)" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BANK STATEMENT</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.bankStatement}}" data-toggle="modal" data-target="#bankModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="bankStatement($event)" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">ADDRESS PROOF</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.addressProof}}" data-toggle="modal" data-target="#addrModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="addressProof($event)" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">BANALCE SHEET</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.balanceSheet}}" data-toggle="modal" data-target="#balModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="balanceSheet($event)" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">GST CERTIFICATE</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.gstCertificate}}" data-toggle="modal" data-target="#gstModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="gstCertificate($event)" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip01">PROPRIETARY DEED</label>
+                    <br>
+                    <img src="data:image/png;base64,{{brwr.borrowerDocuments.proprietaryDeed}}" data-toggle="modal" data-target="#propertyDeedModal" style="height: 100px; width: 100px"/>
+                    <input type="file" class="form-control" (change)="proprietaryDeed($event)" required>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div>
+            <button type="button" class="btn btn-warning btn-lg" *ngIf="steps!=1" (click)="previous()">PREVIOUS</button>
+            &nbsp;&nbsp;
+            <button type="button" class="btn btn-primary btn-lg" *ngIf="steps!=6" (click)="next()">NEXT</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-secondary btn-lg" (click)="reset()">RESET</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-success btn-lg" *ngIf="steps==6">SUBMIT</button>
+        </div>
+    </form>
+
 </div>
+
+<div class="modal fade" data-backdrop="false" id="gstModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">GST Certificate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.gstCertificate}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="propertyDeedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Property Deed</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.proprietaryDeed}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="adharModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adhar Card </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.adharCard}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="pancardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">PanCard</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.panCard}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">PHOTOGRAPH</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.photo}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="bankModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bank Statement</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> 
+      </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.bankStatement}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="addrModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Address Proof</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.addressProof}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" data-backdrop="false" id="balModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Balance Sheet</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="data:image/png;base64,{{brwr.borrowerDocuments.balanceSheet}}" style="height: 500px; width: 500px"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

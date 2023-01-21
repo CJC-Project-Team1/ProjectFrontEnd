@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Borrower } from 'src/app/model/borrower';
 import { BorrowerService } from 'src/app/shared/borrower.service';
 
@@ -17,7 +18,7 @@ export class LoanListComponent {
    tableItems: number = 5;
    tableSizes: any = [2, 4, 6, 8];
 
-  constructor(private bs:BorrowerService){}
+  constructor(private bs:BorrowerService, private router:Router){}
 
   ngOnInit()
   {
@@ -45,5 +46,10 @@ export class LoanListComponent {
     this.getData();
   }
 
+  showdetails(b){
+    console.log(b)
+    this.bs.brwr=Object.assign({},b)
+    this.router.navigate(['reHome','details'])
+  }
 
 }
