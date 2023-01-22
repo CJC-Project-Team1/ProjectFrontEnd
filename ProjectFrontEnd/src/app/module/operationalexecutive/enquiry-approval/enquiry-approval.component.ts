@@ -21,12 +21,19 @@ export class EnquiryApprovalComponent {
   tableItems: number = 5;
   tableSizes: any = [2, 4, 6, 8];
 
-  constructor(private es: EnquiryService, private route: Router,private loctn:Location) { }
+  constructor(private es: EnquiryService, private route: Router,private loctn:Location,private cs:CibilService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
     this.es.get().subscribe(enqList => {
+
       this.enquiry = enqList;
     })
+
+    // console.log(Math.floor(Math.random()*90000000000+10000000000))
   }
 
   update(enq:Enquiry)
@@ -42,5 +49,24 @@ export class EnquiryApprovalComponent {
   rejected(e:Enquiry)
   {
     e.enquiryStatus='Rejected'
+  }
+
+  check(e:Enquiry)
+  {
+    this.cs.getCibil(e.panCard).subscribe();
+    window.location.reload();
+  }
+
+  onTableData(event:any)
+  {
+    this.page=event;
+    this.getData();
+  }
+
+  onTableSize(event:any)
+  {
+    this.tableItems=event.target.value;
+    this.page=1;
+    this.getData();
   }
 }

@@ -15,4 +15,9 @@ export class EmailSenderService {
     console.log("post method with attachment");
     return this.http.post(this.url+"sendMail",data,{responseType:'text' as 'json'});
   }
+
+  sendMail(data:any)
+  {
+    return this.http.post(this.url+"email",data);
+  }
 }

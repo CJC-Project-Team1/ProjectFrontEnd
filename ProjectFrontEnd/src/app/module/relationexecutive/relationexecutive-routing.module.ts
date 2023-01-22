@@ -52,10 +52,10 @@ const routes: Routes = [
         path:'approval/cibil',component:CibilCheckComponent
       },
       {
-        path: 'mail', component: CorrespondanceComponent
+        path: 'approval/mail', component: CorrespondanceComponent
       },
       {
-        path: 'loanReg', component: LoanRegistrationComponent
+        path: 'approval/loanReg', component: LoanRegistrationComponent
       },
       {
         path: 'approval', component: EnquiryApprovalComponent
