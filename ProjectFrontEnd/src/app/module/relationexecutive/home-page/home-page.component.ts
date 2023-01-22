@@ -49,12 +49,12 @@ export class HomePageComponent {
   renderChart1(){
 
     new Chart("polarChart", {
-      type: 'polarArea',
+      type: 'bar',
       data: {
         labels: ['Secured MSME', 'Loan Against Gold', 'Overdraft', 'Refinance', 'Export Credit', 'Equipment Loan'],
         datasets: [{
           label: 'Amount in Rs(lakhs)',
-          data: [27.9, 25.2, 23.8, 18.5, 21.8, 17.5],
+          data: [27, 25, 23, 18, 21, 17],
           backgroundColor:[
             'rgba(245, 11, 7,0.8)',
             'rgba(7, 118, 245,0.8)',
