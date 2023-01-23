@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/shared/borrower.service';
@@ -22,7 +23,7 @@ export class LoanRegistrationComponent {
   selectedgstCertificate: any;
   selectedproprietaryDeed: any;
 
-  constructor(private fb: FormBuilder, private bs: BorrowerService) { }
+  constructor(private fb: FormBuilder, private bs: BorrowerService, private location:Location) { }
 
   ngOnInit() {
     this.regForm = this.fb.group({
@@ -74,9 +75,19 @@ export class LoanRegistrationComponent {
         rateOfInterest: ['', Validators.required],
       })
     })
+    this.set();
   }
 
-
+  set()
+  {
+    let data:any=this.location.getState()
+    this.regForm.get('borrowerName').setValue(data.customerName);
+    this.regForm.get('dateOfBirth').setValue(data.dateOfBirth);
+    this.regForm.get('emailId').setValue(data.emailId);
+    this.regForm.get('contactNo').setValue(data.contactNo);
+    this.regForm.get('adharNo').setValue(data.adharCard);
+    this.regForm.get('panNo').setValue(data.panCard);
+  }
   
   onReg() {
     

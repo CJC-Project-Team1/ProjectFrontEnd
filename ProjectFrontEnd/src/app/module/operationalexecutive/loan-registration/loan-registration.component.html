@@ -40,12 +40,6 @@
                     <input type="text" class="form-control" formControlName="address" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="validationTooltip02">DOCUMENT STATUS</label>
-                    <input type="text" class="form-control" formControlName="documentStatus" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-3">
                     <label for="validationTooltip02">GST NUMBER</label>
                     <input type="text" class="form-control" formControlName="gstNo" required>
                 </div>
@@ -90,7 +84,13 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">BUSINESS TYPE</label>
-                    <input type="text" class="form-control" formControlName="businesstype" required>
+                    <select formControlName="businesstype" class="form-control">
+                        <option value="Constuction">Constuction</option>
+                        <option value="Food">Food</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Tours And Travel">Tours And Travel</option>
+                        <option value="Consumer Goods">Consumer Goods</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -99,7 +99,11 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">Loan type</label>
-                    <input type="text" class="form-control" formControlName="loanType" required>
+                    <select formControlName="loanType" class="form-control">
+                        <option value="Micro">Micro</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                    </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">LOAN AMOUNT</label>
@@ -118,15 +122,9 @@
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="validationTooltip01">REMAINING AMOUNT</label>
-                    <input type="text" class="form-control" formControlName="remainingAmount" required>
-                </div>
-                <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">BANK</label>
                     <input type="text" class="form-control" formControlName="bankName" required>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">DEFAULTER COUNT</label>
                     <input type="number" class="form-control" formControlName="defaulterCount" required>
@@ -142,27 +140,17 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">LOAN TYPE</label>
-                    <input type="text" class="form-control" formControlName="loanType" required>
+                    <select formControlName="loanType" class="form-control">
+                        <option value="Micro">Micro</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="validationTooltip01">EMI COUNT</label>
-                    <input type="number" class="form-control" formControlName="emiCount" required>
-                </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip01">TENURE</label>
                     <input type="text" class="form-control" formControlName="tenure" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="validationTooltip01">LOAN STATUS</label>
-                    <input type="text" class="form-control" formControlName="loanStatus" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationTooltip01">RATE OF INTEREST</label>
-                    <input type="text" class="form-control" formControlName="rateOfInterest" required>
                 </div>
             </div>
         </div>

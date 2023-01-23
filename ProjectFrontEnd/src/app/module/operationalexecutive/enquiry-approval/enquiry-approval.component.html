@@ -11,7 +11,6 @@
       <th scope="col">Cibil Status</th>
       <th scope="col">Cibil Check</th>
       <th scope="col">Enquiry Status</th>
-      <th scope="col">Update</th>
       <th scope="col">Start Application</th>
     </tr>
   </thead>
@@ -39,8 +38,7 @@ let i = index" >
         <button class="btn btn-success" *ngIf="e.cibil.cibilScore>=700" (click)="approved(e)" type="button">Approved</button>
         <button class="btn btn-danger" *ngIf="700>e.cibil.cibilScore" (click)="rejected(e)" [routerLink]="['mail']" [state]="e" type="button">Rejected</button>
       </div></td>
-      <td><i class="fa fa-refresh" aria-hidden="true" (click)="update(e)"></i></td>
-      <td><i class="fa fa-pencil-square-o" aria-hidden="true" *ngIf="e.enquiryStatus=='Approved'" routerLink="loanReg"></i></td>
+      <td><i class="fa fa-pencil-square-o" aria-hidden="true" *ngIf="e.enquiryStatus=='Approved'" [routerLink]="['loanReg']" [state]="e"></i></td>
     </tr>
   </tbody>
 </table>

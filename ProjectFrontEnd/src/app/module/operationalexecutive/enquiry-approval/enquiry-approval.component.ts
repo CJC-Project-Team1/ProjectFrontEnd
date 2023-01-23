@@ -45,10 +45,12 @@ export class EnquiryApprovalComponent {
   
   approved(e:Enquiry){
     e.enquiryStatus='Approved'
+    this.update(e);
   }
   rejected(e:Enquiry)
   {
     e.enquiryStatus='Rejected'
+    this.update(e);
   }
 
   check(e:Enquiry)
