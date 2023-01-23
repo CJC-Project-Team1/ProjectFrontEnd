@@ -11,6 +11,7 @@ import { LeaveApplicaionsComponent } from '../admin/leave-applicaions/leave-appl
 import { ProfileComponent } from '../admin/profile/profile.component';
 import { UpdateEmployeeComponent } from '../admin/update-employee/update-employee.component';
 import { ViewEmployeesComponent } from '../admin/view-employees/view-employees.component';
+import { LoanAppDetailsComponent } from '../creditmanager/loan-app-details/loan-app-details.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
 import { PreviousLoanCheckComponent } from '../creditmanager/previous-loan-check/previous-loan-check.component';
 import { ApplicationDetailsComponent } from '../operationalexecutive/application-details/application-details.component';
@@ -125,6 +126,9 @@ const routes: Routes = [
       },
       {
         path: 'prevLoan', component: PreviousLoanCheckComponent
+      },
+      {
+        path:'application/viewAppication', component:LoanAppDetailsComponent
       },
 
       //AH Components
