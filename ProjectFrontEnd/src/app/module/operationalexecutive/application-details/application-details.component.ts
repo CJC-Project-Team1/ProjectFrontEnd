@@ -24,12 +24,6 @@ export class ApplicationDetailsComponent {
   selectedgstCertificate: any;
   selectedproprietaryDeed: any;
 
-    // //pagination
-    // page: number = 1;
-    // count: number = 0;
-    // tableItems: number = 5;
-    // tableSizes: any = [2, 4, 6, 8];
-
   constructor(private bs:BorrowerService,private actvRout:ActivatedRoute,private loctn:Location,private fb:FormBuilder){}
 
   regForm:FormGroup
@@ -93,55 +87,39 @@ export class ApplicationDetailsComponent {
       })
     })
     //console.log(this.regForm.value)
+
+    this.selectedadharCard=this.brwr.borrowerDocuments.adharCard
+    this.selectedpanCard=this.brwr.borrowerDocuments.panCard
+    this.selectedphoto=this.brwr.borrowerDocuments.photo
+    this.selectedbankStatement=this.brwr.borrowerDocuments.bankStatement
+    this.selectedaddressProof=this.brwr.borrowerDocuments.addressProof
+    this.selectedbalanceSheet=this.brwr.borrowerDocuments.balanceSheet
+    this.selectedgstCertificate=this.brwr.borrowerDocuments.gstCertificate
+    this.selectedproprietaryDeed=this.brwr.borrowerDocuments.proprietaryDeed
   }
 
   getData()
   {
-    // this.actvRout.paramMap.subscribe(brwrData=>{
-    //   this.bs.getBrwrById(parseInt(brwrData.get('id'))).subscribe(data=>{
-    //     this.brwr=data;
-    //   })
-    // })
     this.brwr=this.bs.brwr
-   // console.log("in details.....")
-   // console.log(this.brwr)
   }
-
-  // getBack()
-  // {
-  //   this.loctn.back();
-  // }
-
-
-  // onTableData(event:any)
-  // {
-  //   this.page=event;
-  //   this.getData();
-  // }
-
-  // onTableSize(event:any)
-  // {
-  //   this.tableItems=event.target.value;
-  //   this.page=1;
-  //   this.getData();
-  // }
 
   onReg() {
     
     console.log(this.regForm.value);
-    let brwrData=JSON.stringify(this.regForm.value);
-    let frmdata=new FormData();
-    frmdata.append("adharCard",this.selectedadharCard);
-    frmdata.append("panCard",this.selectedpanCard);
-    frmdata.append("photo",this.selectedphoto);
-    frmdata.append("bankStatement",this.selectedbankStatement);
-    frmdata.append("addressProof",this.selectedaddressProof);
-    frmdata.append("balanceSheet",this.selectedbalanceSheet);
-    frmdata.append("gstCertificate",this.selectedgstCertificate);
-    frmdata.append("proprietaryDeed",this.selectedproprietaryDeed);
-    frmdata.append("borrower",brwrData);
+    // this.regForm.controls['borrowerDocuments'].value['adharCard']==this.selectedadharCard
+    // let brwrData=JSON.stringify(this.regForm.value);
+    // let frmdata=new FormData();
+    // frmdata.append("adharCard",this.selectedadharCard);
+    // frmdata.append("panCard",this.selectedpanCard);
+    // frmdata.append("photo",this.selectedphoto);
+    // frmdata.append("bankStatement",this.selectedbankStatement);
+    // frmdata.append("addressProof",this.selectedaddressProof);
+    // frmdata.append("balanceSheet",this.selectedbalanceSheet);
+    // frmdata.append("gstCertificate",this.selectedgstCertificate);
+    // frmdata.append("proprietaryDeed",this.selectedproprietaryDeed);
+   // frmdata.append("borrower",brwrData);
     
-    this.bs.updateBrwr(frmdata).subscribe();
+    this.bs.updateBrwr(this.regForm.value).subscribe();
     alert("Registered.");
    //  window.location.reload();
   }
@@ -177,6 +155,7 @@ export class ApplicationDetailsComponent {
   proprietaryDeed(event)
   {
     this.selectedproprietaryDeed=event.target.files[0];
+    //this.regForm.get('borrowerDocuments').get('proprietaryDeed')
   }
   reset() {
     this.regForm.reset();

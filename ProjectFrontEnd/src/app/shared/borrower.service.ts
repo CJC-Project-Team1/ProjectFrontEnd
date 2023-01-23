@@ -74,8 +74,8 @@ export class BorrowerService {
     return this.http.post(this.url + "borrower", b, { responseType: 'text' as 'json' });
   }
 
-  updateBrwr(b: any) {
-    return this.http.put(this.url + "borrower/" + b.borrowerId, b, { responseType: 'text' as 'json' });
+  updateBrwr(b: Borrower) {
+    return this.http.put(this.url +"update",b,{ responseType: 'text' as 'json' });
   }
 
    getBrwrById(id: number) {
