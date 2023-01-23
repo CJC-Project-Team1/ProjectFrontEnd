@@ -11,6 +11,8 @@ import { UpdateComponent } from './update/update.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProfileEmpComponent } from './profile-emp/profile-emp.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,19 +23,22 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomePageComponent,
     ViewApplicaionComponent,
     UpdateComponent,
-    ApprovedEnquiryComponent
+    ApprovedEnquiryComponent,
+    ProfileEmpComponent
   ],
   imports: [
     CommonModule,
     RelationexecutiveRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports:[
     ReHeaderComponent,
     ReSidenavComponent,
-    ReHomeComponent
+    ReHomeComponent,
+    ProfileEmpComponent
   ]
 })
 export class RelationexecutiveModule { }

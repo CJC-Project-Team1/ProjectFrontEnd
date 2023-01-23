@@ -10,3 +10,11 @@
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 30%;
 }
+
+.tt{
+    text-align: right;
+    margin-left: 55%;
+    color: white;
+    font-size: large;
+    /* padding-left: 55%; */
+}

@@ -6,10 +6,11 @@ import { LoanApplicationComponent } from './loan-application/loan-application.co
 import { PreviousLoanCheckComponent } from './previous-loan-check/previous-loan-check.component';
 
 
+
 @NgModule({
   declarations: [
     LoanApplicationComponent,
-    PreviousLoanCheckComponent
+    PreviousLoanCheckComponent,
   ],
   imports: [
     CommonModule,

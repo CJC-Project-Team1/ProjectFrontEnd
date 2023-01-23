@@ -23,6 +23,7 @@ import { UpdateLoanComponent } from '../operationalexecutive/update-loan/update-
 import { DefaultersComponent } from '../telehead/defaulters/defaulters.component';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ProfileEmpComponent } from './profile-emp/profile-emp.component';
 import { ReHomeComponent } from './re-home/re-home.component';
 import { RegisterEnquiryComponent } from './register-enquiry/register-enquiry.component';
 import { UpdateComponent } from './update/update.component';
@@ -33,6 +34,9 @@ const routes: Routes = [
     path: 'reHome', component: ReHomeComponent, children: [
       {
         path: 'homepage', component: HomePageComponent
+      },
+      {
+        path: 'profileEmp', component: ProfileEmpComponent
       },
       //RE Components
       {
@@ -136,6 +140,7 @@ const routes: Routes = [
       {
         path: 'approvedApp/ledger', component: LedgerComponent
       },
+   
 
   //TH Component
   {
