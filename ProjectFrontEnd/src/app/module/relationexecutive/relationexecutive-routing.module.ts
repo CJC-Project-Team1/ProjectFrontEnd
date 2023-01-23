@@ -76,6 +76,9 @@ const routes: Routes = [
         path: 'loanlist/details/:id', component: ApplicationDetailsComponent
       },
       {
+        path: 'details', component: ApplicationDetailsComponent
+      },
+      {
         path: 'loanlist/update', component: UpdateLoanComponent
       },
 

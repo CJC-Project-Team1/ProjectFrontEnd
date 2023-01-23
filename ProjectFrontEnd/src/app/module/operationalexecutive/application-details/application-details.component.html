@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="container-form">
-    <h1 style="font-weight: bolder;">REGISTER BORROWER</h1>
+    <h1 style="font-weight: bolder;">BORROWER DETAILS</h1>
     <hr width="100%">
     <form [formGroup]="regForm" (ngSubmit)="onReg()">
         <div *ngIf="steps==1">
@@ -235,7 +235,7 @@
             &nbsp;&nbsp;
             <button type="button" class="btn btn-primary btn-lg" *ngIf="steps!=6" (click)="next()">NEXT</button>&nbsp;&nbsp;
             <button type="button" class="btn btn-secondary btn-lg" (click)="reset()">RESET</button>&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="submit" class="btn btn-success btn-lg" *ngIf="steps==6">SUBMIT</button>
+            <button type="submit" class="btn btn-success btn-lg" *ngIf="steps==6">UPDATE</button>
         </div>
     </form>
 
