@@ -8,7 +8,7 @@ import { RegisterEnquiryComponent } from './register-enquiry/register-enquiry.co
 import { HomePageComponent } from './home-page/home-page.component';
 import { ViewApplicaionComponent } from './view-applicaion/view-applicaion.component';
 import { UpdateComponent } from './update/update.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -27,7 +27,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     RelationexecutiveRoutingModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   exports:[
     ReHeaderComponent,

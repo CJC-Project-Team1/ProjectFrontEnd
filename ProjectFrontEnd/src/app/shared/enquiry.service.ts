@@ -43,8 +43,10 @@ export class EnquiryService {
 
   getByStatus()
   {
-    return this.http.get<Enquiry[]>(this.url+"/getEnqByStatus/"+"OPEN");
+    return this.http.get<Enquiry[]>(this.url+"/getEnqByStatus/"+"CLOSE");
   }
+
+  
 
   
   update(enq:Enquiry)

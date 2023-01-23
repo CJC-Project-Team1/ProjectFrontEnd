@@ -38,7 +38,11 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="validationTooltip02">Enquiry Status</label>
-                    <input type="text" class="form-control" formControlName="enquiryStatus" name="status" required>
+                    <select class="form-control" formControlName="enquiryStatus" name="status">
+                        <option value="OPEN">OPEN</option>
+                        <option value="CLOSE">CLOSE</option>
+                    </select>
+                   
                 </div>
             </div>
             <br>
