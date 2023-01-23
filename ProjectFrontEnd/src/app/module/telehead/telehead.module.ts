@@ -7,7 +7,7 @@ import { DefaultersComponent } from './defaulters/defaulters.component';
 
 @NgModule({
   declarations: [
-    DefaultersComponent
+    DefaultersComponent,
   ],
   imports: [
     CommonModule,
