@@ -23,7 +23,12 @@ export class RegisterEnquiryComponent {
       emailId: [],
       dateOfBirth: [],
       enquiryStatus: ['OPEN'],
-      contactNo: []
+      contactNo: [],
+      cibil:this.fb.group({
+        cibilId:[],
+        cibilScore:[],
+        cibilRemark:[]
+      })
     })
   }
 
@@ -31,6 +36,6 @@ export class RegisterEnquiryComponent {
     this.enq.save(this.enquiryform.value).subscribe()
     console.log(this.enquiryform.value)
     this.notify.success("Enquiry Registered!", "Registered");
-    window.location.reload()
+    // window.location.reload()
   }
 }

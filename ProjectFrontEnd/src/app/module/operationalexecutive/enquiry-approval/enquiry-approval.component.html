@@ -7,10 +7,6 @@
       <th scope="col">Enquiry ID</th>
       <th scope="col">Customer Name</th>
       <th scope="col">Email ID</th>
-      <th scope="col">Pan Card</th>
-      <th scope="col">Adhar Card</th>
-      <th scope="col">Date of Birth</th>
-      <th scope="col">Contact Number</th>
       <th scope="col">Cibil Score</th>      
       <th scope="col">Cibil Status</th>
       <th scope="col">Cibil Check</th>
@@ -29,15 +25,11 @@ let i = index" >
       <td>{{e.enquiryId}}</td>
       <td>{{e.customerName}}</td>
       <td>{{e.emailId}}</td>
-      <td>{{e.panCard}}</td>
-      <td>{{e.adharCard}}</td>
-      <td>{{e.dateOfBirth}}</td>
-      <td>{{e.contactNo}}</td>
       <td>{{e.cibil.cibilScore}}</td>
       <td>{{e.cibil.cibilRemark}}</td>
       <td><button type="button" class="btn btn-info" (click)="check(e)">Check</button></td>
       <!-- <td>
-        <select [value]="e.enquiryStatus">
+        <select>
             <option >OPEN</option>
             <option ><button type="button" (click)="approved(e)">Approved</button></option>
             <option ><button type="button" (click)="rejected(e)">Rejected</button></option>
