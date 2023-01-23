@@ -1,7 +1,7 @@
 <div class="side-nav-content">
     <ul class="nv-list" [ngClass]="{'nav-list-open':sideNavStatus}">
         <li class="nav-list-item" *ngFor="let item of list[0][role]">
-            <i class="{{item.icon}}" aria-hidden="true"></i>
+            <i class="{{item.icon}}"  [routerLink]="[item.path]"  aria-hidden="true"></i>
             <span>
                 <a [routerLink]="[item.path]">{{item.name}}</a>
             </span>
