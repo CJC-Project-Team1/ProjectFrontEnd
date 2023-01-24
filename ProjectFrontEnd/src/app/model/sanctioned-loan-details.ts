@@ -1,11 +1,12 @@
+import { Borrower } from "./borrower";
 
 
 export class SanctionedLoanDetails {
     sanctionedLoanId:number;
 	sanctionedLoanAmount:string;
 	sanctionedLoanTenure:string;
-    customerName:string;
-	customerId:string;
+	rateOfInterest:string;
 	monthlyEmi:Number;
-
+	sanctionLetter:any;
+	borrower:Borrower;
 }

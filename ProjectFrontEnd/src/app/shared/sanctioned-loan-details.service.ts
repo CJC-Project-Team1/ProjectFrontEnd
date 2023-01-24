@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Borrower } from '../model/borrower';
 import { SanctionedLoanDetails } from '../model/sanctioned-loan-details';
 
 @Injectable({
@@ -11,10 +12,10 @@ export class SanctionedLoanDetailsService {
     sanctionedLoanId: 0,
     sanctionedLoanAmount: '',
     sanctionedLoanTenure: '',
-    customerName: '',
-    customerId: '',
     monthlyEmi: 0,
-   
+    sanctionLetter: undefined,
+    borrower: new Borrower,
+    rateOfInterest: ''
   }
   url:string="http://localhost:9080/sanLoanApi/";
 

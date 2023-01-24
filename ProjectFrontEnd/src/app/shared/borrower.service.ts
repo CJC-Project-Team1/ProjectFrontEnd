@@ -61,7 +61,8 @@ export class BorrowerService {
       tenure: '',
       loanStatus: '',
       rateOfInterest: 0
-    }
+    },
+    applicationStatus: ''
   }
 
   url: string = "http://localhost:9080/borrowerApi/";

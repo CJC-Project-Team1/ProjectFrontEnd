@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApprovedApplicationComponent } from '../accounthead/approved-application/approved-application.component';
 import { EmailComponent } from '../accounthead/email/email.component';
 import { LedgerComponent } from '../accounthead/ledger/ledger.component';
-import { SanctionLetterComponent } from '../accounthead/sanction-letter/sanction-letter.component';
 import { ActiveEmployeesComponent } from '../admin/active-employees/active-employees.component';
 import { AddEmployeeComponent } from '../admin/add-employee/add-employee.component';
 import { InactiveEmployeesComponent } from '../admin/inactive-employees/inactive-employees.component';
@@ -13,7 +12,8 @@ import { UpdateEmployeeComponent } from '../admin/update-employee/update-employe
 import { ViewEmployeesComponent } from '../admin/view-employees/view-employees.component';
 import { LoanAppDetailsComponent } from '../creditmanager/loan-app-details/loan-app-details.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
-import { PreviousLoanCheckComponent } from '../creditmanager/previous-loan-check/previous-loan-check.component';
+import { SanctionLetterComponent } from '../creditmanager/sanction-letter/sanction-letter.component';
+import { SanctionedLoanListComponent } from '../creditmanager/sanctioned-loan-list/sanctioned-loan-list.component';
 import { ApplicationDetailsComponent } from '../operationalexecutive/application-details/application-details.component';
 import { CibilCheckComponent } from '../operationalexecutive/cibil-check/cibil-check.component';
 import { CorrespondanceComponent } from '../operationalexecutive/correspondance/correspondance.component';
@@ -125,10 +125,13 @@ const routes: Routes = [
         path: 'application', component: LoanApplicationComponent
       },
       {
-        path: 'prevLoan', component: PreviousLoanCheckComponent
+        path: 'sanctionedLoans', component: SanctionedLoanListComponent
       },
       {
         path:'application/viewAppication', component:LoanAppDetailsComponent
+      },
+      {
+        path:'application/sanctionLetter', component:SanctionLetterComponent
       },
 
       //AH Components
@@ -137,9 +140,6 @@ const routes: Routes = [
       },
       {
         path: 'approvedApp/email', component: EmailComponent
-      },
-      {
-        path: 'approvedApp/sanctionLetter', component: SanctionLetterComponent
       },
       {
         path: 'approvedApp/ledger', component: LedgerComponent

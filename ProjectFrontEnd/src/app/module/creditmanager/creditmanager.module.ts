@@ -3,19 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { CreditmanagerRoutingModule } from './creditmanager-routing.module';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
-import { PreviousLoanCheckComponent } from './previous-loan-check/previous-loan-check.component';
 import { LoanAppDetailsComponent } from './loan-app-details/loan-app-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SanctionedLoanListComponent } from './sanctioned-loan-list/sanctioned-loan-list.component';
+import { SanctionLetterComponent } from './sanction-letter/sanction-letter.component';
 
 
 @NgModule({
   declarations: [
     LoanApplicationComponent,
-    PreviousLoanCheckComponent,
-    LoanAppDetailsComponent
+    LoanAppDetailsComponent,
+    SanctionedLoanListComponent,
+    SanctionLetterComponent
   ],
   imports: [
     CommonModule,
-    CreditmanagerRoutingModule
+    CreditmanagerRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CreditmanagerModule { }

@@ -1,10 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import jsPDF from 'jspdf';
-import { Emi } from 'src/app/model/emi';
-import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { BorrowerService } from 'src/app/shared/borrower.service';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
@@ -14,7 +12,6 @@ import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-det
   styleUrls: ['./sanction-letter.component.css']
 })
 export class SanctionLetterComponent {
- 
   sanctionForm: FormGroup;
 
   @ViewChild('content',{static:false}) el!:ElementRef

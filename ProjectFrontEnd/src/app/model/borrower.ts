@@ -20,4 +20,5 @@ export class Borrower {
 	loanHistory:PreviousLoanDetails;
 	borrowerDocuments:BorrowerDocuments ;
 	appliedLoan:AppliedLoan ;
+	applicationStatus:string; 
 }

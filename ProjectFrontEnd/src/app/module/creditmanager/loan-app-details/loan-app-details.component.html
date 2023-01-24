@@ -1,9 +1,9 @@
-<div class="container shadow">
+<div class="container shadow p-2">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Borrower Details</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">History</a>
           <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Documents</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">History</a>
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
@@ -109,10 +109,20 @@
                                 <div class="col-sm-5">
                                   <h4 class="mb-0">Document status</h4>
                                 </div>
-                                <div class="col-sm-7 text-secondary">
+                                <div class="col-sm-7 text-secondary text-danger">
                                     {{brw.documentStatus}}
                                 </div>
                               </div> 
+
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-5">
+                                  <h4 class="mb-0">Document status</h4>
+                                </div>
+                                <div class="col-sm-7 text-secondary text-danger">
+                                    {{brw.applicationStatus}}
+                                </div>
+                              </div>
 
                             </div>
                           </div>
@@ -286,7 +296,14 @@
 
                       </div>
                     </div>
+                        
           </div>
+          <div class="col-md-2" style="margin-top: 50px; margin-left: 30px;">
+            <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#sanLoanModal">SANCTION LOAN</button>
+          </div> 
+          <div class="col-md-3" style="margin-top: 50px; margin-left: 30px;">
+            <button type="button" class="btn btn-danger"  >REJECT APPLICATION</button>
+          </div> 
       </div>
   </div>
         </div>
@@ -297,7 +314,7 @@
 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.photo}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.photo}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.photo)">
                         <div class="card-body">
                           <p class="card-text text-secondary">Photo</p>
                         </div>
@@ -306,7 +323,7 @@
 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.panCard}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.panCard}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.panCard)">
                         <div class="card-body">
                           <p class="card-text text-secondary">PAN card</p>
                         </div>
@@ -315,7 +332,7 @@
 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.photo}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.adharCard}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.adharCard)">
                         <div class="card-body">
                           <p class="card-text text-secondary">Adhar card</p>
                         </div>
@@ -324,7 +341,7 @@
 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.bankStatement}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.bankStatement}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.bankStatement)">
                         <div class="card-body">
                           <p class="card-text text-secondary">Bank Statement</p>
                         </div>
@@ -335,7 +352,7 @@
             <div class="row p-3">
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.addressProof}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.addressProof}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.addressProof)">
                         <div class="card-body">
                           <p class="card-text text-secondary">Address Proof</p>
                         </div>
@@ -344,7 +361,7 @@
                 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.balanceSheet}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.balanceSheet}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.balanceSheet)">
                         <div class="card-body">
                           <p class="card-text text-secondary">Balance Sheet</p>
                         </div>
@@ -353,7 +370,7 @@
                 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.gstCertificate}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.gstCertificate}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.gstCertificate)">
                         <div class="card-body">
                           <p class="card-text text-secondary">GST Certificate</p>
                         </div>
@@ -362,18 +379,128 @@
                 
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.proprietaryDeed}}" class="card-img-top" alt="...">
+                        <img src="data:image/png;base64,{{brw.borrowerDocuments.proprietaryDeed}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(brw.borrowerDocuments.proprietaryDeed)">
                         <div class="card-body">
                           <p class="card-text text-secondary">Proprietary deed</p>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
+            
             <div class="p-4">
-                <button type="button" class="btn btn-danger">Verify Documents</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#verifyDoc">Verify Documents</button>
             </div>
+        </div>
             
       </div>
+    </div>
+</div>
+      <!--view document Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Document viewer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <img src="data:image/png;base64,{{image}}" alt="">
+      </div>
+    </div>
+  </div>
 </div>
 
+<!--verify documents Modal -->
+<div class="modal fade" id="verifyDoc" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Verify documents</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+            <button type="button" class="btn btn-outline-success" style="margin-right: 50px;" (click)="accept()" data-dismiss="modal">Accept</button>
+            <button type="button" class="btn btn-outline-danger" (click)="reject()" data-dismiss="modal">Reject</button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!--Sanction loan Modal -->
+  <div class="modal fade bd-example-modal-lg" id="sanLoanModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+          <form [formGroup]="sanctionForm" (ngSubmit)="sanctionLoan()">
+            <div class="row gutters-sm" >
+              <div class="col-md-12">
+                <div class="card mb-3" style="margin: 20px;">
+                  <h3 class="card-header" style="background-color: beige;">Enter loan Details:</h3>
+                  <div class="card-body">
+  
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <h4 class="mb-0">Loan amout</h4>
+                      </div>
+                      <div class="col-sm-7 text-secondary">
+                        <input type="text" class="form-control" formControlName="sanctionedLoanAmount">
+                      </div>
+                    </div>
+  
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <h4 class="mb-0">Tenure (in years)</h4>
+                      </div>
+                      <div class="col-sm-7 text-secondary">
+                        <input type="text" class="form-control" formControlName="sanctionedLoanTenure">
+                      </div>
+                    </div>
+  
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <h4 class="mb-0">Rate of interest</h4>
+                      </div>
+                      <div class="col-sm-7 text-secondary">
+                        <input type="text" class="form-control" formControlName="rateOfInterest">
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+
+                <div class="modal-footer" style="margin-left: 20px; margin-top: 20px;">
+                  <input type="submit" class="btn btn-success" value="Sanction">
+                  
+                  <button type="button" class="btn btn-secondary" style="margin-left: 20px;" data-dismiss="modal">Cancel</button>
+                </div> 
+                
+              </div>
+            </div>
+          </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+ 

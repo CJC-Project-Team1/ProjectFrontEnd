@@ -111,9 +111,9 @@ export class ReSidenavComponent {
         },
         {
           number:'2',
-          name:'Previous Loan',
+          name:'Sanctioned loans',
           icon:'fa fa-hand-o-up',
-          path:'prevLoan'
+          path:'sanctionedLoans'
         }
       ],
       AH:[

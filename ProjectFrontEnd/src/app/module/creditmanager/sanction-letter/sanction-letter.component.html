@@ -2,26 +2,18 @@
     <div class="row">
     <div class="col-md-12">
 
-        <div class="container" id="content" #content  >
-            <img src="assets\Image\MSME1.jpg" width="50%" >
-            <br><br> <br><br>
-            <h1 style="color: rgb(20, 79, 146);"><b>MSME FINANCE PVT.LTD</b></h1>
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                {{date| date:'shortDate'}}<br>
-                pune</p>
-
+        <div id="content" #content  >
+            <img src="assets\Image\MSME1.jpg" width="10%" >
+            
+            <h2 style="color: rgb(20, 79, 146);"><b>MSME FINANCE PVT.LTD</b></h2>
+            <p style="text-align: right;" >
+                Date: {{date| date:'shortDate'}}<br>
+                Place: Pune &nbsp;&nbsp;
+            </p>
+            
             <hr>
             <form [formGroup]="sanctionForm">
-                TO,<br><br>
+                TO,<br>
                 <input type="text" formControlName="borrowerName" ><br><br>
 
                 <b> Sub. – Loan approval confirmation </b><br><br>

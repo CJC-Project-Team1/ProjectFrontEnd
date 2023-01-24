@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container p-2">
   
     <table class="table">
       <thead class="thead" style="background-color: aquamarine;">
@@ -7,9 +7,10 @@
           <th scope="col">Application ID</th>
           <th scope="col">Borrower Name</th>
           <th scope="col">Address</th>
-          <th scope="col">Document Status</th>
           <th scope="col">Expected amount</th>
           <th scope="col">Tenure</th>
+          <th scope="col">Document Status</th>
+          <th scope="col">Application Status</th>
           <th scope="col">View Application</th>
         </tr>
       </thead>
@@ -18,9 +19,10 @@
           <th scope="row">{{br.borrowerId}}</th>
           <td>{{br.borrowerName}}</td>
           <td>{{br.address}}</td>
-          <td>{{br.documentStatus}}</td>
           <td>{{br.appliedLoan.expectedAmount}}</td>
           <td>{{br.appliedLoan.tenure}}</td>
+          <td>{{br.documentStatus}}</td>
+          <td>{{br.applicationStatus}}</td>
           <td><button type="button" class="btn btn-outline-primary" [routerLink]="['viewAppication']" [state]="br">View</button></td>
         </tr>
       </tbody>
