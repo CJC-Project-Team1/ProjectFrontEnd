@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BorrowerService } from 'src/app/shared/borrower.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 @Component({
   selector: 'app-loan-registration',
@@ -23,7 +24,7 @@ export class LoanRegistrationComponent {
   selectedgstCertificate: any;
   selectedproprietaryDeed: any;
 
-  constructor(private fb: FormBuilder, private bs: BorrowerService, private location:Location) { }
+  constructor(private fb: FormBuilder, private bs: BorrowerService, private location:Location,private notifiy:NotifierService) { }
 
   ngOnInit() {
     this.regForm = this.fb.group({
@@ -36,7 +37,7 @@ export class LoanRegistrationComponent {
       adharNo: ['', Validators.required],
       panNo: ['', Validators.required],
       address: ['', Validators.required],
-      documentStatus: ['', Validators.required],
+      documentStatus: ['To Check'],
       gstNo: ['', Validators.required],
       bankDetails: this.fb.group({
         bankDetailsId: [],
@@ -105,8 +106,8 @@ export class LoanRegistrationComponent {
     frmdata.append("borrower",brwrData);
     
     this.bs.saveBrwr(frmdata).subscribe();
-    alert("Registered.");
-   //  window.location.reload();
+    this.notifiy.info("Borrower Registered","Success");
+   this.location.back();
   }
 
   adharCard(event)

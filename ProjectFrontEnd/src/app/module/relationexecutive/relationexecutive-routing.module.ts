@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ApprovedApplicationComponent } from '../accounthead/approved-application/approved-application.component';
+import { AprvdLoanDetailsComponent } from '../accounthead/aprvd-loan-details/aprvd-loan-details.component';
 import { EmailComponent } from '../accounthead/email/email.component';
 import { LedgerComponent } from '../accounthead/ledger/ledger.component';
 import { ActiveEmployeesComponent } from '../admin/active-employees/active-employees.component';
@@ -139,7 +140,10 @@ const routes: Routes = [
         path: 'approvedApp', component: ApprovedApplicationComponent,
       },
       {
-        path: 'approvedApp/email', component: EmailComponent
+        path: 'approvedApp/view', component: AprvdLoanDetailsComponent,
+      },
+      {
+        path: 'approvedApp/mail', component: EmailComponent
       },
       {
         path: 'approvedApp/ledger', component: LedgerComponent

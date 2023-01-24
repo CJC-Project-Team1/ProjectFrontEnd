@@ -1,8 +1,10 @@
 h1{
     text-align: center;
     padding-top: 20px;
-    color: navy;
+    color: rgb(28, 139, 134);
     padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 60px;
 }
 
 label{
@@ -14,3 +16,4 @@ label{
     width: 150%;
     padding-left: 200px;
 }
+

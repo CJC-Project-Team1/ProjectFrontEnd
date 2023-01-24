@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Borrower } from 'src/app/model/borrower';
 import { BorrowerService } from 'src/app/shared/borrower.service';
+import jsPDF from 'jspdf';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-loan-list',
@@ -11,6 +14,7 @@ import { BorrowerService } from 'src/app/shared/borrower.service';
 export class LoanListComponent {
 
   brwr:Borrower[];
+  @ViewChild('content',{static:false}) el!:ElementRef
 
    //pagination
    page: number = 1;
@@ -50,6 +54,25 @@ export class LoanListComponent {
     console.log(b)
     this.bs.brwr=Object.assign({},b)
     this.router.navigate(['reHome','details'])
+  }
+
+  makeXLSX()
+  {
+    let element=document.getElementById('Table');
+    const ws:XLSX.WorkSheet=XLSX.utils.table_to_sheet(element);
+    const wb:XLSX.WorkBook=XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb,ws,'Approved Enquiry');
+    XLSX.writeFile(wb,'ApprovedEnquiry.xlsx');
+  }
+
+  makePDF()
+  {
+    let pdf =new jsPDF('p','pt','a2');
+    pdf.html(this.el.nativeElement,{
+      callback:(pdf)=>{
+        pdf.save("ApprovedEnquryList.pdf");
+      }
+    })     
   }
 
 }

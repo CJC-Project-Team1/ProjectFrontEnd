@@ -1,1 +1,37 @@
-<p>approved-application works!</p>
+
+<div class="container">
+  
+    <table class="table" border="2">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Application ID</th>
+          <th scope="col">Borrower Name</th>
+          <th scope="col">Document Status</th>
+          <th scope="col">Expected amount</th>
+          <th scope="col">Expected Tenure</th>
+          <th scope="col">View Application</th>
+          <th scope="col">Disbursement</th>
+          <th scope="col">E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let br of borrowers">
+          <th scope="row">{{br.borrowerId}}</th>
+          <td>{{br.borrowerName}}</td>
+          <td>{{br.documentStatus}}</td>
+          <td>{{br.appliedLoan.expectedAmount}}</td>
+          <td>{{br.appliedLoan.tenure}}</td>
+          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['view']" [state]="br">View</button></td>
+          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['sanction']">Sanction</button></td>
+          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['mail']">E-mail</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+    
+  
+    
+  
+  
+  

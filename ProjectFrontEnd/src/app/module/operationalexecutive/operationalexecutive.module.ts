@@ -27,7 +27,7 @@ import { UpdateLoanComponent } from './update-loan/update-loan.component';
     OperationalexecutiveRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ]
 })
 export class OperationalexecutiveModule { }

@@ -1,8 +1,8 @@
 <div class="container">
-  <h1 style="text-align: center; color: rgb(33, 46, 71);">Enquiry List Data</h1>
-<hr>
+  <h1 >Enquiry List Data</h1>
+<hr color="rgb(28, 139, 134)">
 <table class="table table-striped table-dark" border="2">
-  <thead>
+  <thead class="thead">
     <tr>
       <th scope="col">Enquiry ID</th>
       <th scope="col">Customer Name</th>
@@ -38,7 +38,7 @@ let i = index" >
         <button class="btn btn-success" *ngIf="e.cibil.cibilScore>=700" (click)="approved(e)" type="button">Approved</button>
         <button class="btn btn-danger" *ngIf="700>e.cibil.cibilScore" (click)="rejected(e)" [routerLink]="['mail']" [state]="e" type="button">Rejected</button>
       </div></td>
-      <td><i class="fa fa-pencil-square-o" aria-hidden="true" *ngIf="e.enquiryStatus=='Approved'" [routerLink]="['loanReg']" [state]="e"></i></td>
+      <td><i class="fa fa-pencil-square-o fa-2xl" aria-hidden="true" *ngIf="e.enquiryStatus=='Approved'" [routerLink]="['loanReg']" [state]="e"></i></td>
     </tr>
   </tbody>
 </table>

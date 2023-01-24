@@ -6,6 +6,7 @@ import { ApprovedApplicationComponent } from './approved-application/approved-ap
 import { EmailComponent } from './email/email.component';
 import { LedgerComponent } from './ledger/ledger.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AprvdLoanDetailsComponent } from './aprvd-loan-details/aprvd-loan-details.component';
 
 
 @NgModule({

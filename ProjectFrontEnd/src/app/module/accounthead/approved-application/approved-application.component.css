@@ -1,0 +1,9 @@
+.table
+{
+    text-align: center;
+} 
+.thead{
+    background-color: rgb(84, 187, 182);
+    color: white;
+    border: 2 ;
+}

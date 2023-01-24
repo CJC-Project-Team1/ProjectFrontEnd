@@ -1,59 +1,72 @@
-<div>
-    <div class="container">
-        <h1>SEND MAIL</h1><hr>
-        <div class="row">
-                <form [formGroup]="mailForm" (ngSubmit)="onSend()" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Send Mail</h1><hr color="white">
+                </div>
+                <form [formGroup]="mailForm" (ngSubmit)="onSend()">
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">to:</label>
+                        <label class="col-sm-2 col-form-label">To</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="to">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">subject:</label>
+                        <label class="col-sm-2 col-form-label">Subject</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="subject">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Borrower Name:</label>
+                        <label class="col-sm-2 col-form-label">Borrower Name</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="borrowerName">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Loan Amount:</label>
+                        <label class="col-sm-2 col-form-label">Loan Amount</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="loanAmount">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Application No:</label>
+                        <label class="col-sm-2 col-form-label">Application No</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="applicationNo">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Tenure:</label>
+                        <label class="col-sm-2 col-form-label">Tenure</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="tenure">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Interest Rate:</label>
+                        <label class="col-sm-2 col-form-label">Interest Rate</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="intRate">
                         </div>
                     </div>
-                    <form>
-                        <div class="form-group">
-                          <label for="exampleFormControlFile1">Attachment</label>
-                          <input type="file" class="form-control-file" (change)="attachment($event)">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Attachment</label>
+                        <div class="col-sm-10">
+
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile02"
+                                        (change)="attachment($event)">
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                            </div>
                         </div>
-                      </form>
-                    <button type="button" class="btn btn-success" (click)="onSend()">SEND</button>
-                </form>
+                    </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success btn-lg btn-block"
+                                (click)="onSend()">SEND</button>
+                        </div>
+                </form><br>
+            </div>
         </div>
     </div>
-
 </div>
