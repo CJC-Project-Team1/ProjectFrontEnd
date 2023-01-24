@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(35, 120, 153);
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 60px;
+}
+.table
+{
+    text-align: center;
+} 
+.thead{
+    background-color: rgb(49, 151, 143);
+    color: white;
+    border: 2 ;
+}

@@ -1,8 +1,10 @@
 h1{
     text-align: center;
     padding-top: 20px;
+    color: rgb(34, 112, 143);
     padding-bottom: 20px;
-    color: blue;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 h3{

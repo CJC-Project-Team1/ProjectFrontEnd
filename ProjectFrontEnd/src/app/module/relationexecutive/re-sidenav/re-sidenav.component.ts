@@ -50,32 +50,27 @@ export class ReSidenavComponent {
         }
       ],
       OE:[
+
         {
           number:'1',
-          name:'Loan Registration',
-          icon:'fa fa-pencil-square-o',
-          path:'loanReg'
-        },
-        {
-          number:'2',
           name:'Enquiry Approval',
           icon:'fa fa-check-square-o',
           path:'approval'
         },
         {
-          number:'3',
+          number:'2',
           name:'Cibil Check',
           icon:'fa fa-star',
           path:'cibil'
         },
         {
-          number:'4',
+          number:'3',
           name:'Correspondance',
           icon:'fa fa-envelope',
           path:'mail'
         },
         {
-          number:'5',
+          number:'4',
           name:'Registered Loans',
           icon:'fa fa-list-ol',
           path:'loanlist'
@@ -120,7 +115,7 @@ export class ReSidenavComponent {
         {
           number:'1',
           name:'Final Applications',
-          icon:'fa fa-check',
+          icon:'fa fa-list',
           path:'approvedApp'
         }
       ],

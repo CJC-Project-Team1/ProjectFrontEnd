@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { EmailSenderService } from 'src/app/shared/email-sender.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 @Component({
   selector: 'app-correspondance',
@@ -11,7 +12,7 @@ import { EmailSenderService } from 'src/app/shared/email-sender.service';
 export class CorrespondanceComponent {
 
   mailForm: FormGroup;
-  constructor(private fb: FormBuilder, private es: EmailSenderService, private loctn: Location) { }
+  constructor(private fb: FormBuilder, private es: EmailSenderService, private loctn: Location,private notiy:NotifierService) { }
 
   ngOnInit() {
     this.mailForm = this.fb.group({
@@ -29,14 +30,12 @@ export class CorrespondanceComponent {
     let mail:any=this.loctn.getState();
     this.mailForm.get('to').setValue(mail.emailId)
     this.mailForm.get('borrowerName').setValue(mail.customerName)
-    this.mailForm.get('applicationNo').setValue(Math.floor(Math.random()*90000000000+10000000000))
+    this.mailForm.get('applicationNo').setValue(mail.enquiryId)
   }
   onSend() {
     console.log(this.mailForm.value);
-    alert("to:"+this.mailForm.get('to').value);
-
+    this.notiy.success("To:"+this.mailForm.get('to').value,"Mail Sent");
     this.es.sendMail(this.mailForm.value).subscribe(res => { console.log(res); });
-    alert("mail sent.");
-    // this.loctn.back();
+     this.loctn.back();
   }
 }

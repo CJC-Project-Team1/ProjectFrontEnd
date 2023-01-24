@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 @Component({
   selector: 'app-update',
@@ -12,7 +13,7 @@ export class UpdateComponent {
 
   updateEnqform:FormGroup;
 
-  constructor(private es:EnquiryService,private fb:FormBuilder,private loctn:Location){}
+  constructor(private es:EnquiryService,private fb:FormBuilder,private loctn:Location,private notify:NotifierService){}
 
   ngOnInit()
   {
@@ -48,6 +49,7 @@ export class UpdateComponent {
     console.log(this.updateEnqform.value);
     this.es.update(this.updateEnqform.value).subscribe();   
     this.loctn.back();
+    this.notify.info("Enquiry Updated","UPDATED");
    // window.location.reload();
   }
 }

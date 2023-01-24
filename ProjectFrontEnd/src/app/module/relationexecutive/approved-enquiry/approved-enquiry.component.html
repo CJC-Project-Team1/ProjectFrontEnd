@@ -1,9 +1,9 @@
 <div class="container">
   <div id="content" #content>
-    <h1 style="text-align: center; color: rgb(33, 46, 71);">Approved Enquiry List Data</h1>
-    <hr>
-    <table class="table" border="2">
-      <thead>
+    <h1 >Approved Enquiry Data</h1>
+    <hr color=" rgb(28, 139, 134)">
+    <table class="table" border="2" id="Table">
+      <thead class="thead">
         <tr>
           <th scope="col">Enquiry ID</th>
           <th scope="col">Customer Name</th>
@@ -30,7 +30,9 @@
     </table>
     
     </div>
-    <i class="fa fa-download" aria-hidden="true"></i><button type="button" class="btn btn-warning"  (click)="makePDF()">DownLoad PDF</button>
+    
+  <button type="button" class="btn btn-warning btn-lg"  (click)="makePDF()"><i class="fa fa-file-pdf-o fa-2xl" aria-hidden="true"></i></button> &nbsp;&nbsp;
+  <button type="button" class="btn btn-warning btn-lg"  (click)="makeXLSX()"><i class="fa fa-file-excel-o fa-2xl" aria-hidden="true"></i></button>
     <router-outlet></router-outlet>
     
 </div>

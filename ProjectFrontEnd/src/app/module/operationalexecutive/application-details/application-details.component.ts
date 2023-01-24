@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Borrower } from 'src/app/model/borrower';
 import { BorrowerService } from 'src/app/shared/borrower.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 @Component({
   selector: 'app-application-details',
@@ -24,7 +25,7 @@ export class ApplicationDetailsComponent {
   selectedgstCertificate: any;
   selectedproprietaryDeed: any;
 
-  constructor(private bs:BorrowerService,private actvRout:ActivatedRoute,private loctn:Location,private fb:FormBuilder){}
+  constructor(private bs:BorrowerService,private actvRout:ActivatedRoute,private loctn:Location,private fb:FormBuilder,private notify:NotifierService){}
 
   regForm:FormGroup
 
@@ -120,8 +121,8 @@ export class ApplicationDetailsComponent {
    // frmdata.append("borrower",brwrData);
     
     this.bs.updateBrwr(this.regForm.value).subscribe();
-    alert("Registered.");
-   //  window.location.reload();
+   this.notify.info("Borrower Updated","UPDATE"); 
+    window.location.reload();
   }
 
   adharCard(event)

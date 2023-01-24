@@ -40,7 +40,7 @@ export class EnquiryApprovalComponent {
   {
     console.log(enq.enquiryStatus)
     this.es.update(enq).subscribe();
-    //window.location.reload();
+  //  window.location.reload();
   }
   
   approved(e:Enquiry){

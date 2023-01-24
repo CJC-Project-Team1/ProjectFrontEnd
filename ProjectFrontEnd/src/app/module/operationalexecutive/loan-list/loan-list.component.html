@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 style="text-align: center; color: rgb(33, 46, 71);">BORROWER LIST</h1><hr>
-<table class="table table-striped table-dark" border="2" >
-    <thead>
+  <h1>BORROWER LIST</h1><hr>
+<table class="table table-striped table-dark" border="2">
+    <thead class="thead">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">NAME</th>
@@ -14,7 +14,6 @@
         <th scope="col">GST NUMBER</th>    
         <th scope="col">DOCUMNET STATUS</th>    
         <th scope="col">SHOW DETAILS</th>
-        <th scope="col">EDIT</th>
       </tr>
     </thead>
     <tbody>
@@ -35,8 +34,7 @@
         <td>{{b.gstNo}}</td>
         <td>{{b.documentStatus}}</td>
        <!-- <td><i class="fa fa-info" aria-hidden="true" [routerLink]="['details',b.borrowerId]"></i></td>  -->
-       <td><i class="fa fa-info" aria-hidden="true" (click)="showdetails(b)"></i></td> 
-       <td><i class="fa fa-pencil-square-o" aria-hidden="true" [routerLink]="['update']" [state]="b"></i></td> 
+       <td><i class="fa fa-info-circle fa-2xl" aria-hidden="true" (click)="showdetails(b)"></i></td> 
      </tr>
     </tbody>
 </table>
@@ -47,5 +45,6 @@
                        (pageChange)="onTableData($event)">
     </pagination-controls>
   </div> 
+ 
 <router-outlet></router-outlet>
 </div>

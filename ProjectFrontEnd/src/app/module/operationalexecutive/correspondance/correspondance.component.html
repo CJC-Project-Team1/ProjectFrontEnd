@@ -1,40 +1,45 @@
-<div>
-    <div class="container">
-        <h1>SEND MAIL</h1><hr>
-        <div class="row">
-                <form [formGroup]="mailForm" (ngSubmit)="onSend()" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Send Mail</h1><hr>
+                </div>
+                <form [formGroup]="mailForm" (ngSubmit)="onSend()">
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-5 col-form-label">to:</label>
-                        <div class="col-sm-7">
+                        <label class="col-sm-2 col-form-label">To</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="to">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-5 col-form-label">subject:</label>
-                        <div class="col-sm-7">
+                        <label class="col-sm-2 col-form-label">Subject</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="subject">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-5 col-form-label">Borrower Name:</label>
-                        <div class="col-sm-7">
+                        <label class="col-sm-2 col-form-label">Borrower Name</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="borrowerName">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-5 col-form-label">Application No:</label>
-                        <div class="col-sm-7">
+                        <label class="col-sm-2 col-form-label">Enquiry Id</label>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control" formControlName="applicationNo">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="SEND" class="btn btn-success">
-                    </div>
-                    <!-- <button type="button" class="btn btn-success" (click)="onSend()">SEND</button> -->
-                </form>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success btn-lg"
+                                (click)="onSend()">SEND</button>
+                        </div>
+                </form><br>
+            </div>
         </div>
     </div>
-
 </div>
+
+
 
 
