@@ -20,9 +20,14 @@ label{
 }
 
 .card h1{
-    color: aliceblue;
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 50px;
 }
-.card h6{
+.card h5{
     color: aliceblue;
 }
 
