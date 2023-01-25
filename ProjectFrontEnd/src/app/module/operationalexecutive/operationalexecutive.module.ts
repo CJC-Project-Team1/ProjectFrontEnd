@@ -10,7 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoanListComponent } from './loan-list/loan-list.component';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
 import { UpdateLoanComponent } from './update-loan/update-loan.component';
-
+import { OeNotificationComponent } from './oe-notification/oe-notification.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UpdateLoanComponent } from './update-loan/update-loan.component';
     CorrespondanceComponent,
     LoanListComponent,
     ApplicationDetailsComponent,
-    UpdateLoanComponent
+    UpdateLoanComponent,
+    OeNotificationComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { UpdateLoanComponent } from './update-loan/update-loan.component';
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule
   ]
 })
 export class OperationalexecutiveModule { }

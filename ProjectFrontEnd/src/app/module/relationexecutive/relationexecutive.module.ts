@@ -13,6 +13,7 @@ import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.co
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProfileEmpComponent } from './profile-emp/profile-emp.component';
 import { RouterModule } from '@angular/router';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     NgxPaginationModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    Ng2SearchPipeModule,
   ],
   exports:[
     ReHeaderComponent,

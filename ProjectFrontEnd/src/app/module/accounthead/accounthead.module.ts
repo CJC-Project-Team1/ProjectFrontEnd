@@ -7,11 +7,12 @@ import { EmailComponent } from './email/email.component';
 import { LedgerComponent } from './ledger/ledger.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AprvdLoanDetailsComponent } from './aprvd-loan-details/aprvd-loan-details.component';
+import { AhNotificationComponent } from './ah-notification/ah-notification.component';
 
 
 @NgModule({
   declarations: [  
-    ApprovedApplicationComponent, EmailComponent, LedgerComponent,
+    ApprovedApplicationComponent, EmailComponent, LedgerComponent, AhNotificationComponent,
   ],
   imports: [
     CommonModule,

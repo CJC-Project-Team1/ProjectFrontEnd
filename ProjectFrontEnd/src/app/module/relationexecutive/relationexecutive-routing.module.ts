@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AhNotificationComponent } from '../accounthead/ah-notification/ah-notification.component';
 import { ApprovedApplicationComponent } from '../accounthead/approved-application/approved-application.component';
 import { AprvdLoanDetailsComponent } from '../accounthead/aprvd-loan-details/aprvd-loan-details.component';
 import { EmailComponent } from '../accounthead/email/email.component';
@@ -11,6 +12,7 @@ import { LeaveApplicaionsComponent } from '../admin/leave-applicaions/leave-appl
 import { ProfileComponent } from '../admin/profile/profile.component';
 import { UpdateEmployeeComponent } from '../admin/update-employee/update-employee.component';
 import { ViewEmployeesComponent } from '../admin/view-employees/view-employees.component';
+import { CmNotificationComponent } from '../creditmanager/cm-notification/cm-notification.component';
 import { LoanAppDetailsComponent } from '../creditmanager/loan-app-details/loan-app-details.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
 import { SanctionLetterComponent } from '../creditmanager/sanction-letter/sanction-letter.component';
@@ -21,8 +23,10 @@ import { CorrespondanceComponent } from '../operationalexecutive/correspondance/
 import { EnquiryApprovalComponent } from '../operationalexecutive/enquiry-approval/enquiry-approval.component';
 import { LoanListComponent } from '../operationalexecutive/loan-list/loan-list.component';
 import { LoanRegistrationComponent } from '../operationalexecutive/loan-registration/loan-registration.component';
+import { OeNotificationComponent } from '../operationalexecutive/oe-notification/oe-notification.component';
 import { UpdateLoanComponent } from '../operationalexecutive/update-loan/update-loan.component';
 import { DefaultersComponent } from '../telehead/defaulters/defaulters.component';
+import { ThNotificationComponent } from '../telehead/th-notification/th-notification.component';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProfileEmpComponent } from './profile-emp/profile-emp.component';
@@ -62,6 +66,9 @@ const routes: Routes = [
       },
       {
         path: 'approval/mail', component: CorrespondanceComponent
+      },
+      {
+        path: 'oeNotify', component:OeNotificationComponent
       },
       {
         path: 'mail', component: CorrespondanceComponent
@@ -129,6 +136,9 @@ const routes: Routes = [
         path: 'sanctionedLoans', component: SanctionedLoanListComponent
       },
       {
+        path: 'cmNotify', component:CmNotificationComponent
+      },
+      {
         path:'application/viewAppication', component:LoanAppDetailsComponent
       },
       {
@@ -143,6 +153,9 @@ const routes: Routes = [
         path: 'approvedApp/view', component: AprvdLoanDetailsComponent,
       },
       {
+        path: 'ahNotify', component:AhNotificationComponent
+      },
+      {
         path: 'approvedApp/mail', component: EmailComponent
       },
       {
@@ -153,7 +166,10 @@ const routes: Routes = [
   //TH Component
   {
     path: 'defaulter', component: DefaultersComponent
-  }
+  },
+  {
+    path: 'thNotify', component:ThNotificationComponent
+  },
 
 ]
   }

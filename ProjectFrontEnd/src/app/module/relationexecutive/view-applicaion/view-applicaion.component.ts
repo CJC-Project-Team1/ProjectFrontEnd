@@ -17,13 +17,12 @@ export class ViewApplicaionComponent {
   count: number = 0;
   tableItems: number = 5;
   tableSizes: any = [2, 4, 6, 8];
-   filteredEnqs:Enquiry[];
-  _filterText:string = '';
+  searchText:any
 
   constructor(private es: EnquiryService, private route: Router,private notify:NotifierService) { }
 
   ngOnInit() {
-    this.filteredEnqs=this.enq;
+   
    this.getData();
    this.notify.info("ENQUIRY LIST","TABLE");
    
@@ -35,36 +34,12 @@ export class ViewApplicaionComponent {
     this.es.get().subscribe((enqList: Enquiry[]) => {
       this.enq = enqList;
     })
-
   }
 
 
-  get filterText()
-  {
-    return this._filterText;
-  }
-
-  set filterText(value:string)
-  {
-    this._filterText = value;
-    this.filteredEnqs = this.filterEnqByStatus(value);
-  }
+  
 
 
-
-  filterEnqByStatus(filterTerm:string)
-  {
-    if(this.enq.length === 0 || this.filterText === '')
-    {
-      return this.enq;
-    }
-    else
-    {
-      return this.enq.filter((enquiry)=>{
-        return enquiry.enquiryStatus.toLowerCase() === filterTerm.toLowerCase();
-      });
-    }
-  }
   
   onTableData(event:any)
   {
@@ -78,9 +53,5 @@ export class ViewApplicaionComponent {
     this.page=1;
     this.getData();
   }
-
-
-
-
 
 }

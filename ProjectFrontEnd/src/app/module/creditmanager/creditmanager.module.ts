@@ -7,6 +7,7 @@ import { LoanAppDetailsComponent } from './loan-app-details/loan-app-details.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SanctionedLoanListComponent } from './sanctioned-loan-list/sanctioned-loan-list.component';
 import { SanctionLetterComponent } from './sanction-letter/sanction-letter.component';
+import { CmNotificationComponent } from './cm-notification/cm-notification.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SanctionLetterComponent } from './sanction-letter/sanction-letter.compo
     LoanApplicationComponent,
     LoanAppDetailsComponent,
     SanctionedLoanListComponent,
-    SanctionLetterComponent
+    SanctionLetterComponent,
+    CmNotificationComponent
   ],
   imports: [
     CommonModule,

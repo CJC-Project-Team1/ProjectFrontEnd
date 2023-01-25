@@ -20,7 +20,7 @@ export class EnquiryApprovalComponent {
   count: number = 0;
   tableItems: number = 5;
   tableSizes: any = [2, 4, 6, 8];
-
+  searchText:any;
   constructor(private es: EnquiryService, private route: Router,private loctn:Location,private cs:CibilService) { }
 
   ngOnInit() {

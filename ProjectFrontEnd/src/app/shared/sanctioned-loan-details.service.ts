@@ -15,8 +15,8 @@ export class SanctionedLoanDetailsService {
     sanctionedLoanTenure: '',
     monthlyEmi: 0,
     sanctionLetter: undefined,
-    borrower: new Borrower,
     rateOfInterest: '',
+    borrower: new Borrower,
     emilist: [],
   }
   url:string="http://localhost:9080/sanLoanApi/";

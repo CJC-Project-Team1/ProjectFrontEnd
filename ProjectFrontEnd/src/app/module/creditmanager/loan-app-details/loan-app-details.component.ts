@@ -75,7 +75,7 @@ export class LoanAppDetailsComponent {
 
   sanctionLoan()
   {
-    this.ss.sLoan.borrower = this.borrower;
+    this.ss.sLoan.borrower=this.borrower;
     this.ss.sLoan.sanctionedLoanAmount = this.sanctionForm.controls['sanctionedLoanAmount'].value;
     this.ss.sLoan.sanctionedLoanTenure = this.sanctionForm.controls['sanctionedLoanTenure'].value;
     this.ss.sLoan.rateOfInterest = this.sanctionForm.controls['rateOfInterest'].value;

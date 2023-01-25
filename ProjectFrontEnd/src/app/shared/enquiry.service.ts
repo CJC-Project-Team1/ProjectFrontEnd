@@ -15,7 +15,7 @@ export class EnquiryService {
     adharCard: '',
     emailId: '',
     dateOfBirth: '',
-    enquiryStatus: 'pending',
+    enquiryStatus: 'OPEN',
     contactNo: 0,
     cibil: {
       cibilId: 0,
@@ -46,7 +46,10 @@ export class EnquiryService {
     return this.http.get<Enquiry[]>(this.url+"/getEnqByStatus/"+"CLOSE");
   }
 
-  
+  getByStatusOp()
+  {
+    return this.http.get<Enquiry[]>(this.url+"/getEnqByStatus/"+"OPEN");
+  }
 
   
   update(enq:Enquiry)

@@ -1,7 +1,7 @@
 <div class="container">
   <h1 >Enquiry List Data</h1>
   <hr color=" rgb(28, 139, 134)">
-  <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder="search by status" [(ngModel)]="_filterText">
+  <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder="search by status" [(ngModel)]="searchText">
   <table class="table" border="2">
     <thead class="thead">
       <tr>
@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of enq | paginate: {
+      <tr *ngFor="let e of enq | filter:searchText | paginate: {
         itemsPerPage: tableItems,
        currentPage: page,
        totalItems: count

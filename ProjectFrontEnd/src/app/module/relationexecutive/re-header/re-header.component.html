@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-info ">
-
   <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggled()">
     <i class="fa fa-bars" aria-hidden="true"></i>
   </div>
-
-  <a class="navbar-brand" routerLink="reHome">Home</a>
+  <a class="navbar-brand" href="reHome/homepage">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,12 +11,12 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav me-auto">
       <li class="nav-item active">
-        <a class="nav-link">Notifications<span class="sr-only">(current)</span></a>
+        <button class="btn btn-link " (click)="notify()">Notifications<span class="badge badge-danger"></span></button>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="true">
           Resources
-        </a>
+        </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="https://www.rbi.org.in/scripts/NotificationUser.aspx">RBI Notifications</a>
           <a class="dropdown-item" href="https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx">PRESS RELEASES</a>
