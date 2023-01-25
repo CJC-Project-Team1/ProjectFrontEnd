@@ -20,4 +20,8 @@ export class EmailSenderService {
   {
     return this.http.post(this.url+"email",data);
   }
+  sendDynamicMail(data:any)
+  {
+    return this.http.post(this.url+"dynamicEmail",data);
+  }
 }

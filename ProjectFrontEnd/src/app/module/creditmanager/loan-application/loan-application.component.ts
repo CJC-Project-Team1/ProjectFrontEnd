@@ -9,11 +9,18 @@ import { BorrowerService } from 'src/app/shared/borrower.service';
 })
 export class LoanApplicationComponent {
   constructor(private bs:BorrowerService){}
-  borrowers:Borrower[];
-
+  borrowers:Borrower[]=[];
+  st1:string = "Under review"
   ngOnInit()
   {
-    this.bs.getBrwr().subscribe((brs:Borrower[])=>this.borrowers = brs);
+    this.bs.getBrwr().subscribe((brs:Borrower[])=>{
+      brs.forEach((bor)=>{
+        if(bor.applicationStatus == this.st1)
+        {
+          this.borrowers.push(bor)
+        }
+      })
+    });
   }
 
   

@@ -89,6 +89,8 @@ export class BorrowerService {
   delete(id: number) {
     return this.http.delete(this.url + "borrower/" + id);
   }
-
-
+  
+  getBrwrByAppStatus() {
+    return this.http.get<Borrower[]>(this.url + "getbyAppStatus");
+  }
 }

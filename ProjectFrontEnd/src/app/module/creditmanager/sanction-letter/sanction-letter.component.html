@@ -21,11 +21,6 @@
                 </div>
                 <div class="row" style="margin-left: 5px;">
                     <div class="col-sm-4 text-secondary">
-                        {{ sanctionForm.get('contactNo').value }}
-                    </div>
-                </div>
-                <div class="row" style="margin-left: 5px;">
-                    <div class="col-sm-4 text-secondary">
                         {{ sanctionForm.get('emailId').value }}
                     </div>
                 </div>
@@ -49,8 +44,8 @@
                 helped the immediate approval of your request.</p>
                 <p>Following are the details regarding your loan request.</p>
 
-                <div>
-                    <table>
+                <div style="color: brown;">
+                    <table >
                         <tr>
                             <td>Sanctioned Loan Amount:</td>
                             <td><div class="row">
@@ -101,12 +96,14 @@
             </form>
         </div><br>
 
-        <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"
+        <div>
+            <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"
             style="margin-left: 350px">
         &nbsp;&nbsp;
         <input type="button" value="Sanction loan" class="btn btn-success" data-toggle="modal" data-target="#approval">
         &nbsp;&nbsp;
         <input type="button" value="Back" class="btn btn-success" (click)="back()">
+        </div>
     </div>
 </div>
 </div>
