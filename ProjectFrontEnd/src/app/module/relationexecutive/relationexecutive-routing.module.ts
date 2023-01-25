@@ -132,7 +132,7 @@ const routes: Routes = [
         path:'application/viewAppication', component:LoanAppDetailsComponent
       },
       {
-        path:'application/sanctionLetter', component:SanctionLetterComponent
+        path:'application/viewApplication/sanctionLetter', component:SanctionLetterComponent
       },
 
       //AH Components

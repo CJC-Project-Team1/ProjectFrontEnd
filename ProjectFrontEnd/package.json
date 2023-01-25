@@ -25,6 +25,7 @@
     "bootstrap-icons": "^1.10.3",
     "chart.js": "^4.2.0",
     "font-awesome": "^4.7.0",
+    "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "ngx-pagination": "^6.0.3",
     "ngx-toastr": "^16.0.2",

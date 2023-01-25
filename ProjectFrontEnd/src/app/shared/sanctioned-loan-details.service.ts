@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Borrower } from '../model/borrower';
+import { Emi } from '../model/emi';
 import { SanctionedLoanDetails } from '../model/sanctioned-loan-details';
 
 @Injectable({
@@ -15,13 +16,14 @@ export class SanctionedLoanDetailsService {
     monthlyEmi: 0,
     sanctionLetter: undefined,
     borrower: new Borrower,
-    rateOfInterest: ''
+    rateOfInterest: '',
+    emilist: [],
   }
   url:string="http://localhost:9080/sanLoanApi/";
 
   constructor(private http:HttpClient) { }
 
-  saveSanLoan(sLoan:SanctionedLoanDetails)
+  saveSanLoan(sLoan)
   {
     return this.http.post(this.url+"saveSanLoan",sLoan,{responseType:'text' as 'json'});
   }

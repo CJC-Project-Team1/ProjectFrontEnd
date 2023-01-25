@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Borrower } from 'src/app/model/borrower';
+import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { BorrowerService } from 'src/app/shared/borrower.service';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
@@ -21,6 +22,7 @@ export class LoanAppDetailsComponent {
   borrower:Borrower;
   image:any;
   status:string;
+  sanctionloan:SanctionedLoanDetails
 
   ngOnInit()
   {
@@ -60,6 +62,16 @@ export class LoanAppDetailsComponent {
     window.location.reload();
     
   }
+  calculate(){
+    let r=this.sanctionForm.get('rateOfInterest').value/1200
+    let p=this.sanctionForm.get('sanctionedLoanAmount').value
+    let n=this.sanctionForm.get('sanctionedLoanTenure').value*12
+
+    let num=p*r*Math.pow((1+r),n) 
+    let deno=(Math.pow((1+r),n)-1)
+    let temp=num/deno
+    this.ss.sLoan.monthlyEmi=Math.round(((temp) + Number.EPSILON) * 100) / 100;;
+  }
 
   sanctionLoan()
   {
@@ -67,7 +79,9 @@ export class LoanAppDetailsComponent {
     this.ss.sLoan.sanctionedLoanAmount = this.sanctionForm.controls['sanctionedLoanAmount'].value;
     this.ss.sLoan.sanctionedLoanTenure = this.sanctionForm.controls['sanctionedLoanTenure'].value;
     this.ss.sLoan.rateOfInterest = this.sanctionForm.controls['rateOfInterest'].value;
-    this.router.navigate(['reHome/application/sanctionLetter']);
+    this.calculate();
+    
+    this.router.navigate(['reHome/application/viewApplication/sanctionLetter']);
 
   }
 

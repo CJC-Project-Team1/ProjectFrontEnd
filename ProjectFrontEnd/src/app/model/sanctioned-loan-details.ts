@@ -1,4 +1,5 @@
 import { Borrower } from "./borrower";
+import { Emi } from "./emi";
 
 
 export class SanctionedLoanDetails {
@@ -6,7 +7,8 @@ export class SanctionedLoanDetails {
 	sanctionedLoanAmount:string;
 	sanctionedLoanTenure:string;
 	rateOfInterest:string;
-	monthlyEmi:Number;
+	monthlyEmi:number;
 	sanctionLetter:any;
 	borrower:Borrower;
+	emilist:Emi[];
 }

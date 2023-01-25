@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row">
+<div class="container p-2">
+    <div class="row" style="margin: 10px;">
     <div class="col-md-12">
 
         <div id="content" #content  >
@@ -14,31 +14,82 @@
             <hr>
             <form [formGroup]="sanctionForm">
                 TO,<br>
-                <input type="text" formControlName="borrowerName" ><br><br>
+                <div class="row" style="margin-left: 5px;">
+                    <div class="col-sm-4 text-secondary">
+                        {{ sanctionForm.get('borrowerName').value }}
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 5px;">
+                    <div class="col-sm-4 text-secondary">
+                        {{ sanctionForm.get('contactNo').value }}
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 5px;">
+                    <div class="col-sm-4 text-secondary">
+                        {{ sanctionForm.get('emailId').value }}
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 5px;">
+                    <div class="col-sm-4 text-secondary">
+                        {{ sanctionForm.get('address').value }}
+                    </div>
+                </div><br>
 
-                <b> Sub. – Loan approval confirmation </b><br><br>
-                Dear <input type="text" formControlName="borrowerName"><br>
+                <b> Subject: Loan approval confirmation </b><br>
+                 <div class="row">
+                    <div class="col-sm-4 text-secondary">
+                        Dear Sir/Mam {{ sanctionForm.get('borrowerName').value }}
+                    </div>
+                </div><br>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
                <p> We are pleased to inform you that your loan request has been approved, and we are releasing the
                 sanctioned amount to your Account.
                 We are sure you will agree that your consistent performance, dependability and overall contribution have
-                helped the immediate approval of your request.</p><br>
-                <p>Following are the details regarding your loan request.</p><br>
+                helped the immediate approval of your request.</p>
+                <p>Following are the details regarding your loan request.</p>
 
-                <div formGroupName="SanctionedLoanDetails">
+                <div>
                     <table>
                         <tr>
-                            <td>Your Sanctioned Loan Amount :-</td>
-                            <td><input class="text" formControlName="sanctionedLoanAmount"> </td>
+                            <td>Sanctioned Loan Amount:</td>
+                            <td><div class="row">
+                                <div class="col-sm-4 text-secondary">
+                                    {{ sanctionForm.get('sanctionedLoanAmount').value }}₹
+                                </div>
+                            </div></td>
                         </tr>
                         <tr>
-                            <td>Monthly Emi :- </td>
-                            <td> <input class="text" formControlName="monthlyEmi"> </td>
+                            <td>Monthly Emi: </td>
+                            <td><div class="row">
+                                <div class="col-sm-4 text-secondary">
+                                    {{ sanctionForm.get('monthlyEmi').value }}₹
+                                </div>
+                            </div></td>
                         </tr>
                         <tr>
-                            <td>Loan Tenure in years :- </td>
-                            <td> <input class="text" formControlName="sanctionedLoanTenure"> </td>
+                            <td>Loan Tenure in years: </td>
+                            <td><div class="row">
+                                <div class="col-sm-4 text-secondary">
+                                    {{ sanctionForm.get('sanctionedLoanTenure').value }}
+                                </div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td>Total interest to be paid: </td>
+                            <td><div class="row">
+                                <div class="col-sm-4 text-secondary">
+                                    {{interestAmount}}₹
+                                </div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td>Total amount to be paid: </td>
+                            <td><div class="row">
+                                <div class="col-sm-4 text-secondary">
+                                    {{totalAmt}}₹
+                                </div>
+                            </div></td>
                         </tr>
                     </table>
                 </div><br>
@@ -46,16 +97,43 @@
                 consistent performances moving forward.<br>
                 <br>
                 Good luck
-                <br><br><br>
+                
             </form>
-        </div>
+        </div><br>
 
         <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"
             style="margin-left: 350px">
         &nbsp;&nbsp;
-        <input type="button" value="Send Mail" class="btn btn-success" (click)="mail()">
+        <input type="button" value="Sanction loan" class="btn btn-success" data-toggle="modal" data-target="#approval">
         &nbsp;&nbsp;
         <input type="button" value="Back" class="btn btn-success" (click)="back()">
     </div>
 </div>
 </div>
+
+<!--Confirm approval Modal -->
+<div class="modal fade" id="approval" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Upload sanction letter</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+              <div class="custom-file" style="margin-bottom: 10px;">
+                <input type="file" class="custom-file-input" (change)="onselectfile($event)">
+                <label class="custom-file-label">Choose file</label>
+              </div>
+              
+        </div>
+        <div class="modal-footer">
+            <div>
+                <button type="button" style="margin-right: 10px;" class="btn btn-success" (click)="saveData()">Confirm</button>
+              </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
