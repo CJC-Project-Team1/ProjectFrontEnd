@@ -82,6 +82,12 @@ export class BorrowerService {
    getBrwrById(id: number) {
      return this.http.get<Borrower>(this.url + "borrower/"+id);
    }
+
+   getBrwrByStatus() {
+    return this.http.get<Borrower[]>(this.url + "borrowers/"+"Varified");
+  }
+
+
   getBrwr() {
     return this.http.get<Borrower[]>(this.url + "borrowers");
   }
