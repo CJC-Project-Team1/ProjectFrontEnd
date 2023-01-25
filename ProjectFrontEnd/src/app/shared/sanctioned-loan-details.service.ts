@@ -32,6 +32,7 @@ export class SanctionedLoanDetailsService {
   {
     return this.http.get<SanctionedLoanDetails[]>(this.url+"getAllSanLoan");
   }
+  
 
   getSanlaonById(id:number)
   {

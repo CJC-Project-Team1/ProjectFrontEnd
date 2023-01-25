@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Borrower } from 'src/app/model/borrower';
-import { BorrowerService } from 'src/app/shared/borrower.service';
+import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
+import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
 @Component({
   selector: 'app-approved-application',
@@ -9,11 +9,11 @@ import { BorrowerService } from 'src/app/shared/borrower.service';
 })
 export class ApprovedApplicationComponent {
 
-  constructor(private bs:BorrowerService){}
-  borrowers:Borrower[];
+  constructor(private ss:SanctionedLoanDetailsService){}
+  sLoans:SanctionedLoanDetails[];
 
   ngOnInit()
   {
-    this.bs.getBrwr().subscribe((brs:Borrower[])=>this.borrowers = brs);
+    this.ss.getAllSanLoan().subscribe((sLoan:SanctionedLoanDetails[])=>this.sLoans = sLoan);
   }
 }
