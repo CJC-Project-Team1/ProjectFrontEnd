@@ -2,6 +2,8 @@
 <div class="container">
   <h1>APPROVED APPLICATIONS</h1>
     <hr width="100%">
+    <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder="search here" [(ngModel)]="searchText">
+
     <table class="table" border="2">
       <thead class="thead">
         <tr>
@@ -10,32 +12,45 @@
           <th scope="col">Document Status</th>
           <th scope="col">Sanctioned amount</th>
           <th scope="col">Sanctioned Tenure<br><small>(in years)</small></th>
-          <th scope="col">View Application</th>
-          <th scope="col">Disbursement</th>
-          <th scope="col">E-mail</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let s of sLoans">
+        <tr *ngFor="let s of sLoans | filter:searchText  | paginate: {
+          itemsPerPage: tableItems,
+         currentPage: page,
+         totalItems: count
+        };
+    let i = index">
           <th scope="row">{{s.borrower.borrowerId}}</th>
           <td>{{s.borrower.borrowerName}}</td>
           <td>{{s.borrower.documentStatus}}</td>
           <td>{{s.sanctionedLoanAmount}}</td>
           <td>{{s.sanctionedLoanTenure}}</td>
-          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['view']" [state]="s">View</button></td>
-          <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmDisbursement">Disburse</button></td>
-          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['mail']">E-mail</button></td>
+          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['view']" [state]="s" >View</button>&nbsp;
+          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmDisbursement" (click)="onDisburse(s)">Disburse</button>&nbsp;
+          <button type="button" class="btn btn-outline-primary" [routerLink]="['mail']" [state]="s">E-mail</button>&nbsp;
+          <button type="button" class="btn btn-outline-primary" [routerLink]="['ledger']" [state]="s">Generate</button></td>
+          
+         
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+                          previousLabel="Prev"
+                          nextLabel="Next"
+                         (pageChange)="onTableData($event)">
+      </pagination-controls>
+    </div> 
   </div>
   <!--disbursement Modal -->
 <div class="modal fade" id="confirmDisbursement" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalCenterTitle">Loan Disbursement</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="color: rgb(51, 32, 3);">Loan Disbursement</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

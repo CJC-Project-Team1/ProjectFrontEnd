@@ -5,7 +5,6 @@ import { CreditmanagerRoutingModule } from './creditmanager-routing.module';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
 import { LoanAppDetailsComponent } from './loan-app-details/loan-app-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SanctionedLoanListComponent } from './sanctioned-loan-list/sanctioned-loan-list.component';
 import { SanctionLetterComponent } from './sanction-letter/sanction-letter.component';
 import { CmNotificationComponent } from './cm-notification/cm-notification.component';
 
@@ -14,7 +13,6 @@ import { CmNotificationComponent } from './cm-notification/cm-notification.compo
   declarations: [
     LoanApplicationComponent,
     LoanAppDetailsComponent,
-    SanctionedLoanListComponent,
     SanctionLetterComponent,
     CmNotificationComponent
   ],

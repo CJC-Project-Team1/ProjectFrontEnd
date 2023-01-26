@@ -5,6 +5,7 @@ import { ApprovedApplicationComponent } from '../accounthead/approved-applicatio
 import { AprvdLoanDetailsComponent } from '../accounthead/aprvd-loan-details/aprvd-loan-details.component';
 import { EmailComponent } from '../accounthead/email/email.component';
 import { LedgerComponent } from '../accounthead/ledger/ledger.component';
+import { ViewEmiComponent } from '../accounthead/view-emi/view-emi.component';
 import { ActiveEmployeesComponent } from '../admin/active-employees/active-employees.component';
 import { AddEmployeeComponent } from '../admin/add-employee/add-employee.component';
 import { InactiveEmployeesComponent } from '../admin/inactive-employees/inactive-employees.component';
@@ -16,7 +17,6 @@ import { CmNotificationComponent } from '../creditmanager/cm-notification/cm-not
 import { LoanAppDetailsComponent } from '../creditmanager/loan-app-details/loan-app-details.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
 import { SanctionLetterComponent } from '../creditmanager/sanction-letter/sanction-letter.component';
-import { SanctionedLoanListComponent } from '../creditmanager/sanctioned-loan-list/sanctioned-loan-list.component';
 import { ApplicationDetailsComponent } from '../operationalexecutive/application-details/application-details.component';
 import { CibilCheckComponent } from '../operationalexecutive/cibil-check/cibil-check.component';
 import { CorrespondanceComponent } from '../operationalexecutive/correspondance/correspondance.component';
@@ -133,9 +133,6 @@ const routes: Routes = [
         path: 'application', component: LoanApplicationComponent
       },
       {
-        path: 'sanctionedLoans', component: SanctionedLoanListComponent
-      },
-      {
         path: 'cmNotify', component:CmNotificationComponent
       },
       {
@@ -157,6 +154,9 @@ const routes: Routes = [
       },
       {
         path: 'approvedApp/mail', component: EmailComponent
+      },
+      {
+        path: 'approvedApp/emi', component: ViewEmiComponent
       },
       {
         path: 'approvedApp/ledger', component: LedgerComponent
