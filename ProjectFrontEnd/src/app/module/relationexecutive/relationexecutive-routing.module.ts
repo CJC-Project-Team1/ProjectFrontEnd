@@ -138,6 +138,9 @@ const routes: Routes = [
         path: 'cmNotify', component:CmNotificationComponent
       },
       {
+        path:'sanctionedLoans', component:SanctionedLoanListComponent
+      },
+      {
         path:'application/viewAppication', component:LoanAppDetailsComponent
       },
       {
