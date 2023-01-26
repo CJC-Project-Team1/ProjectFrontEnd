@@ -47,33 +47,37 @@ export class ApprovedApplicationComponent {
     this.emi.emiAmount=s.monthlyEmi;
     this.emi.emiCount=Number(s.sanctionedLoanTenure)*12
     this.emi.loanBal=Number(s.sanctionedLoanAmount)
-    this.emi.date=new Date()
+    this.emi.emiStatus = 'Unpaid';
+    this.emi.defautlerCount = 0;
     console.log(this.emi.date)
     this.emi.defautlerCount=0
     this.emi.emiId=0
   
     for(let i=1;i<=this.emi.emiCount;i++){
       let emi1 =new Emi();
-      emi1.date=new Date()
-      emi1.defautlerCount=0
-      emi1.emiAmount=this.emi.emiAmount
-      emi1.emiCount=i;
-      console.log("emi count="+emi1.emiCount +" "+ i);
-     // emi1.emiId=0
-      emi1.emiStatus='Unpaid'
-      emi1.emiTenure=this.emi.emiTenure
-      emi1.loanBal=this.emi.loanBal
-      emi1.date.setDate(this.emi.date.getDate()+(30*i)) 
-      
+
+      emi1.emiTenure=s.sanctionedLoanTenure;
+      emi1.emiAmount=s.monthlyEmi;
+      emi1.emiCount=Number(s.sanctionedLoanTenure)*12
+      emi1.loanBal=Number(s.sanctionedLoanAmount)
+      emi1.defautlerCount = this.emi.defautlerCount;
+      emi1.emiStatus = this.emi.emiStatus;
+      //emi1.emiId=i;
+
+      emi1.date = new Date();
+      let currentDate = new Date();
+      let num = 30*i;
+      emi1.date.setDate(currentDate.getDate()+num) 
       console.log(emi1.date)
-      console.log(s)
-      console.log("EMI1=========="+emi1)
+      
+      console.log(emi1.emiId)
       s.emilist.push(emi1);
-      this.ss.updateSanLoan(s).subscribe()
     }
 
-    console.log(s)
+    //console.log(s)
     console.log(s.emilist)
+    this.ss.updateSanLoan(s).subscribe();
+
   }
 
   onTableData(event:any)
