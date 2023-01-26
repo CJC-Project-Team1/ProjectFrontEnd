@@ -1,0 +1,35 @@
+
+<div class="container p-2">
+  
+    <table class="table">
+      <thead class="thead" style="background-color: aquamarine;">
+        <tr>
+          <th scope="col">Application ID</th>
+          <th scope="col">Borrower Name</th>
+          <th scope="col">Sanctioned loan amount</th>
+          <th scope="col">Tenure (years)</th>
+          <th scope="col">Rate of interest (%)</th>
+          <th scope="col">Application Status</th>
+          <th scope="col">View Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sl of sanLoans">
+          <th scope="row">{{sl.borrower.borrowerId}}</th>
+          <td>{{sl.borrower.borrowerName}}</td>
+          <td>{{sl.sanctionedLoanAmount}}</td>
+          <td>{{sl.sanctionedLoanTenure}}</td>
+          <td>{{sl.rateOfInterest}}</td>
+          <td>{{sl.borrower.applicationStatus}}</td>
+          <td><button type="button" class="btn btn-outline-primary" [routerLink]="['viewSanctionLoan']" [state]="sl">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+    
+  
+    
+  
+  
+  

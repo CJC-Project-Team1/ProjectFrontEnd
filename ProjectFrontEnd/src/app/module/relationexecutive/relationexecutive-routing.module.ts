@@ -16,6 +16,7 @@ import { CmNotificationComponent } from '../creditmanager/cm-notification/cm-not
 import { LoanAppDetailsComponent } from '../creditmanager/loan-app-details/loan-app-details.component';
 import { LoanApplicationComponent } from '../creditmanager/loan-application/loan-application.component';
 import { SanctionLetterComponent } from '../creditmanager/sanction-letter/sanction-letter.component';
+import { SanctionedLoanDetailsComponent } from '../creditmanager/sanctioned-loan-details/sanctioned-loan-details.component';
 import { SanctionedLoanListComponent } from '../creditmanager/sanctioned-loan-list/sanctioned-loan-list.component';
 import { ApplicationDetailsComponent } from '../operationalexecutive/application-details/application-details.component';
 import { CibilCheckComponent } from '../operationalexecutive/cibil-check/cibil-check.component';
@@ -140,6 +141,9 @@ const routes: Routes = [
       },
       {
         path:'application/viewAppication', component:LoanAppDetailsComponent
+      },
+      {
+        path:'sanctionedLoans/viewSanctionLoan', component:SanctionedLoanDetailsComponent
       },
       {
         path:'application/viewApplication/sanctionLetter', component:SanctionLetterComponent

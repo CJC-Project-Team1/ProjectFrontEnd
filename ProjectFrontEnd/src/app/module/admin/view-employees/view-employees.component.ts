@@ -58,7 +58,7 @@ export class ViewEmployeesComponent {
         return 'red-svg';
         break;
         
-    }
+    } 
   }
 
   filterEmpByStatus(filterTerm:string)

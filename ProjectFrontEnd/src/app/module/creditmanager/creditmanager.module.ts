@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SanctionedLoanListComponent } from './sanctioned-loan-list/sanctioned-loan-list.component';
 import { SanctionLetterComponent } from './sanction-letter/sanction-letter.component';
 import { CmNotificationComponent } from './cm-notification/cm-notification.component';
+import { SanctionedLoanDetailsComponent } from './sanctioned-loan-details/sanctioned-loan-details.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CmNotificationComponent } from './cm-notification/cm-notification.compo
     LoanAppDetailsComponent,
     SanctionedLoanListComponent,
     SanctionLetterComponent,
-    CmNotificationComponent
+    CmNotificationComponent,
+    SanctionedLoanDetailsComponent
   ],
   imports: [
     CommonModule,

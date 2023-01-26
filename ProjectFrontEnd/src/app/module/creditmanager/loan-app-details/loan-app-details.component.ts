@@ -67,6 +67,10 @@ export class LoanAppDetailsComponent {
   image:any;
   status:string;
   sanctionloan:SanctionedLoanDetails
+  visible:boolean;
+  loan:boolean;
+  approved:boolean;
+
 
   ngOnInit()
   {
@@ -84,13 +88,19 @@ export class LoanAppDetailsComponent {
       sanctionedLoanTenure: new FormControl('', Validators.required),
       rateOfInterest: new FormControl('', Validators.required)
     })
+    
   }
 
   getState()
   {
     let b:any = this.loc.getState();
     this.brw = b;
-    this.bs.getBrwrById(this.brw.borrowerId).subscribe((br:Borrower)=>this.borrower = br);
+    this.bs.getBrwrById(this.brw.borrowerId).subscribe((br:Borrower)=>{
+      this.borrower = br;
+      this.getButtonVisible();
+      this.loanVisible();
+    });
+    
 
   }
 
@@ -170,14 +180,53 @@ export class LoanAppDetailsComponent {
 
   sanctionLoan()
   {
+    if(this.borrower.documentStatus == "Not verified")
+    {
+      alert("Please varify documents first");
+      window.location.reload();
+    }
+    else if(this.borrower.documentStatus == "Verified")
+    {
+      this.ss.sLoan.borrower=this.borrower;
+      this.ss.sLoan.sanctionedLoanAmount = this.sanctionForm.controls['sanctionedLoanAmount'].value;
+      this.ss.sLoan.sanctionedLoanTenure = this.sanctionForm.controls['sanctionedLoanTenure'].value;
+      this.ss.sLoan.rateOfInterest = this.sanctionForm.controls['rateOfInterest'].value;
+      this.calculate();
+      this.router.navigate(['reHome/application/viewApplication/sanctionLetter']);
+    }
+
     
-    this.ss.sLoan.borrower=this.borrower;
-    this.ss.sLoan.sanctionedLoanAmount = this.sanctionForm.controls['sanctionedLoanAmount'].value;
-    this.ss.sLoan.sanctionedLoanTenure = this.sanctionForm.controls['sanctionedLoanTenure'].value;
-    this.ss.sLoan.rateOfInterest = this.sanctionForm.controls['rateOfInterest'].value;
-    this.calculate();
-    this.router.navigate(['reHome/application/viewApplication/sanctionLetter']);
 
   }
 
+  getButtonVisible() {
+    if(this.borrower.documentStatus == "Not verified")
+    {
+      this.visible = false;
+    }
+    else if
+    (this.borrower.documentStatus == "Verified")
+    {
+      this.visible = true;
+    }
+    else if
+    (this.borrower.documentStatus == "Rejected")
+    {
+      this.visible = true;
+    }
+  }
+
+  loanVisible()
+  {
+    if(this.borrower.loanHistory.bankName == null || this.borrower.loanHistory.bankName == "")
+    {
+      this.loan = false;
+    }
+    else
+    {
+      this.loan = true;
+    }
+  }
+
+  
 }
