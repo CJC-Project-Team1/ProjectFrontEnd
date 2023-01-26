@@ -115,7 +115,7 @@ export class LoanAppDetailsComponent {
 
   accept()
   {
-    this.brw.documentStatus = "Varified";
+    this.brw.documentStatus = "Verified";
     this.bs.updateBrwr(this.brw).subscribe((msg:string)=>alert("Document status "+msg));
     window.location.reload();
     

@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Emi } from 'src/app/model/emi';
 import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
@@ -15,6 +16,7 @@ export class ApprovedApplicationComponent {
   tableItems: number = 5;
   tableSizes: any = [2, 4, 6, 8];
   searchText:any;
+  
   emi:Emi={
     emiId: 0,
     emiStatus: 'Unpaid',
@@ -52,11 +54,22 @@ export class ApprovedApplicationComponent {
   
     for(let i=1;i<=this.emi.emiCount;i++){
       let emi1 =new Emi();
-      this.emi.date.setDate(this.emi.date.getDate()+30) 
-      console.log(this.emi.date)
-      this.emi.emiId=i;
+      emi1.date=new Date()
+      emi1.defautlerCount=0
+      emi1.emiAmount=this.emi.emiAmount
+      emi1.emiCount=i;
+      console.log("emi count="+emi1.emiCount +" "+ i);
+     // emi1.emiId=0
+      emi1.emiStatus='Unpaid'
+      emi1.emiTenure=this.emi.emiTenure
+      emi1.loanBal=this.emi.loanBal
+      emi1.date.setDate(this.emi.date.getDate()+(30*i)) 
       
+      console.log(emi1.date)
+      console.log(s)
+      console.log("EMI1=========="+emi1)
       s.emilist.push(emi1);
+      this.ss.updateSanLoan(s).subscribe()
     }
 
     console.log(s)

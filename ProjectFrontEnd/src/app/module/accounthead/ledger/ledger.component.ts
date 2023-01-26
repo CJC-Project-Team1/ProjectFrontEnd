@@ -30,8 +30,8 @@ export class LedgerComponent {
 
     this.bal=sLoan.sanctionedLoanAmount;
 
-    this.loan.emilist.forEach(e=>
-      console.log("status",e.emiStatus))
+    // this.loan.emilist.forEach(e=>
+    //   console.log("status",e.emiStatus))
     
      
   }

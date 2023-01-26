@@ -84,7 +84,7 @@ export class BorrowerService {
    }
 
    getBrwrByStatus() {
-    return this.http.get<Borrower[]>(this.url + "borrowers/"+"Varified");
+    return this.http.get<Borrower[]>(this.url + "borrowers/"+"Verified");
   }
 
 

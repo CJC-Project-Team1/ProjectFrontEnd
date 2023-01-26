@@ -1,5 +1,4 @@
-<p>view-emi works!</p>
-<p>ledger works!</p>
+
 <div class="container">
     <h1 align="center">Ledger Details</h1>
 </div>
@@ -28,12 +27,12 @@
             <td>
                 <div class="col-sm-3">{{d1.emiTenure}} </div>
             </td>
-<!-- 
+
             <td>
-                <div class="col-sm-3">{{d1.emiPaid}} </div>
+                <div class="col-sm-3">{{d1.emiCount}} </div>
             </td>
             <td>
-                <div class="col-sm-3">{{d1.emiRemaining}} </div>
+                <div class="col-sm-3">{{d1.loanBal}} </div>
             </td> -->
             <td>
                 <div class="col-sm-3">{{d1.defautlerCount}} </div>
@@ -41,10 +40,10 @@
             <td>
                 <div class="col-sm-3">{{d1.emiStatus}} </div>
             </td>
-            <td>
+            <!-- <td>
                 <div> <button type="submit" (click)="paid(d1) " class="btn btn-warning"
                         *ngIf="d1.emiStatus!='paid'">Paid</button> </div>
-            </td>
+            </td> -->
         </tr>
     </tbody>
 </table>
