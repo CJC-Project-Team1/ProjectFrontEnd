@@ -3,7 +3,8 @@ export class Emi {
 	emiStatus:string;
 	emiTenure:string;
 	emiAmount:number;
-	emiPaid:string;
-	emiRemaining:string;
+	emiCount:number;
+	loanBal:number;
+	date:Date;
 	defautlerCount:number;
 }

@@ -1,6 +1,8 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Emi } from 'src/app/model/emi';
-import { EmiService } from 'src/app/shared/emi.service';
+import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
+import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
 @Component({
   selector: 'app-ledger',
@@ -8,21 +10,29 @@ import { EmiService } from 'src/app/shared/emi.service';
   styleUrls: ['./ledger.component.css']
 })
 export class LedgerComponent {
-  emi:Emi[];
 
-  constructor(private es:EmiService) { }
-
+  loan:SanctionedLoanDetails;
+  date:any=new Date();
+  bal:number;
+  constructor(private ss:SanctionedLoanDetailsService,private loctn:Location){}
 
   ngOnInit()
-   {
-    this.es.getAllEmi().subscribe((data: Emi[]) => {
-      this.emi= data;
-    });
+  {
+    this.get();
   }
 
-  paid(e: Emi) {
-    alert("in emistatuschange")
-       e.emiStatus='paid';
-       this.es.updateEmi(e).subscribe();
-     }
+  get()
+  {
+    let sLoan:any=this.loctn.getState();
+    this.ss.getSanlaonById(sLoan.sanctionedLoanId).subscribe((sanL:SanctionedLoanDetails)=>{
+      this.loan=sanL;
+    })
+
+    this.bal=sLoan.sanctionedLoanAmount;
+
+    this.loan.emilist.forEach(e=>
+      console.log("status",e.emiStatus))
+    
+     
+  }
 }
