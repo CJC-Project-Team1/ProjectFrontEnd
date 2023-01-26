@@ -11,33 +11,46 @@ import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-det
   styleUrls: ['./aprvd-loan-details.component.css']
 })
 export class AprvdLoanDetailsComponent {
-  constructor(private loc:Location, private router:Router, private ss:SanctionedLoanDetailsService)
-  {
-    
+  constructor(private loc:Location, private sls:SanctionedLoanDetailsService){}
+
+  loan:boolean;
+  image: any;
+  sanLoan:SanctionedLoanDetails = {
+    sanctionedLoanId: 0,
+    sanctionedLoanAmount: '',
+    sanctionedLoanTenure: '',
+    rateOfInterest: '',
+    monthlyEmi: 0,
+    sanctionLetter: undefined,
+    borrower: new Borrower,
+    emilist: []
   }
 
-  sLoan:SanctionedLoanDetails;
-  sL:SanctionedLoanDetails;
-  image:any;
-  status:string;
   ngOnInit()
   {
-    this.getState();
+    let sl:any = this.loc.getState();
+    this.sanLoan = sl;
+    this.loanVisible();
   }
 
-  getState()
-  {
-    let s:any = this.loc.getState();
-    this.sL = s;
-    this.ss.getSanlaonById(this.sL.sanctionedLoanId).subscribe((loan:SanctionedLoanDetails)=>this.sL = loan);
-
-  }
   change(img)
   {
     this.image = img;
   }
- 
-  onBack()
+  
+  loanVisible()
+  {
+    if(this.sanLoan.borrower.loanHistory.bankName == null || this.sanLoan.borrower.loanHistory.bankName == "")
+    {
+      this.loan = false;
+    }
+    else
+    {
+      this.loan = true;
+    }
+  }
+
+  back()
   {
     this.loc.back();
   }

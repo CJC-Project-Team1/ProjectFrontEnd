@@ -38,7 +38,6 @@ export class BorrowerService {
       loanAmount: 0,
       loanTenure: '',
       paidAmount: 0,
-      remainingAmount: 0,
       bankName: '',
       defaulterCount: 0
     },
@@ -85,6 +84,10 @@ export class BorrowerService {
 
    getBrwrByStatus() {
     return this.http.get<Borrower[]>(this.url + "borrowers/"+"Verified");
+  }
+
+  getBrwrByStatusN() {
+    return this.http.get<Borrower[]>(this.url + "borrowers/"+"Not Verified");
   }
 
 

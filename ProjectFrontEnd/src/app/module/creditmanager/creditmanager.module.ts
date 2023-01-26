@@ -8,7 +8,7 @@ import { SanctionLetterComponent } from './sanction-letter/sanction-letter.compo
 import { CmNotificationComponent } from './cm-notification/cm-notification.component';
 import { SanctionedLoanDetailsComponent } from './sanctioned-loan-details/sanctioned-loan-details.component';
 import { SanctionedLoanListComponent } from './sanctioned-loan-list/sanctioned-loan-list.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { SanctionedLoanListComponent } from './sanctioned-loan-list/sanctioned-l
     CommonModule,
     CreditmanagerRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,    
+    NgxPaginationModule
   ]
 })
 export class CreditmanagerModule { }

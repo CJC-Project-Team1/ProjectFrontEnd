@@ -24,13 +24,13 @@
     let i = index">
           <th scope="row">{{s.borrower.borrowerId}}</th>
           <td>{{s.borrower.borrowerName}}</td>
-          <td>{{s.borrower.documentStatus}}</td>
+          <td>{{s.borrower.applicationStatus}}</td>
           <td>{{s.sanctionedLoanAmount}}</td>
           <td>{{s.sanctionedLoanTenure}}</td>
           <td><button type="button" class="btn btn-outline-primary" [routerLink]="['view']" [state]="s" >View</button>&nbsp;
           <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmDisbursement" (click)="onDisburse(s)">Disburse</button>&nbsp;
           <button type="button" class="btn btn-outline-primary" [routerLink]="['mail']" [state]="s">E-mail</button>&nbsp;
-          <button type="button" class="btn btn-outline-primary" [routerLink]="['ledger']" [state]="s">Generate</button></td>
+          <button type="button" class="btn btn-outline-primary" [routerLink]="['ledger']" [state]="s">Ledger</button></td>
           
          
         </tr>

@@ -4,7 +4,6 @@ export class PreviousLoanDetails {
     loanAmount:number;
     loanTenure:string;
     paidAmount:number;
-    remainingAmount:number;
     bankName:string;
     defaulterCount:number;
 }
