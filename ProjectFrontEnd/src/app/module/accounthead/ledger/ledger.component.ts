@@ -5,6 +5,8 @@ import jsPDF from 'jspdf';
 import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 import { Emi } from 'src/app/model/emi';
+import { Borrower } from 'src/app/model/borrower';
+import { EmiService } from 'src/app/shared/emi.service';
 
 @Component({
   selector: 'app-ledger',
@@ -14,11 +16,21 @@ import { Emi } from 'src/app/model/emi';
 export class LedgerComponent {
   
  
-  loan:SanctionedLoanDetails;
+  loan:SanctionedLoanDetails={
+    sanctionedLoanId: 0,
+    sanctionedLoanAmount: '',
+    sanctionedLoanTenure: '',
+    rateOfInterest: '',
+    monthlyEmi: 0,
+    sanctionLetter: undefined,
+    borrower: new Borrower,
+    emilist: []
+  };
+
   date:any=new Date();
   bal:number;
   @ViewChild('content',{static:false}) el!:ElementRef;
-  constructor(private ss:SanctionedLoanDetailsService,private loctn:Location){}
+  constructor(private ss:SanctionedLoanDetailsService,private loctn:Location,private emiS:EmiService){}
 
   ngOnInit()
   {
@@ -35,14 +47,21 @@ export class LedgerComponent {
   }
 
 
-  onPaid(e:Emi)
+  onPaid(e:Emi,i:number)
   {
-    e.emiAmount=0;
+    console.log("eni id===="+e.emiId);
+   // e.emiAmount=0;
     console.log('in onpaid')
     let status:string='paid';
     e.emiStatus=status;
-    this.bal=Number(this.loan.sanctionedLoanAmount)-e.emiAmount;    
-    //(this.loan.sanctionedLoanAmount)=this.bal;
+    console.log(status)
+    this.bal=Number(this.loan.sanctionedLoanAmount)-(e.emiAmount*(i+1));
+    console.log(this.bal);
+    console.log("value of i=="+i);
+    e.loanBal=this.bal;
+    let datee=new Date();
+    e.date=datee;
+    this.emiS.updateEmi(e).subscribe();
   }
 
 

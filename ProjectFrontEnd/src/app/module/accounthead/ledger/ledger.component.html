@@ -19,9 +19,9 @@
         <td>{{e.date| date:'shortDate'}}</td>
         <td>{{loan.sanctionedLoanAmount}}</td>
         <td>{{e.emiAmount}}</td>
-        <td>{{loan.sanctionedLoanAmount}}</td>
+        <td>{{e.loanBal | number : '1.2-2'}}</td>
         <td>
-          <button type="button" class="btn btn-warning" (click)="onPaid(e)" *ngIf="e.emiStatus!='paid'">Paid</button>
+          <button type="button" class="btn btn-warning" (click)="onPaid(e,i)" *ngIf="e.emiStatus!='paid'">Paid</button>
         </td>
       </tr>
     </tbody>
