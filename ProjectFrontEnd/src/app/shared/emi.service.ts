@@ -7,14 +7,15 @@ import { Emi } from '../model/emi';
 })
 export class EmiService {
 
-  emi:{
-    emiId:0,
-    emiStatus:'',
-    emiTenure:'',
-    emiAmount:0,
-    emiPaid:'',
-    emiRemaining:'',
-    defautlerCount:0
+  emi:Emi={
+    emiId: 0,
+    emiStatus: '',
+    emiTenure: '',
+    emiAmount: 0,
+    loanBal: 0,
+    date: undefined,
+    defautlerCount: 0,
+    emiCount: 0
   }
   
   url:string="http://localhost:9080/emiApi/";

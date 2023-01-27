@@ -1,16 +1,16 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { Borrower } from 'src/app/model/borrower';
 import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
 @Component({
-  selector: 'app-aprvd-loan-details',
-  templateUrl: './aprvd-loan-details.component.html',
-  styleUrls: ['./aprvd-loan-details.component.css']
+  selector: 'app-sanctioned-loan-details',
+  templateUrl: './sanctioned-loan-details.component.html',
+  styleUrls: ['./sanctioned-loan-details.component.css']
 })
-export class AprvdLoanDetailsComponent {
+export class SanctionedLoanDetailsComponent {
+    
   constructor(private loc:Location, private sls:SanctionedLoanDetailsService){}
 
   loan:boolean;
@@ -54,10 +54,4 @@ export class AprvdLoanDetailsComponent {
   {
     this.loc.back();
   }
-
-  
-
-
-
-
 }

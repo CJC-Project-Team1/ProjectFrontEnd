@@ -62,7 +62,6 @@ export class ApplicationDetailsComponent {
         loanAmount: [this.brwr.loanHistory.loanAmount],
         loanTenure: [this.brwr.loanHistory.loanTenure],
         paidAmount: [this.brwr.loanHistory.paidAmount],
-        remainingAmount: [this.brwr.loanHistory.remainingAmount],
         bankName: [this.brwr.loanHistory.bankName],
         defaulterCount: [this.brwr.loanHistory.defaulterCount],
       }),

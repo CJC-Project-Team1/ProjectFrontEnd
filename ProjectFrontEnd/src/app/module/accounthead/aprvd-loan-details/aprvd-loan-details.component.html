@@ -1,379 +1,467 @@
-<div class="container shadow">
-    <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Borrower Details</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">History</a>
-          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Documents</a>        
-          </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div class="main-body">
-                      <div class="row gutters-sm" >
-                        <div class="col-md-6">
+<div class="container shadow p-2">
+  <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-loanhome-tab" data-toggle="tab" href="#nav-loanhome" role="tab" aria-controls="nav-home" aria-selected="true">Sanctioned loan</a>
+        <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Borrower Details</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Documents</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">History</a>
+      </div>
+      <div style="text-align: right; margin-top: 5px;">
+          <button type="button" class="btn btn-primary" (click)="back()"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="nav-loanhome" role="tabpanel" aria-labelledby="nav-loanhome-tab">
+          <div class="main-body">
+              <div class="row gutters-sm" >
+                <div class="col-md-6">
+                  <div class="card mb-3" style="margin: 20px;">
+                    <h3 class="card-header" style="background-color: beige;">Sanctioned loan Details:</h3>
+                    <div class="card-body" id="loan" *ngIf="loan">
+    
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Loan amount</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.sanctionedLoanAmount}} ₹
+                        </div>
+                      </div>
+    
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Tenure (in years)</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.sanctionedLoanTenure}}
+                        </div>
+                      </div>
+    
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Rate of interest (%)</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.rateOfInterest}}
+                        </div>
+                      </div>
+    
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Monthly EMI</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.monthlyEmi}} ₹
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                      
+        </div>
+         
+    </div>
+</div>
+      </div>
+
+
+      <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="main-body">
+                    <div class="row gutters-sm" >
+                      <div class="col-md-6">
+                        <div class="card mb-3" style="margin: 20px;">
+                          <h3 class="card-header" style="background-color: beige;">Personal Details:</h3>
+                          <div class="card-body">
+          
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Application ID</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.borrowerId}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Borrower Name</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.borrowerName}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Date of birth</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.dateOfBirth}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Contact no</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.contactNo}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Email</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.emailId}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Adhar no</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.adharNo}}
+                              </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">PAN no</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.panNo}}
+                              </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Address</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.address}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">GST no</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary">
+                                  {{sanLoan.borrower.gstNo}}
+                              </div>
+                            </div>
+          
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Document status</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary text-danger">
+                                  {{sanLoan.borrower.documentStatus}}
+                              </div>
+                            </div> 
+
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-5">
+                                <h4 class="mb-0">Application status</h4>
+                              </div>
+                              <div class="col-sm-7 text-secondary text-danger">
+                                  {{sanLoan.borrower.applicationStatus}}
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                        <div class="col-md-6" >
                           <div class="card mb-3" style="margin: 20px;">
-                            <h3 class="card-header" style="background-color: rgb(206, 248, 255);">Personal Details:</h3>
+                            <h3 class="card-header" style="background-color: beige;">Bank Details:</h3>
                             <div class="card-body">
             
                               <div class="row">
                                 <div class="col-sm-5">
-                                  <h4 class="mb-0">Application ID</h4>
+                                  <h4 class="mb-0">Account no</h4>
                                 </div>
                                 <div class="col-sm-7 text-secondary">
-                                    {{brw.borrowerId}}
+                                  {{sanLoan.borrower.bankDetails.bankAccountNo}}
                                 </div>
                               </div>
             
                               <hr>
                               <div class="row">
                                 <div class="col-sm-5">
-                                  <h4 class="mb-0">Borrower Name</h4>
+                                  <h4 class="mb-0">IFSC code</h4>
                                 </div>
                                 <div class="col-sm-7 text-secondary">
-                                    {{brw.borrowerName}}
+                                  {{sanLoan.borrower.bankDetails.ifscCode}}
                                 </div>
                               </div>
             
                               <hr>
                               <div class="row">
                                 <div class="col-sm-5">
-                                  <h4 class="mb-0">Date of birth</h4>
+                                  <h4 class="mb-0">Bank Name</h4>
                                 </div>
                                 <div class="col-sm-7 text-secondary">
-                                    {{brw.dateOfBirth}}
+                                  {{sanLoan.borrower.bankDetails.bankName}}
                                 </div>
                               </div>
             
                               <hr>
                               <div class="row">
                                 <div class="col-sm-5">
-                                  <h4 class="mb-0">Contact no</h4>
+                                  <h4 class="mb-0">Branch</h4>
                                 </div>
                                 <div class="col-sm-7 text-secondary">
-                                    {{brw.contactNo}}
+                                  {{sanLoan.borrower.bankDetails.bankBranch}}
                                 </div>
                               </div>
-            
-                              <hr>
-                              <div class="row">
-                                <div class="col-sm-5">
-                                  <h4 class="mb-0">Email</h4>
-                                </div>
-                                <div class="col-sm-7 text-secondary">
-                                    {{brw.emailId}}
-                                </div>
-                              </div>
-            
-                              <hr>
-                              <div class="row">
-                                <div class="col-sm-5">
-                                  <h4 class="mb-0">Adhar no</h4>
-                                </div>
-                                <div class="col-sm-7 text-secondary">
-                                    {{brw.adharNo}}
-                                </div>
-                              </div>
-
-                              <hr>
-                              <div class="row">
-                                <div class="col-sm-5">
-                                  <h4 class="mb-0">PAN no</h4>
-                                </div>
-                                <div class="col-sm-7 text-secondary">
-                                    {{brw.panNo}}
-                                </div>
-                              </div>
-
-                              <hr>
-                              <div class="row">
-                                <div class="col-sm-5">
-                                  <h4 class="mb-0">Address</h4>
-                                </div>
-                                <div class="col-sm-7 text-secondary">
-                                    {{brw.address}}
-                                </div>
-                              </div>
-            
-                              <hr>
-                              <div class="row">
-                                <div class="col-sm-5">
-                                  <h4 class="mb-0">GST no</h4>
-                                </div>
-                                <div class="col-sm-7 text-secondary">
-                                    {{brw.gstNo}}
-                                </div>
-                              </div>
-            
-                              <hr>
-                              <div class="row">
-                                <div class="col-sm-5">
-                                  <h4 class="mb-0">Document status</h4>
-                                </div>
-                                <div class="col-sm-7 text-secondary">
-                                    {{brw.documentStatus}}
-                                </div>
-                              </div> 
 
                             </div>
                           </div>
-                        </div>
 
-                          <div class="col-md-6" >
-                            <div class="card mb-3" style="margin: 20px;">
-                              <h3 class="card-header" style="background-color: rgb(206, 248, 255);">Bank Details:</h3>
+                          <div class="card mb-3" style="margin: 20px;">
+                              <h3 class="card-header" style="background-color: beige;">Business Details:</h3>
                               <div class="card-body">
               
                                 <div class="row">
                                   <div class="col-sm-5">
-                                    <h4 class="mb-0">Account no</h4>
+                                    <h4 class="mb-0">Business type</h4>
                                   </div>
                                   <div class="col-sm-7 text-secondary">
-                                    {{brw.bankDetails.bankAccountNo}}
+                                      {{sanLoan.borrower.businessDetails.businesstype}}
                                   </div>
                                 </div>
               
                                 <hr>
                                 <div class="row">
                                   <div class="col-sm-5">
-                                    <h4 class="mb-0">IFSC code</h4>
+                                    <h4 class="mb-0">Business name</h4>
                                   </div>
                                   <div class="col-sm-7 text-secondary">
-                                    {{brw.bankDetails.ifscCode}}
+                                      {{sanLoan.borrower.businessDetails.companyName}}
                                   </div>
                                 </div>
               
                                 <hr>
                                 <div class="row">
                                   <div class="col-sm-5">
-                                    <h4 class="mb-0">Bank Name</h4>
+                                    <h4 class="mb-0">Revenue (₹)</h4>
                                   </div>
                                   <div class="col-sm-7 text-secondary">
-                                    {{brw.bankDetails.bankName}}
-                                  </div>
-                                </div>
-              
-                                <hr>
-                                <div class="row">
-                                  <div class="col-sm-5">
-                                    <h4 class="mb-0">Branch</h4>
-                                  </div>
-                                  <div class="col-sm-7 text-secondary">
-                                    {{brw.bankDetails.bankBranch}}
-                                  </div>
-                                </div>
-
+                                      {{sanLoan.borrower.businessDetails.revenue}}
                               </div>
                             </div>
 
-                            <div class="card mb-3" style="margin: 20px;">
-                                <h3 class="card-header" style="background-color: rgb(206, 248, 255);">Business Details:</h3>
-                                <div class="card-body">
-                
-                                  <div class="row">
-                                    <div class="col-sm-5">
-                                      <h4 class="mb-0">Business type</h4>
-                                    </div>
-                                    <div class="col-sm-7 text-secondary">
-                                        {{brw.businessDetails.businesstype}}
-                                    </div>
-                                  </div>
-                
-                                  <hr>
-                                  <div class="row">
-                                    <div class="col-sm-5">
-                                      <h4 class="mb-0">Business name</h4>
-                                    </div>
-                                    <div class="col-sm-7 text-secondary">
-                                        {{brw.businessDetails.companyName}}
-                                    </div>
-                                  </div>
-                
-                                  <hr>
-                                  <div class="row">
-                                    <div class="col-sm-5">
-                                      <h4 class="mb-0">Revenue (₹)</h4>
-                                    </div>
-                                    <div class="col-sm-7 text-secondary">
-                                        {{brw.businessDetails.revenue}}
-                                </div>
-                              </div>
-
-                          </div>
-
-                      </div>
-                </div>
-            </div>
-        </div>
-            
-        </div>
-
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="main-body">
-                <div class="row gutters-sm" >
-                  <div class="col-md-6">
-                    <div class="card mb-3" style="margin: 20px;">
-                      <h3 class="card-header" style="background-color:rgb(206, 248, 255);">Pevious loan Details:</h3>
-                      <div class="card-body">
-      
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Loan type</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.loanType}}
-                          </div>
-                        </div>
-      
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Amount</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.loanAmount}}
-                          </div>
-                        </div>
-      
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Tenure</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.loanTenure}}
-                          </div>
-                        </div>
-      
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Paid amount</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.paidAmount}}
-                          </div>
-                        </div>
-      
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Remaining amount</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.remainingAmount}}
-                          </div>
-                        </div>
-      
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Financer bank</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.bankName}}
-                          </div>
                         </div>
 
-                        <hr>
-                        <div class="row">
-                          <div class="col-sm-5">
-                            <h4 class="mb-0">Defaulter count</h4>
-                          </div>
-                          <div class="col-sm-7 text-secondary">
-                            {{brw.loanHistory.defaulterCount}}
-                          </div>
-                        </div>
-
-                      </div>
                     </div>
+              </div>
           </div>
       </div>
-  </div>
-        </div>
-
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="main-body">
-            <div class="main-body p-3">
-            <div class="row p-3">
-
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.photo}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">Photo</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.panCard}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">PAN card</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.photo}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">Adhar card</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.bankStatement}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">Bank Statement</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row p-3">
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.addressProof}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">Address Proof</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.balanceSheet}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">Balance Sheet</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.gstCertificate}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">GST Certificate</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="data:image/png;base64,{{brw.borrowerDocuments.proprietaryDeed}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text text-secondary">Proprietary deed</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="p-4">
-                <button type="button" class="btn btn-danger">Verify Documents</button>
-            </div>           
+          
       </div>
+
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="main-body">
+              <div class="row gutters-sm" >
+                <div class="col-md-6">
+                  <div class="card mb-3" style="margin: 20px;">
+                    <h3 class="card-header" style="background-color: beige;">Pevious loan Details:</h3>
+                    <div class="card-body" id="loan" *ngIf="loan">
+    
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Loan type</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.borrower.loanHistory.loanType}}
+                        </div>
+                      </div>
+    
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Amount</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.borrower.loanHistory.loanAmount}} ₹
+                        </div>
+                      </div>
+    
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Tenure (years)</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.borrower.loanHistory.loanTenure}}
+                        </div>
+                      </div>
+    
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Paid amount</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.borrower.loanHistory.paidAmount}} ₹
+                        </div>
+                      </div>   
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Financer bank</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.borrower.loanHistory.bankName}}
+                        </div>
+                      </div>
+
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <h4 class="mb-0">Defaulter count</h4>
+                        </div>
+                        <div class="col-sm-7 text-secondary">
+                          {{sanLoan.borrower.loanHistory.defaulterCount}}
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="card-body" id="noloan" *ngIf="!loan" >
+                      <div class="col-sm-7 text-secondary">
+                        No previous loan
+                      </div>
+                    </div>
+                  </div>
+                      
+        </div>
+         
+    </div>
 </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="main-body">
+          <div class="main-body p-3">
+          <div class="row p-3">
+
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.photo}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.photo)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">Photo</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.panCard}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.panCard)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">PAN card</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.adharCard}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.adharCard)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">Adhar card</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.bankStatement}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.bankStatement)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">Bank Statement</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row p-3">
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.addressProof}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.addressProof)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">Address Proof</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.balanceSheet}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.balanceSheet)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">Balance Sheet</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.gstCertificate}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.gstCertificate)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">GST Certificate</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-3">
+                  <div class="card" style="width: 15rem;">
+                      <img src="data:image/png;base64,{{sanLoan.borrower.borrowerDocuments.proprietaryDeed}}" class="card-img-top" alt="..." data-toggle="modal" data-target=".bd-example-modal-lg" (click)="change(sanLoan.borrower.borrowerDocuments.proprietaryDeed)">
+                      <div class="card-body">
+                        <p class="card-text text-secondary">Proprietary deed</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+          
+    </div>
+  </div>
+</div>
+
+<!--view document Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Document viewer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;" style="height: 500px; text-align: center;">
+          <img src="data:image/png;base64,{{image}}" alt="" width="500px">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
 
 

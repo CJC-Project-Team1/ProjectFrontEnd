@@ -1,1 +1,33 @@
-<p>ah-notification works!</p>
+<div id="accordion" style="width: 40%; margin: auto;">
+    <div class="about-section;">
+        <h1>Notifications</h1>
+    </div>
+    <div class="card">
+        <div class="card-header">
+
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let b of brwr | paginate: {
+                        itemsPerPage: tableItems,
+                       currentPage: page,
+                       totalItems: count
+                      };
+                  let i = index" >
+                        <td> <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                New Approved Loan Application for {{b.borrowerName}}
+                            </a></td>
+                        <td style="color: green"> {{b.applicationStatus}} </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <pagination-controls
+                                    previousLabel="Prev"
+                                    nextLabel="Next"
+                                   (pageChange)="onTableData($event)">
+                </pagination-controls>
+              </div> 
+
+        </div>
+    </div>
+</div>

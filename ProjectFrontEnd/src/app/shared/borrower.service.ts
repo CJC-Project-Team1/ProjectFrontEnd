@@ -38,7 +38,6 @@ export class BorrowerService {
       loanAmount: 0,
       loanTenure: '',
       paidAmount: 0,
-      remainingAmount: 0,
       bankName: '',
       defaulterCount: 0
     },
@@ -82,6 +81,16 @@ export class BorrowerService {
    getBrwrById(id: number) {
      return this.http.get<Borrower>(this.url + "borrower/"+id);
    }
+
+   getBrwrByStatus() {
+    return this.http.get<Borrower[]>(this.url + "borrowers/"+"Verified");
+  }
+
+  getBrwrByStatusN() {
+    return this.http.get<Borrower[]>(this.url + "borrowers/"+"Not Verified");
+  }
+
+
   getBrwr() {
     return this.http.get<Borrower[]>(this.url + "borrowers");
   }
@@ -89,6 +98,8 @@ export class BorrowerService {
   delete(id: number) {
     return this.http.delete(this.url + "borrower/" + id);
   }
-
-
+  
+  getBrwrByAppStatus() {
+    return this.http.get<Borrower[]>(this.url + "getbyAppStatus");
+  }
 }
