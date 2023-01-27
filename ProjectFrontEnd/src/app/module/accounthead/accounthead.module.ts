@@ -7,7 +7,6 @@ import { EmailComponent } from './email/email.component';
 import { LedgerComponent } from './ledger/ledger.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AhNotificationComponent } from './ah-notification/ah-notification.component';
-import { ViewEmiComponent } from './view-emi/view-emi.component';
 import { AprvdLoanDetailsComponent } from './aprvd-loan-details/aprvd-loan-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -19,7 +18,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     EmailComponent, 
     LedgerComponent, 
     AhNotificationComponent, 
-    ViewEmiComponent,
     AprvdLoanDetailsComponent
   ],
   imports: [

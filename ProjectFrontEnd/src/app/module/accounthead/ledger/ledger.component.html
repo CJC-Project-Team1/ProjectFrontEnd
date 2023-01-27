@@ -1,25 +1,32 @@
 <div class="container">
-    <h1>LEDGER</h1>
-      <hr width="100%">
-      <table class="table" border="2">
-        <thead class="thead">
-          <tr>
-            <th scope="col">Sr No.</th>
-            <th scope="col">Date</th>
-            <th scope="col">Principal Loan</th>
-            <th scope="col">Loan Paid</th>
-            <th scope="col">Interest</th>
-            <th scope="col">Loan Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"></th>
-            <td>{{date| date:'shortDate'}}</td>
-            <td>{{loan.sanctionedLoanAmount}}</td>
-            <td>{{loan.monthlyEmi}}</td>
-            <td></td>
-            <td>{{loan.sanctionedLoanAmount}}</td>            
-          </tr>
-        </tbody>
-      </table>
+
+ <h1>LEDGER</h1>
+  <hr width="100%">
+  <table class="table" border="2" id="Table">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Sr No.</th>
+        <th scope="col">Date</th>
+        <th scope="col">Principal Loan</th>
+        <th scope="col">EMIs </th>
+        <th scope="col">Balance Loan</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of loan.emilist; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{e.date| date:'shortDate'}}</td>
+        <td>{{loan.sanctionedLoanAmount}}</td>
+        <td>{{e.emiAmount}}</td>
+        <td>{{loan.sanctionedLoanAmount}}</td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="onPaid(e)" *ngIf="e.emiStatus!='paid'">Paid</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button style="margin-left: 110%;" type="button" class="btn btn-warning" (click)="makePDF()">PDF<i class="fa fa-file-pdf-o fa-2xl" aria-hidden="true"></i></button>
+  &nbsp;&nbsp;
+  <button style="margin-left: 110%;" type="button" class="btn btn-warning" (click)="makeXLSX()">Excel<i class="fa fa-file-excel-o fa-2xl" aria-hidden="true"></i></button>
+  
