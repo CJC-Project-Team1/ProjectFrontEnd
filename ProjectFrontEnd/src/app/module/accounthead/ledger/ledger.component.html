@@ -7,7 +7,7 @@
       <tr>
         <th scope="col">Sr No.</th>
         <th scope="col">Date</th>
-        <th scope="col">Principal Loan</th>
+        <th scope="col">Total Loan</th>
         <th scope="col">EMIs </th>
         <th scope="col">Balance Loan</th>
         <th scope="col">Action</th>
@@ -17,16 +17,19 @@
       <tr *ngFor="let e of loan.emilist; let i = index">
         <th scope="row">{{i+1}}</th>
         <td>{{e.date| date:'shortDate'}}</td>
-        <td>{{loan.sanctionedLoanAmount}}</td>
+        <td>{{totalLoan}}</td>
         <td>{{e.emiAmount}}</td>
-        <td>{{e.loanBal | number : '1.2-2'}}</td>
+        <td *ngIf="e.loanBal != sanLoan;else elseBlock">{{e.loanBal | number : '1.2-2'}}</td>
         <td>
           <button type="button" class="btn btn-warning" (click)="onPaid(e,i)" *ngIf="e.emiStatus!='paid'">Paid</button>  &nbsp;&nbsp;
-          <button type="button" class="btn btn-warning" (click)="onMissed(e)" *ngIf="e.emiStatus!='missed'">Missed</button>
+          <button type="button" class="btn btn-warning" (click)="onMissed(e)" *ngIf="e.emiStatus=='Unpaid'">Missed</button>
         </td>
       </tr>
     </tbody>
   </table>
+  <ng-template style="padding-top: 30px;" #elseBlock>
+    ----
+  </ng-template>
   </div>
 
  

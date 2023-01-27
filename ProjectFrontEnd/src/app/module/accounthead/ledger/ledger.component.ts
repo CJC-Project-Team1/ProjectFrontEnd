@@ -15,6 +15,8 @@ import { EmiService } from 'src/app/shared/emi.service';
 })
 export class LedgerComponent {
   
+  totalLoan:number
+  sanLoan:number
  
   loan:SanctionedLoanDetails={
     sanctionedLoanId: 0,
@@ -43,6 +45,12 @@ export class LedgerComponent {
     this.ss.getSanlaonById(sLoan.sanctionedLoanId).subscribe((sanL:SanctionedLoanDetails)=>{
       this.loan=sanL;
     })    
+
+    sLoan.emilist.forEach((emi:Emi)=>{
+      this.totalLoan=emi.emiAmount*Number(emi.emiTenure)*12
+    })
+
+    this.sanLoan=Number(sLoan.sanctionedLoanAmount)
    
   }
 
@@ -51,16 +59,19 @@ export class LedgerComponent {
   {
     console.log("eni id===="+e.emiId);
    // e.emiAmount=0;
+  //let totalLoan=e.emiAmount*Number(e.emiTenure)*12
+  // this.totalLoan=totalLoan
     console.log('in onpaid')
     let status:string='paid';
     e.emiStatus=status;
     console.log(status)
-    this.bal=Number(this.loan.sanctionedLoanAmount)-(e.emiAmount*(i+1));
+    this.bal=Number(this.totalLoan)-(e.emiAmount*(i+1));
     console.log(this.bal);
     console.log("value of i=="+i);
     e.loanBal=this.bal;
     let datee=new Date();
     e.date=datee;
+    e.defautlerCount=0;
     this.emiS.updateEmi(e).subscribe();
   }
 
@@ -70,16 +81,16 @@ export class LedgerComponent {
     let status:string='missed'; 
     let d=new Date();
     let valDate=new Date(e.date);
-     if((valDate.getDate()+90)<=d.getDate())
-     {
+    //  if((valDate.getDate()+90)<=d.getDate())
+    //  {
       e.defautlerCount=1;
       e.emiStatus=status;
-    }
+   // }
    // let defaul:number=0
   //  e.defautlerCount=defaul+1;
   
     console.log(e.defautlerCount)
- // this.emiS.updateEmi(e).subscribe();
+    this.emiS.updateEmi(e).subscribe();
   }
 
   makePDF()
