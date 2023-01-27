@@ -125,6 +125,12 @@ export class ReSidenavComponent {
           name:'Defaulters',
           icon:'fa fa-exclamation-triangle',
           path:'defaulter'
+        },
+        {
+          number:'2',
+          name:'Email',
+          icon:'fa fa-envelope',
+          path:'mail'
         }
       ]
     }

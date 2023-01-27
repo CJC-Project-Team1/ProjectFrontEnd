@@ -27,6 +27,7 @@ import { LoanRegistrationComponent } from '../operationalexecutive/loan-registra
 import { OeNotificationComponent } from '../operationalexecutive/oe-notification/oe-notification.component';
 import { UpdateLoanComponent } from '../operationalexecutive/update-loan/update-loan.component';
 import { DefaultersComponent } from '../telehead/defaulters/defaulters.component';
+import { ThEmailComponent } from '../telehead/th-email/th-email.component';
 import { ThNotificationComponent } from '../telehead/th-notification/th-notification.component';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -174,6 +175,9 @@ const routes: Routes = [
   {
     path: 'thNotify', component:ThNotificationComponent
   },
+  {
+    path:'mail',component:ThEmailComponent
+  }
 
 ]
   }
