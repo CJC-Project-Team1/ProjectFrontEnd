@@ -1,6 +1,6 @@
 <div class="container">
   <div id="content" #content>
-    <h1 >Approved Enquiry Data</h1>
+    <h1>Approved Enquiry Data</h1>
     <hr color=" rgb(28, 139, 134)">
     <table class="table" border="2" id="Table">
       <thead class="thead">
@@ -11,8 +11,8 @@
           <th scope="col">Pan Card</th>
           <th scope="col">Adhar Card</th>
           <th scope="col">Date of Birth</th>
-          <th scope="col">Contact Number</th>      
-          <th scope="col">Enquiry Status</th> 
+          <th scope="col">Contact Number</th>
+          <th scope="col">Enquiry Status</th>
         </tr>
       </thead>
       <tbody>
@@ -28,11 +28,13 @@
         </tr>
       </tbody>
     </table>
-    
-    </div>
-    
-  <button type="button" class="btn btn-warning btn-lg"  (click)="makePDF()"><i class="fa fa-file-pdf-o fa-2xl" aria-hidden="true"></i></button> &nbsp;&nbsp;
-  <button type="button" class="btn btn-warning btn-lg"  (click)="makeXLSX()"><i class="fa fa-file-excel-o fa-2xl" aria-hidden="true"></i></button>
-    <router-outlet></router-outlet>
-    
+
+  </div>
+
+  <button type="button" class="btn btn-warning btn-lg" (click)="makePDF()"><i class="fa fa-file-pdf-o fa-2xl"
+      aria-hidden="true"></i></button> &nbsp;&nbsp;
+  <button type="button" class="btn btn-warning btn-lg" (click)="makeXLSX()"><i class="fa fa-file-excel-o fa-2xl"
+      aria-hidden="true"></i></button>
+  <router-outlet></router-outlet>
+
 </div>

@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 import jsPDF from 'jspdf';
 import { BorrowerService } from 'src/app/shared/borrower.service';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
-import * as jspdf from 'jspdf';
-import html2canvas from 'html2canvas';
+
 import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { EmailSenderService } from 'src/app/shared/email-sender.service';
 import { NotifierService } from 'src/app/shared/notifier.service';

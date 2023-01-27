@@ -29,7 +29,7 @@ export class LedgerComponent {
 
   date:any=new Date();
   bal:number;
-  @ViewChild('content',{static:false}) el!:ElementRef;
+  @ViewChild('content',{static:false}) el!:ElementRef
   constructor(private ss:SanctionedLoanDetailsService,private loctn:Location,private emiS:EmiService){}
 
   ngOnInit()
@@ -65,17 +65,33 @@ export class LedgerComponent {
   }
 
 
+  onMissed(e:Emi)
+  {
+    let status:string='missed'; 
+    let d=new Date();
+    let valDate=new Date(e.date);
+     if((valDate.getDate()+90)<=d.getDate())
+     {
+      e.defautlerCount=1;
+      e.emiStatus=status;
+    }
+   // let defaul:number=0
+  //  e.defautlerCount=defaul+1;
+  
+    console.log(e.defautlerCount)
+ // this.emiS.updateEmi(e).subscribe();
+  }
+
   makePDF()
   {
-    console.log("in make PDF")
+    console.log("in make pdf")
     let pdf =new jsPDF('p','pt','a2');
-      pdf.html(this.el.nativeElement,{
-        callback:(pdf)=>{
+    pdf.html(this.el.nativeElement,{
+      callback:(pdf)=>{
         pdf.save("Ledger.pdf");
       }
     })     
   }
-
 
   makeXLSX()
   {

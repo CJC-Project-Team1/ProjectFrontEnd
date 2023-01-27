@@ -1,6 +1,6 @@
 <div class="container">
-
- <h1>LEDGER</h1>
+  <div id="content" #content>
+    <h1>LEDGER</h1>
   <hr width="100%">
   <table class="table" border="2" id="Table">
     <thead class="thead">
@@ -21,12 +21,16 @@
         <td>{{e.emiAmount}}</td>
         <td>{{e.loanBal | number : '1.2-2'}}</td>
         <td>
-          <button type="button" class="btn btn-warning" (click)="onPaid(e,i)" *ngIf="e.emiStatus!='paid'">Paid</button>
+          <button type="button" class="btn btn-warning" (click)="onPaid(e,i)" *ngIf="e.emiStatus!='paid'">Paid</button>  &nbsp;&nbsp;
+          <button type="button" class="btn btn-warning" (click)="onMissed(e)" *ngIf="e.emiStatus!='missed'">Missed</button>
         </td>
       </tr>
     </tbody>
   </table>
+  </div>
+
+ 
   <button style="margin-left: 110%;" type="button" class="btn btn-warning" (click)="makePDF()">PDF<i class="fa fa-file-pdf-o fa-2xl" aria-hidden="true"></i></button>
   &nbsp;&nbsp;
   <button style="margin-left: 110%;" type="button" class="btn btn-warning" (click)="makeXLSX()">Excel<i class="fa fa-file-excel-o fa-2xl" aria-hidden="true"></i></button>
-  
+  </div>
