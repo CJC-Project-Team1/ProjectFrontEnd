@@ -9,7 +9,6 @@ import { CorrespondanceComponent } from './correspondance/correspondance.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoanListComponent } from './loan-list/loan-list.component';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
-import { UpdateLoanComponent } from './update-loan/update-loan.component';
 import { OeNotificationComponent } from './oe-notification/oe-notification.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -21,7 +20,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     CorrespondanceComponent,
     LoanListComponent,
     ApplicationDetailsComponent,
-    UpdateLoanComponent,
     OeNotificationComponent,
   ],
   imports: [

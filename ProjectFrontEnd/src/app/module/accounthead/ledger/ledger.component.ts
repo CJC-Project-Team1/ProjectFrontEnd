@@ -7,6 +7,7 @@ import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-det
 import { Emi } from 'src/app/model/emi';
 import { Borrower } from 'src/app/model/borrower';
 import { EmiService } from 'src/app/shared/emi.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 @Component({
   selector: 'app-ledger',
@@ -32,10 +33,11 @@ export class LedgerComponent {
   date:any=new Date();
   bal:number;
   @ViewChild('content',{static:false}) el!:ElementRef
-  constructor(private ss:SanctionedLoanDetailsService,private loctn:Location,private emiS:EmiService){}
+  constructor(private ss:SanctionedLoanDetailsService,private loctn:Location,private emiS:EmiService,private notify:NotifierService){}
 
   ngOnInit()
   {
+    this.notify.success('Ledger created','Ledger');
     this.getData();
   }
 
