@@ -176,7 +176,7 @@ const routes: Routes = [
     path: 'thNotify', component:ThNotificationComponent
   },
   {
-    path:'mail',component:ThEmailComponent
+    path:'mailth',component:ThEmailComponent
   }
 
 ]

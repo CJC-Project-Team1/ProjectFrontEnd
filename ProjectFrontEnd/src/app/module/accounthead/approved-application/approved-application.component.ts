@@ -58,7 +58,8 @@ export class ApprovedApplicationComponent {
 
       emi1.emiTenure=s.sanctionedLoanTenure;
       emi1.emiAmount=s.monthlyEmi;
-      emi1.emiCount=Number(s.sanctionedLoanTenure)*12
+      // emi1.emiCount=Number(s.sanctionedLoanTenure)*12
+      emi1.emiCount=Number(i)
       emi1.loanBal=Number(s.sanctionedLoanAmount)
       emi1.defautlerCount = this.emi.defautlerCount;
       emi1.emiStatus = this.emi.emiStatus;
