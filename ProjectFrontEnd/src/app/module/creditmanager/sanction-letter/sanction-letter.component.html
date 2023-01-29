@@ -60,7 +60,7 @@
                             <td>Sanctioned Loan Amount:</td>
                             <td><div class="row">
                                 <div class="col-sm-4 text-secondary">
-                                    {{ sanctionForm.get('sanctionedLoanAmount').value |currency:'INR'}}
+                                   Rs {{ sanctionForm.get('sanctionedLoanAmount').value |currency:'INR'}}
                                 </div>
                             </div></td>
                         </tr>
@@ -68,7 +68,7 @@
                             <td>Monthly Emi: </td>
                             <td><div class="row">
                                 <div class="col-sm-4 text-secondary">
-                                    {{ sanctionForm.get('monthlyEmi').value |currency:'INR'}}
+                                    Rs {{ sanctionForm.get('monthlyEmi').value |currency:'INR'}}
                                 </div>
                             </div></td>
                         </tr>
@@ -84,7 +84,7 @@
                             <td>Total interest to be paid: </td>
                             <td><div class="row">
                                 <div class="col-sm-4 text-secondary">
-                                    {{interestAmount|currency:'INR'}}
+                                   Rs {{interestAmount|currency:'INR'}}
                                 </div>
                             </div></td>
                         </tr>
@@ -92,7 +92,7 @@
                             <td>Total amount to be paid: </td>
                             <td><div class="row">
                                 <div class="col-sm-4 text-secondary">
-                                    {{totalAmt|currency:'INR'}}
+                                    Rs {{totalAmt|currency:'INR'}}
                                 </div>
                             </div></td>
                         </tr>

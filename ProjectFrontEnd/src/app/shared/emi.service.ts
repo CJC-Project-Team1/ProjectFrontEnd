@@ -32,6 +32,12 @@ export class EmiService {
     return this.http.get<Emi[]>(this.url+"getAllemi");
   }
 
+
+  getEmiByDeaulter(d:number)
+  {
+    return this.http.get<Emi[]>(this.url+"getAllemiDef/"+d);
+  }
+
   getEmiByStatus(status:string)
   {
     return this.http.get<Emi[]>(this.url+"getAllemi/"+status);

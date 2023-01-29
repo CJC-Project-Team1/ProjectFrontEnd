@@ -11,28 +11,45 @@ import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-det
   styleUrls: ['./defaulters.component.css']
 })
 export class DefaultersComponent {
+  page: number = 1;
+  count: number = 0;
+  tableItems: number = 6;
+  tableSizes: any = [2, 4, 6, 8];
+  constructor(private sls: SanctionedLoanDetailsService, private router: Router) { }
+  defaulters: SanctionedLoanDetails[] = [];
+  missedEmi: Emi[] = [];
 
-  constructor(private sls:SanctionedLoanDetailsService, private router:Router){}
-  defaulters:SanctionedLoanDetails[]=[];
-  missedEmi:Emi[]=[];
+  ngOnInit() {
+    this.getData();
+  }
 
-  ngOnInit(){
-    this.sls.getAllSanLoan().subscribe((sloandata:SanctionedLoanDetails[])=>{
+  getData() {
+    this.sls.getAllSanLoan().subscribe((sloandata: SanctionedLoanDetails[]) => {
       console.log(sloandata)
-      sloandata.forEach((sloan:SanctionedLoanDetails)=>{
-      sloan.emilist.forEach((emi:Emi)=>{
-        if(emi.defautlerCount!=0){
-          this.defaulters.push(sloan)
-          this.missedEmi.push(emi)
-        }
+      sloandata.forEach((sloan: SanctionedLoanDetails) => {
+        sloan.emilist.forEach((emi: Emi) => {
+          if (emi.defautlerCount != 0) {
+            this.defaulters.push(sloan)
+            this.missedEmi.push(emi)
+          }
+        })
       })
     })
-    })
   }
-  
-  mail(d:SanctionedLoanDetails){
-    this.sls.sLoan=Object.assign({},d)
-    this.router.navigate(['reHome','mailth'])
+  mail(d: SanctionedLoanDetails) {
+    this.sls.sLoan = Object.assign({}, d)
+    this.router.navigate(['reHome', 'mailth'])
   }
- 
+
+
+  onTableData(event: any) {
+    this.page = event;
+    this.getData();
+  }
+
+  onTableSize(event: any) {
+    this.tableItems = event.target.value;
+    this.page = 1;
+    this.getData();
+  }
 }

@@ -10,11 +10,20 @@ import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-det
   styleUrls: ['./sanctioned-loan-list.component.css']
 })
 export class SanctionedLoanListComponent {
+  page: number = 1;
+  count: number = 0;
+  tableItems: number = 6;
+  tableSizes: any = [2, 4, 6, 8];
   constructor(private sls:SanctionedLoanDetailsService){}
   sanLoans: SanctionedLoanDetails[] = [];
   
   st1:string = "Approved"
   ngOnInit()
+  {
+   this.getData();
+  }
+
+  getData()
   {
     this.sls.getAllSanLoan().subscribe((slist)=>{
       slist.forEach((sl)=>{
@@ -24,5 +33,16 @@ export class SanctionedLoanListComponent {
         }
       })
     })
+  }
+  
+  onTableData(event: any) {
+    this.page = event;
+    this.getData();
+  }
+
+  onTableSize(event: any) {
+    this.tableItems = event.target.value;
+    this.page = 1;
+    this.getData();
   }
 }
