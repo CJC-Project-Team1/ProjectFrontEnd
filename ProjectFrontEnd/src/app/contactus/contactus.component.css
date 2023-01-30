@@ -35,3 +35,7 @@ input[type=text], select, textarea {
   background: rgb(34,193,195);
     background: linear-gradient(0deg, hsla(205,46%, 30%, 1), hsla(260,29%,36%,1) 100%);
  }
+ label
+ {
+  color: white;
+ }
