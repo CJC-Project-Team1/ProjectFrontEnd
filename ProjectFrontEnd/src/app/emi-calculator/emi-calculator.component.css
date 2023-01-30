@@ -20,14 +20,14 @@ label{
 }
 
 .card h1{
-    color: rgb(68, 68, 68);
+    color: white;
 }
 .card h6{
     color: rgb(68, 68, 68);
 }
 
 label{
-    color: rgb(68, 68, 68);
+    color: white;
 }
 
 .form-text text-muted{
@@ -35,7 +35,7 @@ label{
 }
 
 .result{
-    color: rgb(68, 68, 68);
+    color: rgb(255, 251, 251);
     margin-top: 10px;
     font-weight: normal;
     font-size: medium;
