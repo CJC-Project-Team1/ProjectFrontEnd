@@ -12,7 +12,7 @@ import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-det
 export class SanctionedLoanListComponent {
   page: number = 1;
   count: number = 0;
-  tableItems: number = 6;
+  tableItems: number = 5;
   tableSizes: any = [2, 4, 6, 8];
   constructor(private sls:SanctionedLoanDetailsService){}
   sanLoans: SanctionedLoanDetails[] = [];
