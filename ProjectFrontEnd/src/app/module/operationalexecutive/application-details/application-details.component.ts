@@ -42,6 +42,7 @@ export class ApplicationDetailsComponent {
       panNo: [this.brwr.panNo],
       address: [this.brwr.address],
       documentStatus: [this.brwr.documentStatus],
+      applicationStatus: [this.brwr.applicationStatus],
       gstNo: [this.brwr.gstNo],
       bankDetails: this.fb.group({
         bankDetailsId: [this.brwr.bankDetails.bankDetailsId],
