@@ -1,1 +1,40 @@
-<p>defaulters works!</p>
+<div class="container">
+    <div id="content" #content>
+      <h1>DEFAULTERS</h1>
+    <hr width="100%">
+    <table class="table" border="2" id="Table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Borrower ID</th>
+          <th scope="col">Borrower Name</th>
+          <th scope="col">EMI Amount</th>
+          <!-- <th scope="col">Details</th> -->
+          <!-- <th scope="col">Status</th> -->
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of defaulters| paginate: {
+          itemsPerPage: tableItems,
+         currentPage: page,
+         totalItems: count
+        };
+    let i = index">
+          <th scope="row">{{d.borrower.borrowerId}}</th>
+          <td>{{d.borrower.borrowerName}}</td>
+          <td>{{d.monthlyEmi}}</td>
+          <!-- <td></td> -->
+          <!-- <td>status here---</td> -->
+          <td><i class="fa fa-envelope" aria-hidden="true" (click)="mail(d)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+                          previousLabel="Prev"
+                          nextLabel="Next"
+                         (pageChange)="onTableData($event)">
+      </pagination-controls>
+    </div> 
+  

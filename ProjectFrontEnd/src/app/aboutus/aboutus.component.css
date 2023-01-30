@@ -61,4 +61,20 @@
     }
     
   }
+  h1{
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(34, 112, 143);
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 50px;
+}
+h5{
+  text-align: center;
+  padding-top: 20px;
+  color: rgb(25, 67, 83);
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
  

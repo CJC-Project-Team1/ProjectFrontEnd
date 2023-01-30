@@ -27,6 +27,7 @@ export class AhNotificationComponent {
       this.brwr = bList;
     });
   }
+  
   onTableData(event: any) {
     this.page = event;
     this.getData();

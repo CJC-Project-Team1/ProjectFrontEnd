@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { NotifierService } from 'src/app/shared/notifier.service';
 })
 export class RegisterEnquiryComponent {
 
-  constructor(private enq: EnquiryService, private fb: FormBuilder, private notify: NotifierService) { }
+  constructor(private enq: EnquiryService, private fb: FormBuilder, private notify: NotifierService,private loc:Location) { }
 
   enquiryform: FormGroup
 
@@ -24,10 +25,10 @@ export class RegisterEnquiryComponent {
       dateOfBirth: [],
       enquiryStatus: ['OPEN'],
       contactNo: [],
-      cibil:this.fb.group({
-        cibilId:[],
-        cibilScore:[],
-        cibilRemark:[]
+      cibil: this.fb.group({
+        cibilId: [],
+        cibilScore: [],
+        cibilRemark: []
       })
     })
   }
@@ -35,7 +36,12 @@ export class RegisterEnquiryComponent {
   saveEnquiry() {
     this.enq.save(this.enquiryform.value).subscribe()
     console.log(this.enquiryform.value)
+   // window.location.reload()
     this.notify.success("Enquiry Registered!", "Registered");
-    // window.location.reload()
+  }
+
+  onBack()
+  {
+    this.loc.back();
   }
 }

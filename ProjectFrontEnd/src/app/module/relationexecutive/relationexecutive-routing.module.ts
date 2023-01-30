@@ -25,8 +25,8 @@ import { EnquiryApprovalComponent } from '../operationalexecutive/enquiry-approv
 import { LoanListComponent } from '../operationalexecutive/loan-list/loan-list.component';
 import { LoanRegistrationComponent } from '../operationalexecutive/loan-registration/loan-registration.component';
 import { OeNotificationComponent } from '../operationalexecutive/oe-notification/oe-notification.component';
-import { UpdateLoanComponent } from '../operationalexecutive/update-loan/update-loan.component';
 import { DefaultersComponent } from '../telehead/defaulters/defaulters.component';
+import { ThEmailComponent } from '../telehead/th-email/th-email.component';
 import { ThNotificationComponent } from '../telehead/th-notification/th-notification.component';
 import { ApprovedEnquiryComponent } from './approved-enquiry/approved-enquiry.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -91,9 +91,6 @@ const routes: Routes = [
       },
       {
         path: 'details', component: ApplicationDetailsComponent
-      },
-      {
-        path: 'loanlist/update', component: UpdateLoanComponent
       },
 
 
@@ -174,6 +171,9 @@ const routes: Routes = [
   {
     path: 'thNotify', component:ThNotificationComponent
   },
+  {
+    path:'mailth',component:ThEmailComponent
+  }
 
 ]
   }

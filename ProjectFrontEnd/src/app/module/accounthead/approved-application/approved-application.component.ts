@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Emi } from 'src/app/model/emi';
 import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
 import { EmiService } from 'src/app/shared/emi.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
 @Component({
@@ -28,7 +29,7 @@ export class ApprovedApplicationComponent {
     emiCount: 0
   };
   
-  constructor(private ss:SanctionedLoanDetailsService,private emis:EmiService){}
+  constructor(private ss:SanctionedLoanDetailsService,private emis:EmiService,private notify:NotifierService){}
   sLoans:SanctionedLoanDetails[];
 
   ngOnInit()
@@ -58,7 +59,8 @@ export class ApprovedApplicationComponent {
 
       emi1.emiTenure=s.sanctionedLoanTenure;
       emi1.emiAmount=s.monthlyEmi;
-      emi1.emiCount=Number(s.sanctionedLoanTenure)*12
+      // emi1.emiCount=Number(s.sanctionedLoanTenure)*12
+      emi1.emiCount=Number(i)
       emi1.loanBal=Number(s.sanctionedLoanAmount)
       emi1.defautlerCount = this.emi.defautlerCount;
       emi1.emiStatus = this.emi.emiStatus;
@@ -77,7 +79,7 @@ export class ApprovedApplicationComponent {
     //console.log(s)
     console.log(s.emilist)
     this.ss.updateSanLoan(s).subscribe();
-
+    this.notify.success("Loan Disbursed to"+s.borrower.borrowerName,"Disbursement Successful")
   }
 
   onTableData(event:any)
