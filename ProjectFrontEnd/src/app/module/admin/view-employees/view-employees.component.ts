@@ -11,6 +11,11 @@ import { EmployeeService } from 'src/app/shared/employee.service';
   styleUrls: ['./view-employees.component.css']
 })
 export class ViewEmployeesComponent {
+
+  page: number = 1;
+  count: number = 0;
+  tableItems: number = 4;
+  tableSizes: any = [2, 4, 6, 8];
   constructor(private es:EmployeeService, private sanitizer:DomSanitizer, private router:Router){
     
   }
@@ -20,6 +25,12 @@ export class ViewEmployeesComponent {
   photo:any;
   ngOnInit()
   {
+   this.getData();
+  
+  }
+
+  getData()
+  {
     this.es.getAllEmp().subscribe((edata:Employee[])=>{
       this.employees=edata
       this.employees.forEach(emp => {
@@ -28,9 +39,7 @@ export class ViewEmployeesComponent {
     });
     this.filteredEmps = this.employees;
   }); 
-  
   }
-
   get filterText()
   {
     return this._filterText;
@@ -73,5 +82,16 @@ export class ViewEmployeesComponent {
         return emp.empStatus.toLowerCase() === filterTerm.toLowerCase();
       });
     }
+  }
+
+  onTableData(event: any) {
+    this.page = event;
+    this.getData();
+  }
+
+  onTableSize(event: any) {
+    this.tableItems = event.target.value;
+    this.page = 1;
+    this.getData();
   }
 }

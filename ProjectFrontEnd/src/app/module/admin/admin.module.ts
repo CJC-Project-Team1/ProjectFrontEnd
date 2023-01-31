@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActiveEmployeesComponent } from './active-employees/active-employees.component';
 import { InactiveEmployeesComponent } from './inactive-employees/inactive-employees.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     
@@ -27,7 +28,8 @@ import { ProfileComponent } from './profile/profile.component';
     AdminRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,    
+    NgxPaginationModule
   ],
   exports:[
     

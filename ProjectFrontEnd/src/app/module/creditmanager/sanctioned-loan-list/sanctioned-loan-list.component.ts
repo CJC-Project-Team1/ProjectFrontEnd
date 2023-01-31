@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Borrower } from 'src/app/model/borrower';
 import { SanctionedLoanDetails } from 'src/app/model/sanctioned-loan-details';
-import { BorrowerService } from 'src/app/shared/borrower.service';
 import { SanctionedLoanDetailsService } from 'src/app/shared/sanctioned-loan-details.service';
 
 @Component({
@@ -37,7 +35,7 @@ export class SanctionedLoanListComponent {
   
   onTableData(event: any) {
     this.page = event;
-    this.getData();
+   // this.getData();
   }
 
   onTableSize(event: any) {

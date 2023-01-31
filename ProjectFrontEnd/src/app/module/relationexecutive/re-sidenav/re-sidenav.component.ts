@@ -89,12 +89,6 @@ export class ReSidenavComponent {
           name:'View Employees',
           icon:'fa fa-check-square-o',
           path:'viewEmp'
-        },
-        {
-          number:'3',
-          name:'Leave Applications',
-          icon:'fa fa-star',
-          path:'leaveApp'
         }
       ],
       CM:[
