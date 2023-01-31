@@ -17,7 +17,7 @@ export class CorrespondanceComponent {
   ngOnInit() {
     this.mailForm = this.fb.group({
       to: [''],
-      subject: [''],
+      subject: ['Low cibil score'],
       text: [''],
       borrowerName: [''],
       applicationNo: ['']
