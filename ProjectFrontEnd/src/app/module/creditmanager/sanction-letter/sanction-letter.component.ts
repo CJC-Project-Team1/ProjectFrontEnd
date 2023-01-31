@@ -103,7 +103,7 @@ export class SanctionLetterComponent {
     this.sL.saveSanLoan(data).subscribe();
     this.setMailData();
     this.mailForm.get('text').setValue("\nDear "+this.sL.sLoan.borrower.borrowerName+"\nLoan Application No: "+this.sL.sLoan.borrower.borrowerId+","
-    +"\n We are highly pleased to inform you that your application for a home loan of ₹ "+this.sL.sLoan.sanctionedLoanAmount+" has been approved by the bank."
+    +"\n We are highly pleased to inform you that your application for a loan of ₹ "+this.sL.sLoan.sanctionedLoanAmount+" has been approved by the bank."
     +"\n I hereby request you to please come by at our office to meet our Relationship Executive, anytime during working hours from Monday to Friday to complete all the formalities so that the loan amount can be disbursed."
     +"\n\n Looking forward to see you."
     +"\n\n Thank You !"

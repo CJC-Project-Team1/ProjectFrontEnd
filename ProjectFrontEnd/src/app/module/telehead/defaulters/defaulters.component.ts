@@ -44,7 +44,7 @@ export class DefaultersComponent {
 
   onTableData(event: any) {
     this.page = event;
-    this.getData();
+ //   this.getData();
   }
 
   onTableSize(event: any) {
