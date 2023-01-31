@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/shared/employee.service';
+import { NotifierService } from 'src/app/shared/notifier.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ViewEmployeesComponent {
   count: number = 0;
   tableItems: number = 4;
   tableSizes: any = [2, 4, 6, 8];
-  constructor(private es:EmployeeService, private sanitizer:DomSanitizer, private router:Router){
+  constructor(private es:EmployeeService, private sanitizer:DomSanitizer, private router:Router,private notify :NotifierService){
     
   }
   employees:Employee[];
@@ -54,7 +55,7 @@ export class ViewEmployeesComponent {
   delete(id)
   {
     this.es.deleteEmp(id).subscribe((msg:string)=>alert(msg));
-    //window.location.reload();
+    this.notify.warning('Employee is inactive','Status Changed');
   }
 
   getStateColor(status) {
