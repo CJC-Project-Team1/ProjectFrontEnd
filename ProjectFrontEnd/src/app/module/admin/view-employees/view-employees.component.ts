@@ -54,8 +54,8 @@ export class ViewEmployeesComponent {
 
   delete(id)
   {
-    this.es.deleteEmp(id).subscribe((msg:string)=>alert(msg));
-    this.notify.warning('Employee is inactive','Status Changed');
+    this.es.deleteEmp(id).subscribe((msg:string)=>this.notify.warning('Employee is inactive','Status Changed'));
+    
   }
 
   getStateColor(status) {

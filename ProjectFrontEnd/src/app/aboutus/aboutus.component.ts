@@ -21,8 +21,8 @@ export class AboutusComponent {
   onTL() {
     this.mailForm = this.fb.group({
       to: ['surunautiyal@gmail.com'],
-      subject: ['Contact message from company'],
-      text: ['Someone is trying to Contact you From MSME Finance.'],
+      subject: ['Contact message'],
+      text: ['You have a contact Request From MSME Finance.'],
     });
     this.es.sendDynamicMail(this.mailForm.value).subscribe();
     this.notify.success("To:"+this.mailForm.get('to').value,"Mail Sent");
@@ -30,8 +30,8 @@ export class AboutusComponent {
   onTM1() {
     this.mailForm = this.fb.group({
       to: ['poojaborse451@gmail.com'],
-      subject: ['Contact message from company'],
-      text: ['Someone is trying to Contact you From MSME Finance.'],
+      subject: ['Contact message'],
+      text: ['You have a contact Request From MSME Finance.'],
     });
     this.es.sendDynamicMail(this.mailForm.value).subscribe();
     this.notify.success("To:"+this.mailForm.get('to').value,"Mail Sent");
@@ -39,8 +39,8 @@ export class AboutusComponent {
   onTM2() {
     this.mailForm = this.fb.group({
       to: ['mstambe1996@gmail.com'],
-      subject: ['Contact message from company'],
-      text: ['Someone is trying to Contact you From MSME Finance.'],
+      subject: ['Contact message'],
+      text: ['You have a contact Request From MSME Finance.'],
     });
     this.es.sendDynamicMail(this.mailForm.value).subscribe();
     this.notify.success("To:"+this.mailForm.get('to').value,"Mail Sent");
@@ -48,8 +48,8 @@ export class AboutusComponent {
   onTM3() {
     this.mailForm = this.fb.group({
       to: ['abhilashthakre28@gmail.com'],
-      subject: ['Contact message from company'],
-      text: ['Someone is trying to Contact you From MSME Finance.'],
+      subject: ['Contact message'],
+      text: ['You have a contact Request From MSME Finance.'],
     });
     this.es.sendDynamicMail(this.mailForm.value).subscribe();
     this.notify.success("To:"+this.mailForm.get('to').value,"Mail Sent");
@@ -57,8 +57,8 @@ export class AboutusComponent {
   onTM4() {
     this.mailForm = this.fb.group({
       to: ['narendrapakhare13@gmail.com'],
-      subject: ['Contact message from company'],
-      text: ['Someone is trying to Contact you From MSME Finance.'],
+      subject: ['Contact message'],
+      text: ['You have a contact Request From MSME Finance.'],
     });
     this.es.sendDynamicMail(this.mailForm.value).subscribe();
     this.notify.success("To:"+this.mailForm.get('to').value,"Mail Sent");
